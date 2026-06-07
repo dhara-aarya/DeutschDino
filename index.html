@@ -6,7 +6,7 @@
     <meta name="description" content="Deutsch Flashcards - Learn German vocabulary">
     <title>Deutsch Flashcards 🇩🇪</title>
 
-    <link rel="manifest" href="data:application/manifest+json,{%22name%22:%22Deutsch%20Flashcards%22,%22short_name%22:%22Deutsch%22,%22start_url%22:%22/%22,%22display%22:%22fullscreen%22,%22background_color%22:%22%23ffffff%22,%22theme_color%22:%22%23ff6b9d%22,%22icons%22:[{%22src%22:%22data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 192 192%27><rect fill=%27%23ff6b9d%27 width=%27192%27 height=%27192%27/><text x=%2796%27 y=%27140%27 font-size=%27120%27 text-anchor=%27middle%27>📚</text></svg>%22,%22sizes%22:%22192x192%22,%22type%22:%22image/svg+xml%22},{%22src%22:%22data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 512 512%27><rect fill=%27%23ff6b9d%27 width=%27512%27 height=%27512%27/><text x=%27256%27 y=%27390%27 font-size=%27320%27 text-anchor=%27middle%27>📚</text></svg>%22,%22sizes%22:%22512x512%22,%22type%22:%22image/svg+xml%22}]}">
+    <link rel="manifest" href="data:application/manifest+json,{%22name%22:%22Deutsch%20Flashcards%22,%22short_name%22:%22Deutsch%22,%22start_url%22:%22/%22,%22display%22:%22fullscreen%22,%22background_color%22:%22%23ffffff%22,%22theme_color%22:%22%23ff6b9d%22,%22icons%22:[{%22src%22:%22data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 192 192%27><defs><linearGradient id=%27bg%27 x1=%270%25%27 y1=%270%25%27 x2=%27100%25%27 y2=%27100%25%27><stop offset=%270%25%27 style=%27stop-color:%23ff6b9d;stop-opacity:1%27/><stop offset=%27100%25%27 style=%27stop-color:%23c233ff;stop-opacity:1%27/></linearGradient></defs><rect fill=%27url(%23bg)%27 width=%27192%27 height=%27192%27/><text x=%2796%27 y=%27120%27 font-size=%2780%27 text-anchor=%27middle%27>📚</text></svg>%22,%22sizes%22:%22192x192%22,%22type%22:%22image/svg+xml%22},{%22src%22:%22data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 512 512%27><defs><linearGradient id=%27bg2%27 x1=%270%25%27 y1=%270%25%27 x2=%27100%25%27 y2=%27100%25%27><stop offset=%270%25%27 style=%27stop-color:%23ff6b9d;stop-opacity:1%27/><stop offset=%27100%25%27 style=%27stop-color:%23c233ff;stop-opacity:1%27/></linearGradient></defs><rect fill=%27url(%23bg2)%27 width=%27512%27 height=%27512%27/><text x=%27256%27 y=%27350%27 font-size=%27280%27 text-anchor=%27middle%27>📚</text></svg>%22,%22sizes%22:%22512x512%22,%22type%22:%22image/svg+xml%22}]}">
 
     <link href="https://cdn.tailwindcss.com" rel="stylesheet">
 
@@ -137,7 +137,7 @@
                     { en: "book", de: "Buch", article: "das", emoji: "📚" },
                     { en: "pencil", de: "Bleistift", article: "der", emoji: "✏️" },
                     { en: "backpack", de: "Rucksack", article: "der", emoji: "🎒" },
-                    { en: "desk", de: "Schreibtisch", article: "der", emoji: "🪑" },
+                    { en: "desk", de: "Schreibtisch", article: "der", emoji: "📚" },
                     { en: "teacher", de: "Lehrer", article: "der", emoji: "👨‍🏫" },
                     { en: "student", de: "Schüler", article: "der", emoji: "👦" },
                     { en: "paper", de: "Papier", article: "das", emoji: "📄" },
@@ -147,7 +147,7 @@
                     { en: "scissors", de: "Schere", article: "die", emoji: "✂️" },
                     { en: "glue", de: "Leim", article: "der", emoji: "🧴" },
                     { en: "notebook", de: "Heft", article: "das", emoji: "📓" },
-                    { en: "blackboard", de: "Tafel", article: "die", emoji: "🖤" },
+                    { en: "blackboard", de: "Tafel", article: "die", emoji: "⬛" },
                     { en: "classroom", de: "Klassenzimmer", article: "das", emoji: "🏛️" },
                     { en: "school", de: "Schule", article: "die", emoji: "🏫" },
                     { en: "bell", de: "Glocke", article: "die", emoji: "🔔" },
@@ -666,7 +666,7 @@
                     { en: "checkers", de: "Dame", article: "das", emoji: "♟️" },
                     { en: "hide and seek", de: "Verstecken", article: "das", emoji: "🙈" },
                     { en: "tag", de: "Fangen", article: "das", emoji: "🏃" },
-                    { en: "hopscotch", de: "Himmel und Hölle", article: "das", emoji: "🎲" },
+                    { en: "hopscotch", de: "Himmel und Hölle", article: "das", emoji: "🏃" },
                     { en: "jump rope", de: "Springseil", article: "das", emoji: "🧵" },
                     { en: "dice", de: "Würfel", article: "der", emoji: "🎲" },
                     { en: "card game", de: "Kartenspiel", article: "das", emoji: "🃏" },
@@ -1150,7 +1150,7 @@
                             <div class="card-inner">
                                 <!-- Front -->
                                 <div class="card-front bg-gradient-to-br from-blue-100 to-purple-100 rounded-3xl shadow-2xl border-4 border-white">
-                                    <div class="text-7xl mb-4">${currentCard.emoji}</div>
+                                    <div style="font-size: 12rem" class="mb-4">${currentCard.emoji}</div>
                                     <div class="text-3xl font-bold text-gray-800 text-center mb-3">${currentCard.en}</div>
                                     <div class="text-sm text-gray-700 text-center px-3 mb-2">${currentCard.en_sent || ''}</div>
                                     <div class="text-xs text-red-600 text-center px-3 mb-3">${currentCard.hi_sent || ''}</div>
@@ -1158,7 +1158,7 @@
                                 </div>
                                 <!-- Back -->
                                 <div class="card-back bg-gradient-to-br from-pink-100 to-red-100 rounded-3xl shadow-2xl border-4 border-white">
-                                    <div class="text-7xl mb-3">${currentCard.emoji}</div>
+                                    <div style="font-size: 12rem" class="mb-3">${currentCard.emoji}</div>
                                     <div class="text-lg mb-2">
                                         <span class="${getArticleClass(currentCard.article)}">${currentCard.article}</span>
                                         <span class="font-bold text-gray-800"> ${currentCard.de}</span>
