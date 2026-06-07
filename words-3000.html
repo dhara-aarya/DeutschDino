@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="theme-color" content="#ff6b9d">
+    <meta name="description" content="3000 German Words - Learn German vocabulary">
+    <title>3000 German Words 🇩🇪</title>
+    <link href="https://cdn.tailwindcss.com" rel="stylesheet">
+    <style>
+        * { -webkit-tap-highlight-color: transparent; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+
+        .card-container {
+            perspective: 1000px;
+            height: 400px;
+            width: 100%;
+            max-width: 350px;
+            margin: 0 auto;
+        }
+        .card {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+        }
+        .card.flipped { transform: rotateY(180deg); }
+        .card-front, .card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
+            border-radius: 24px;
+        }
+        .card-back { transform: rotateY(180deg); }
+
+        .fade-in {
+            animation: fadeIn 0.3s ease-in;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        img.word-image {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 16px;
+            background: #f0f0f0;
+        }
+
+        .emoji-fallback {
+            font-size: 8rem;
+            text-align: center;
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-purple-100 via-pink-50 to-blue-100 min-h-screen">
+    <div id="app"></div>
+
+    <script>
+        const app = document.getElementById("app");
+        let VOCABULARY_DB = {};
+        let appState = {
+            screen: "home",
+            selectedCategory: null,
+            currentCardIndex: 0,
+            deck: [],
+            score: 0
+        };
+
+        // Load JSON data
+        fetch("words-3000.json")
+            .then(res => res.json())
+            .then(data => {
+                VOCABULARY_DB = data;
+                showHome();
+            })
+            .catch(err => {
+                app.innerHTML = `<div class="flex items-center justify-center h-screen"><div class="text-red-600 text-2xl">❌ Failed to load words-3000.json</div></div>`;
+                console.error(err);
+            });
+
+        function showHome() {
+            appState.screen = "home";
+            const categories = Object.entries(VOCABULARY_DB).map(([key, cat]) => ({
+                key,
+                name: cat.name,
+                emoji: cat.emoji,
+                color: cat.color,
+                count: cat.words.length
+            }));
+
+            app.innerHTML = `
+                <div class="min-h-screen flex flex-col items-center justify-center px-4 py-8">
+                    <div class="text-center mb-8">
+                        <h1 class="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600 mb-2">3000 Words</h1>
+                        <p class="text-gray-600 text-lg">🇩🇪 Master German vocabulary</p>
+                        <a href="index.html" class="mt-4 inline-block bg-white text-purple-600 font-bold py-2 px-4 rounded-full shadow hover:shadow-lg transition">🏠 Back to App</a>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-4 max-w-md w-full">
+                        ${categories.map(cat => `
+                            <button class="category-btn bg-gradient-to-br ${cat.color} rounded-3xl p-6 text-white font-bold text-center shadow-lg hover:shadow-xl transform hover:scale-105 transition-all" data-category="${cat.key}">
+                                <div class="text-5xl mb-3">${cat.emoji}</div>
+                                <div class="text-sm">${cat.name.split(" & ")[0]}</div>
+                                <div class="text-xs opacity-80 mt-1">${cat.count} words</div>
+                            </button>
+                        `).join("")}
+                    </div>
+                </div>
+            `;
+
+            document.querySelectorAll(".category-btn").forEach(btn => {
+                btn.addEventListener("click", () => startGame(btn.dataset.category));
+            });
+        }
+
+        function startGame(categoryKey) {
+            appState.selectedCategory = categoryKey;
+            appState.currentCardIndex = 0;
+            appState.score = 0;
+            appState.deck = [...VOCABULARY_DB[categoryKey].words];
+            appState.screen = "game";
+            showGame();
+        }
+
+        function showGame() {
+            const category = VOCABULARY_DB[appState.selectedCategory];
+            const currentCard = appState.deck[appState.currentCardIndex];
+            const totalCards = appState.deck.length;
+            const progress = appState.currentCardIndex + 1;
+
+            app.innerHTML = `
+                <div class="min-h-screen flex flex-col px-4 py-6 pb-20">
+                    <div class="flex items-center justify-between mb-6">
+                        <button class="home-btn bg-white rounded-full p-3 shadow-md hover:shadow-lg transition-all" title="Back to home">
+                            🏠
+                        </button>
+                        <div class="text-center flex-1">
+                            <h2 class="text-2xl font-bold text-gray-800">${category.emoji} ${category.name.split(" & ")[0]}</h2>
+                        </div>
+                        <div class="w-12"></div>
+                    </div>
+
+                    <div class="w-full max-w-md mx-auto mb-4">
+                        <div class="bg-gray-300 rounded-full h-2 overflow-hidden">
+                            <div class="bg-gradient-to-r from-purple-500 to-pink-500 h-full transition-all" style="width: ${(progress / totalCards) * 100}%"></div>
+                        </div>
+                        <p class="text-center text-sm text-gray-600 mt-2">${progress} / ${totalCards}</p>
+                    </div>
+
+                    <div class="flex-1 flex items-center justify-center">
+                        <div class="card-container">
+                            <div class="card" id="card">
+                                <div class="card-front bg-gradient-to-br from-blue-100 to-purple-100 rounded-3xl shadow-2xl border-4 border-white">
+                                    ${currentCard.img ? `
+                                        <img src="${currentCard.img}"
+                                             alt="${currentCard.en}"
+                                             loading="lazy"
+                                             class="word-image"
+                                             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                                        <div class="emoji-fallback" style="display:none">🎯</div>
+                                    ` : `<div class="emoji-fallback">🎯</div>`}
+                                    <div class="text-2xl font-bold text-gray-800 text-center mt-4">${currentCard.en}</div>
+                                    <p class="text-xs text-gray-500 mt-4">← Tap to flip →</p>
+                                </div>
+                                <div class="card-back bg-gradient-to-br from-pink-100 to-red-100 rounded-3xl shadow-2xl border-4 border-white">
+                                    <div style="font-size: 8rem" class="mb-3">🇩🇪</div>
+                                    <div class="text-3xl font-bold text-gray-800 text-center">${currentCard.de}</div>
+                                    <p class="text-xs text-gray-500 mt-4">← Tap to flip →</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-3 justify-center mb-4">
+                        <button class="prev-btn ${appState.currentCardIndex === 0 ? 'opacity-50 cursor-not-allowed' : ''} bg-blue-400 hover:bg-blue-500 text-white font-bold py-2 px-6 rounded-xl shadow-lg transform hover:scale-105 transition-all" ${appState.currentCardIndex === 0 ? 'disabled' : ''}>
+                            ⬅️ Prev
+                        </button>
+                        <button class="next-btn ${appState.currentCardIndex === totalCards - 1 ? 'opacity-50 cursor-not-allowed' : ''} bg-blue-400 hover:bg-blue-500 text-white font-bold py-2 px-6 rounded-xl shadow-lg transform hover:scale-105 transition-all" ${appState.currentCardIndex === totalCards - 1 ? 'disabled' : ''}>
+                            Next ➡️
+                        </button>
+                    </div>
+
+                    <div class="flex gap-4 justify-center">
+                        <button class="try-again-btn bg-red-500 hover:bg-red-600 text-white font-bold py-4 px-8 rounded-2xl text-xl shadow-lg transform hover:scale-105 transition-all">
+                            ❌ Try Again
+                        </button>
+                        <button class="know-it-btn bg-green-500 hover:bg-green-600 text-white font-bold py-4 px-8 rounded-2xl text-xl shadow-lg transform hover:scale-105 transition-all">
+                            ✅ I Know It!
+                        </button>
+                    </div>
+                </div>
+            `;
+
+            // Event listeners
+            const card = document.getElementById("card");
+            card.addEventListener("click", () => {
+                card.classList.toggle("flipped");
+            });
+
+            document.querySelector(".home-btn").addEventListener("click", showHome);
+            document.querySelector(".prev-btn").addEventListener("click", () => {
+                if (appState.currentCardIndex > 0) {
+                    appState.currentCardIndex--;
+                    showGame();
+                }
+            });
+            document.querySelector(".next-btn").addEventListener("click", () => {
+                if (appState.currentCardIndex < totalCards - 1) {
+                    appState.currentCardIndex++;
+                    showGame();
+                }
+            });
+            document.querySelector(".know-it-btn").addEventListener("click", () => {
+                appState.score++;
+                if (appState.currentCardIndex < totalCards - 1) {
+                    appState.currentCardIndex++;
+                    showGame();
+                } else {
+                    showCompletion();
+                }
+            });
+            document.querySelector(".try-again-btn").addEventListener("click", () => {
+                // Move to end for retry later
+                if (appState.currentCardIndex < totalCards - 1) {
+                    appState.currentCardIndex++;
+                    showGame();
+                } else {
+                    showCompletion();
+                }
+            });
+        }
+
+        function showCompletion() {
+            const category = VOCABULARY_DB[appState.selectedCategory];
+            const totalCards = appState.deck.length;
+
+            app.innerHTML = `
+                <div class="min-h-screen flex flex-col items-center justify-center px-4 py-8">
+                    <div class="text-9xl mb-6 animate-bounce">🏆</div>
+                    <h1 class="text-5xl font-bold text-gray-800 mb-4">Super gemacht!</h1>
+                    <p class="text-2xl text-gray-600 mb-8">You earned ${appState.score} stars!</p>
+
+                    <div class="mb-8">
+                        <p class="text-6xl">⭐ × ${appState.score}</p>
+                    </div>
+
+                    <div class="flex gap-4 flex-wrap justify-center">
+                        <button class="replay-btn bg-gradient-to-r from-purple-500 to-pink-500 text-white font-bold py-4 px-8 rounded-2xl text-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all">
+                            🔄 Repeat ${category.name.split(" & ")[0]}
+                        </button>
+                        <button class="home-btn-final bg-gradient-to-r from-blue-500 to-indigo-500 text-white font-bold py-4 px-8 rounded-2xl text-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all">
+                            🏠 Home
+                        </button>
+                    </div>
+                </div>
+            `;
+
+            document.querySelector(".replay-btn").addEventListener("click", () => {
+                startGame(appState.selectedCategory);
+            });
+            document.querySelector(".home-btn-final").addEventListener("click", showHome);
+        }
+    </script>
+</body>
+</html>

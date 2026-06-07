@@ -1,0 +1,5245 @@
+{
+  "grammar": {
+    "name": "Grammar & Function Words",
+    "emoji": "📝",
+    "color": "from-gray-500 to-slate-700",
+    "words": [
+      {
+        "de": "der",
+        "en": "the",
+        "img": "https://image.pollinations.ai/prompt/the?nologo=1"
+      },
+      {
+        "de": "und",
+        "en": "and",
+        "img": "https://image.pollinations.ai/prompt/and?nologo=1"
+      },
+      {
+        "de": "in",
+        "en": "in",
+        "img": "https://image.pollinations.ai/prompt/in?nologo=1"
+      },
+      {
+        "de": "ein",
+        "en": "a",
+        "img": "https://image.pollinations.ai/prompt/a?nologo=1"
+      },
+      {
+        "de": "zu",
+        "en": "to",
+        "img": "https://image.pollinations.ai/prompt/to?nologo=1"
+      },
+      {
+        "de": "von",
+        "en": "from",
+        "img": "https://image.pollinations.ai/prompt/from?nologo=1"
+      },
+      {
+        "de": "nicht",
+        "en": "not",
+        "img": "https://image.pollinations.ai/prompt/not?nologo=1"
+      },
+      {
+        "de": "mit",
+        "en": "with",
+        "img": "https://image.pollinations.ai/prompt/with?nologo=1"
+      },
+      {
+        "de": "auf",
+        "en": "on",
+        "img": "https://image.pollinations.ai/prompt/on?nologo=1"
+      },
+      {
+        "de": "für",
+        "en": "for",
+        "img": "https://image.pollinations.ai/prompt/for?nologo=1"
+      },
+      {
+        "de": "an",
+        "en": "at",
+        "img": "https://image.pollinations.ai/prompt/at?nologo=1"
+      },
+      {
+        "de": "so",
+        "en": "so",
+        "img": "https://image.pollinations.ai/prompt/so?nologo=1"
+      },
+      {
+        "de": "ja",
+        "en": "yes",
+        "img": "https://image.pollinations.ai/prompt/yes?nologo=1"
+      },
+      {
+        "de": "wie",
+        "en": "how",
+        "img": "https://image.pollinations.ai/prompt/how?nologo=1"
+      },
+      {
+        "de": "bei",
+        "en": "by",
+        "img": "https://image.pollinations.ai/prompt/by?nologo=1"
+      },
+      {
+        "de": "oder",
+        "en": "or",
+        "img": "https://image.pollinations.ai/prompt/or?nologo=1"
+      },
+      {
+        "de": "aber",
+        "en": "but",
+        "img": "https://image.pollinations.ai/prompt/but?nologo=1"
+      },
+      {
+        "de": "da",
+        "en": "there",
+        "img": "https://image.pollinations.ai/prompt/there?nologo=1"
+      },
+      {
+        "de": "nach",
+        "en": "after",
+        "img": "https://image.pollinations.ai/prompt/after?nologo=1"
+      },
+      {
+        "de": "was",
+        "en": "what",
+        "img": "https://image.pollinations.ai/prompt/what?nologo=1"
+      },
+      {
+        "de": "also",
+        "en": "thus",
+        "img": "https://image.pollinations.ai/prompt/thus?nologo=1"
+      },
+      {
+        "de": "aus",
+        "en": "out",
+        "img": "https://image.pollinations.ai/prompt/out?nologo=1"
+      },
+      {
+        "de": "wenn",
+        "en": "if",
+        "img": "https://image.pollinations.ai/prompt/if?nologo=1"
+      },
+      {
+        "de": "um",
+        "en": "around",
+        "img": "https://image.pollinations.ai/prompt/around?nologo=1"
+      },
+      {
+        "de": "über",
+        "en": "over",
+        "img": "https://image.pollinations.ai/prompt/over?nologo=1"
+      },
+      {
+        "de": "kein",
+        "en": "no",
+        "img": "https://image.pollinations.ai/prompt/no?nologo=1"
+      },
+      {
+        "de": "vor",
+        "en": "before",
+        "img": "https://image.pollinations.ai/prompt/before?nologo=1"
+      },
+      {
+        "de": "durch",
+        "en": "through",
+        "img": "https://image.pollinations.ai/prompt/through?nologo=1"
+      },
+      {
+        "de": "hier",
+        "en": "here",
+        "img": "https://image.pollinations.ai/prompt/here?nologo=1"
+      },
+      {
+        "de": "unter",
+        "en": "under",
+        "img": "https://image.pollinations.ai/prompt/under?nologo=1"
+      },
+      {
+        "de": "wo",
+        "en": "where",
+        "img": "https://image.pollinations.ai/prompt/where?nologo=1"
+      },
+      {
+        "de": "damit",
+        "en": "so that",
+        "img": "https://image.pollinations.ai/prompt/so%20that?nologo=1"
+      },
+      {
+        "de": "oben",
+        "en": "above",
+        "img": "https://image.pollinations.ai/prompt/above?nologo=1"
+      },
+      {
+        "de": "dort",
+        "en": "there",
+        "img": "https://image.pollinations.ai/prompt/there?nologo=1"
+      },
+      {
+        "de": "nein",
+        "en": "no",
+        "img": "https://image.pollinations.ai/prompt/no?nologo=1"
+      },
+      {
+        "de": "vorher",
+        "en": "before",
+        "img": "https://image.pollinations.ai/prompt/before?nologo=1"
+      },
+      {
+        "de": "wann",
+        "en": "when",
+        "img": "https://image.pollinations.ai/prompt/when?nologo=1"
+      },
+      {
+        "de": "warum",
+        "en": "why",
+        "img": "https://image.pollinations.ai/prompt/why?nologo=1"
+      }
+    ]
+  },
+  "pronouns": {
+    "name": "Pronouns",
+    "emoji": "👤",
+    "color": "from-blue-500 to-indigo-600",
+    "words": [
+      {
+        "de": "ich",
+        "en": "I",
+        "img": "https://image.pollinations.ai/prompt/I?nologo=1"
+      },
+      {
+        "de": "sie",
+        "en": "she",
+        "img": "https://image.pollinations.ai/prompt/she?nologo=1"
+      },
+      {
+        "de": "es",
+        "en": "it",
+        "img": "https://image.pollinations.ai/prompt/it?nologo=1"
+      },
+      {
+        "de": "sich",
+        "en": "oneself",
+        "img": "https://image.pollinations.ai/prompt/oneself?nologo=1"
+      },
+      {
+        "de": "er",
+        "en": "he",
+        "img": "https://image.pollinations.ai/prompt/he?nologo=1"
+      },
+      {
+        "de": "ihr",
+        "en": "her",
+        "img": "https://image.pollinations.ai/prompt/her?nologo=1"
+      },
+      {
+        "de": "wir",
+        "en": "we",
+        "img": "https://image.pollinations.ai/prompt/we?nologo=1"
+      },
+      {
+        "de": "man",
+        "en": "one",
+        "img": "https://image.pollinations.ai/prompt/one?nologo=1"
+      },
+      {
+        "de": "all",
+        "en": "all",
+        "img": "https://image.pollinations.ai/prompt/all?nologo=1"
+      },
+      {
+        "de": "du",
+        "en": "you",
+        "img": "https://image.pollinations.ai/prompt/you?nologo=1"
+      },
+      {
+        "de": "mein",
+        "en": "my",
+        "img": "https://image.pollinations.ai/prompt/my?nologo=1"
+      },
+      {
+        "de": "mir",
+        "en": "me",
+        "img": "https://image.pollinations.ai/prompt/me?nologo=1"
+      },
+      {
+        "de": "mich",
+        "en": "me",
+        "img": "https://image.pollinations.ai/prompt/me?nologo=1"
+      },
+      {
+        "de": "uns",
+        "en": "us",
+        "img": "https://image.pollinations.ai/prompt/us?nologo=1"
+      },
+      {
+        "de": "jeder",
+        "en": "every",
+        "img": "https://image.pollinations.ai/prompt/every?nologo=1"
+      },
+      {
+        "de": "ihm",
+        "en": "him",
+        "img": "https://image.pollinations.ai/prompt/him?nologo=1"
+      },
+      {
+        "de": "ihn",
+        "en": "him",
+        "img": "https://image.pollinations.ai/prompt/him?nologo=1"
+      },
+      {
+        "de": "selbst",
+        "en": "self",
+        "img": "https://image.pollinations.ai/prompt/self?nologo=1"
+      },
+      {
+        "de": "unser",
+        "en": "our",
+        "img": "https://image.pollinations.ai/prompt/our?nologo=1"
+      },
+      {
+        "de": "eins",
+        "en": "one",
+        "img": "https://image.pollinations.ai/prompt/one?nologo=1"
+      },
+      {
+        "de": "alle",
+        "en": "all",
+        "img": "https://image.pollinations.ai/prompt/all?nologo=1"
+      },
+      {
+        "de": "beide",
+        "en": "both",
+        "img": "https://image.pollinations.ai/prompt/both?nologo=1"
+      }
+    ]
+  },
+  "verbs": {
+    "name": "Core Verbs",
+    "emoji": "⚡",
+    "color": "from-yellow-500 to-orange-600",
+    "words": [
+      {
+        "de": "sein",
+        "en": "be",
+        "img": "https://image.pollinations.ai/prompt/be?nologo=1"
+      },
+      {
+        "de": "haben",
+        "en": "have",
+        "img": "https://image.pollinations.ai/prompt/have?nologo=1"
+      },
+      {
+        "de": "werden",
+        "en": "become",
+        "img": "https://image.pollinations.ai/prompt/become?nologo=1"
+      },
+      {
+        "de": "sagen",
+        "en": "say",
+        "img": "https://image.pollinations.ai/prompt/say?nologo=1"
+      },
+      {
+        "de": "machen",
+        "en": "make",
+        "img": "https://image.pollinations.ai/prompt/make?nologo=1"
+      },
+      {
+        "de": "geben",
+        "en": "give",
+        "img": "https://image.pollinations.ai/prompt/give?nologo=1"
+      },
+      {
+        "de": "kommen",
+        "en": "come",
+        "img": "https://image.pollinations.ai/prompt/come?nologo=1"
+      },
+      {
+        "de": "wollen",
+        "en": "want",
+        "img": "https://image.pollinations.ai/prompt/want?nologo=1"
+      },
+      {
+        "de": "gehen",
+        "en": "go",
+        "img": "https://image.pollinations.ai/prompt/go?nologo=1"
+      },
+      {
+        "de": "wissen",
+        "en": "know",
+        "img": "https://image.pollinations.ai/prompt/know?nologo=1"
+      },
+      {
+        "de": "sehen",
+        "en": "see",
+        "img": "https://image.pollinations.ai/prompt/see?nologo=1"
+      },
+      {
+        "de": "lassen",
+        "en": "let",
+        "img": "https://image.pollinations.ai/prompt/let?nologo=1"
+      },
+      {
+        "de": "stehen",
+        "en": "stand",
+        "img": "https://image.pollinations.ai/prompt/stand?nologo=1"
+      },
+      {
+        "de": "Arbeit",
+        "en": "work",
+        "img": "https://image.pollinations.ai/prompt/work?nologo=1"
+      },
+      {
+        "de": "fragen",
+        "en": "ask",
+        "img": "https://image.pollinations.ai/prompt/ask?nologo=1"
+      },
+      {
+        "de": "arbeiten",
+        "en": "work",
+        "img": "https://image.pollinations.ai/prompt/work?nologo=1"
+      },
+      {
+        "de": "spielen",
+        "en": "play",
+        "img": "https://image.pollinations.ai/prompt/play?nologo=1"
+      },
+      {
+        "de": "lesen",
+        "en": "read",
+        "img": "https://image.pollinations.ai/prompt/read?nologo=1"
+      },
+      {
+        "de": "schreiben",
+        "en": "write",
+        "img": "https://image.pollinations.ai/prompt/write?nologo=1"
+      },
+      {
+        "de": "sprechen",
+        "en": "speak",
+        "img": "https://image.pollinations.ai/prompt/speak?nologo=1"
+      },
+      {
+        "de": "nehmen",
+        "en": "take",
+        "img": "https://image.pollinations.ai/prompt/take?nologo=1"
+      },
+      {
+        "de": "finden",
+        "en": "find",
+        "img": "https://image.pollinations.ai/prompt/find?nologo=1"
+      },
+      {
+        "de": "helfen",
+        "en": "help",
+        "img": "https://image.pollinations.ai/prompt/help?nologo=1"
+      },
+      {
+        "de": "brauchen",
+        "en": "need",
+        "img": "https://image.pollinations.ai/prompt/need?nologo=1"
+      },
+      {
+        "de": "denken",
+        "en": "think",
+        "img": "https://image.pollinations.ai/prompt/think?nologo=1"
+      },
+      {
+        "de": "versuchen",
+        "en": "try",
+        "img": "https://image.pollinations.ai/prompt/try?nologo=1"
+      },
+      {
+        "de": "benutzen",
+        "en": "use",
+        "img": "https://image.pollinations.ai/prompt/use?nologo=1"
+      },
+      {
+        "de": "leben",
+        "en": "live",
+        "img": "https://image.pollinations.ai/prompt/live?nologo=1"
+      },
+      {
+        "de": "bedeuten",
+        "en": "mean",
+        "img": "https://image.pollinations.ai/prompt/mean?nologo=1"
+      },
+      {
+        "de": "rufen",
+        "en": "call",
+        "img": "https://image.pollinations.ai/prompt/call?nologo=1"
+      },
+      {
+        "de": "bekommen",
+        "en": "get",
+        "img": "https://image.pollinations.ai/prompt/get?nologo=1"
+      },
+      {
+        "de": "scheinen",
+        "en": "seem",
+        "img": "https://image.pollinations.ai/prompt/seem?nologo=1"
+      },
+      {
+        "de": "wohnen",
+        "en": "live",
+        "img": "https://image.pollinations.ai/prompt/live?nologo=1"
+      },
+      {
+        "de": "halten",
+        "en": "hold",
+        "img": "https://image.pollinations.ai/prompt/hold?nologo=1"
+      },
+      {
+        "de": "fühlen",
+        "en": "feel",
+        "img": "https://image.pollinations.ai/prompt/feel?nologo=1"
+      },
+      {
+        "de": "schauen",
+        "en": "look",
+        "img": "https://image.pollinations.ai/prompt/look?nologo=1"
+      },
+      {
+        "de": "erzählen",
+        "en": "tell",
+        "img": "https://image.pollinations.ai/prompt/tell?nologo=1"
+      },
+      {
+        "de": "vermieten",
+        "en": "let",
+        "img": "https://image.pollinations.ai/prompt/let?nologo=1"
+      },
+      {
+        "de": "schenken",
+        "en": "give",
+        "img": "https://image.pollinations.ai/prompt/give?nologo=1"
+      },
+      {
+        "de": "nutzen",
+        "en": "use",
+        "img": "https://image.pollinations.ai/prompt/use?nologo=1"
+      }
+    ]
+  },
+  "time": {
+    "name": "Time & Calendar",
+    "emoji": "⏰",
+    "color": "from-purple-500 to-violet-600",
+    "words": [
+      {
+        "de": "dann",
+        "en": "then",
+        "img": "https://image.pollinations.ai/prompt/then?nologo=1"
+      },
+      {
+        "de": "noch",
+        "en": "still",
+        "img": "https://image.pollinations.ai/prompt/still?nologo=1"
+      },
+      {
+        "de": "Jahr",
+        "en": "year",
+        "img": "https://image.pollinations.ai/prompt/year?nologo=1"
+      },
+      {
+        "de": "schon",
+        "en": "already",
+        "img": "https://image.pollinations.ai/prompt/already?nologo=1"
+      },
+      {
+        "de": "jetzt",
+        "en": "now",
+        "img": "https://image.pollinations.ai/prompt/now?nologo=1"
+      },
+      {
+        "de": "immer",
+        "en": "always",
+        "img": "https://image.pollinations.ai/prompt/always?nologo=1"
+      },
+      {
+        "de": "Mal",
+        "en": "time",
+        "img": "https://image.pollinations.ai/prompt/time?nologo=1"
+      },
+      {
+        "de": "Zeit",
+        "en": "time",
+        "img": "https://image.pollinations.ai/prompt/time?nologo=1"
+      },
+      {
+        "de": "Tag",
+        "en": "day",
+        "img": "https://image.pollinations.ai/prompt/day?nologo=1"
+      },
+      {
+        "de": "Abend",
+        "en": "evening",
+        "img": "https://image.pollinations.ai/prompt/evening?nologo=1"
+      },
+      {
+        "de": "Monat",
+        "en": "month",
+        "img": "https://image.pollinations.ai/prompt/month?nologo=1"
+      },
+      {
+        "de": "Uhr",
+        "en": "clock",
+        "img": "https://image.pollinations.ai/prompt/clock?nologo=1"
+      },
+      {
+        "de": "Woche",
+        "en": "week",
+        "img": "https://image.pollinations.ai/prompt/week?nologo=1"
+      },
+      {
+        "de": "Nacht",
+        "en": "night",
+        "img": "https://image.pollinations.ai/prompt/night?nologo=1"
+      },
+      {
+        "de": "Morgen",
+        "en": "morning",
+        "img": "https://image.pollinations.ai/prompt/morning?nologo=1"
+      },
+      {
+        "de": "heute",
+        "en": "today",
+        "img": "https://image.pollinations.ai/prompt/today?nologo=1"
+      },
+      {
+        "de": "morgen",
+        "en": "tomorrow",
+        "img": "https://image.pollinations.ai/prompt/tomorrow?nologo=1"
+      },
+      {
+        "de": "gestern",
+        "en": "yesterday",
+        "img": "https://image.pollinations.ai/prompt/yesterday?nologo=1"
+      },
+      {
+        "de": "bald",
+        "en": "soon",
+        "img": "https://image.pollinations.ai/prompt/soon?nologo=1"
+      },
+      {
+        "de": "still",
+        "en": "still",
+        "img": "https://image.pollinations.ai/prompt/still?nologo=1"
+      },
+      {
+        "de": "gleich",
+        "en": "soon",
+        "img": "https://image.pollinations.ai/prompt/soon?nologo=1"
+      },
+      {
+        "de": "bereits",
+        "en": "already",
+        "img": "https://image.pollinations.ai/prompt/already?nologo=1"
+      }
+    ]
+  },
+  "numbers": {
+    "name": "Numbers & Quantities",
+    "emoji": "🔢",
+    "color": "from-teal-500 to-cyan-600",
+    "words": [
+      {
+        "de": "zwei",
+        "en": "two",
+        "img": "https://image.pollinations.ai/prompt/two?nologo=1"
+      },
+      {
+        "de": "erste",
+        "en": "first",
+        "img": "https://image.pollinations.ai/prompt/first?nologo=1"
+      },
+      {
+        "de": "Zahl",
+        "en": "number",
+        "img": "https://image.pollinations.ai/prompt/number?nologo=1"
+      },
+      {
+        "de": "drei",
+        "en": "three",
+        "img": "https://image.pollinations.ai/prompt/three?nologo=1"
+      },
+      {
+        "de": "vier",
+        "en": "four",
+        "img": "https://image.pollinations.ai/prompt/four?nologo=1"
+      },
+      {
+        "de": "fünf",
+        "en": "five",
+        "img": "https://image.pollinations.ai/prompt/five?nologo=1"
+      },
+      {
+        "de": "sechs",
+        "en": "six",
+        "img": "https://image.pollinations.ai/prompt/six?nologo=1"
+      },
+      {
+        "de": "sieben",
+        "en": "seven",
+        "img": "https://image.pollinations.ai/prompt/seven?nologo=1"
+      },
+      {
+        "de": "acht",
+        "en": "eight",
+        "img": "https://image.pollinations.ai/prompt/eight?nologo=1"
+      },
+      {
+        "de": "neun",
+        "en": "nine",
+        "img": "https://image.pollinations.ai/prompt/nine?nologo=1"
+      },
+      {
+        "de": "zehn",
+        "en": "ten",
+        "img": "https://image.pollinations.ai/prompt/ten?nologo=1"
+      },
+      {
+        "de": "hundert",
+        "en": "hundred",
+        "img": "https://image.pollinations.ai/prompt/hundred?nologo=1"
+      },
+      {
+        "de": "tausend",
+        "en": "thousand",
+        "img": "https://image.pollinations.ai/prompt/thousand?nologo=1"
+      },
+      {
+        "de": "Million",
+        "en": "million",
+        "img": "https://image.pollinations.ai/prompt/million?nologo=1"
+      },
+      {
+        "de": "Milliarde",
+        "en": "billion",
+        "img": "https://image.pollinations.ai/prompt/billion?nologo=1"
+      },
+      {
+        "de": "Null",
+        "en": "zero",
+        "img": "https://image.pollinations.ai/prompt/zero?nologo=1"
+      },
+      {
+        "de": "zweite",
+        "en": "second",
+        "img": "https://image.pollinations.ai/prompt/second?nologo=1"
+      },
+      {
+        "de": "dritte",
+        "en": "third",
+        "img": "https://image.pollinations.ai/prompt/third?nologo=1"
+      },
+      {
+        "de": "letzte",
+        "en": "last",
+        "img": "https://image.pollinations.ai/prompt/last?nologo=1"
+      },
+      {
+        "de": "einmal",
+        "en": "once",
+        "img": "https://image.pollinations.ai/prompt/once?nologo=1"
+      },
+      {
+        "de": "zweimal",
+        "en": "twice",
+        "img": "https://image.pollinations.ai/prompt/twice?nologo=1"
+      },
+      {
+        "de": "Hälfte",
+        "en": "half",
+        "img": "https://image.pollinations.ai/prompt/half?nologo=1"
+      },
+      {
+        "de": "Viertel",
+        "en": "quarter",
+        "img": "https://image.pollinations.ai/prompt/quarter?nologo=1"
+      },
+      {
+        "de": "Drittel",
+        "en": "third",
+        "img": "https://image.pollinations.ai/prompt/third?nologo=1"
+      },
+      {
+        "de": "Prozent",
+        "en": "percent",
+        "img": "https://image.pollinations.ai/prompt/percent?nologo=1"
+      }
+    ]
+  },
+  "people": {
+    "name": "People & Family",
+    "emoji": "👨‍👩‍👧",
+    "color": "from-pink-500 to-rose-600",
+    "words": [
+      {
+        "de": "Frau",
+        "en": "woman",
+        "img": "https://image.pollinations.ai/prompt/woman?nologo=1"
+      },
+      {
+        "de": "Mann",
+        "en": "man",
+        "img": "https://image.pollinations.ai/prompt/man?nologo=1"
+      },
+      {
+        "de": "Kind",
+        "en": "child",
+        "img": "https://image.pollinations.ai/prompt/child?nologo=1"
+      },
+      {
+        "de": "Mensch",
+        "en": "human",
+        "img": "https://image.pollinations.ai/prompt/human?nologo=1"
+      },
+      {
+        "de": "Mutter",
+        "en": "mother",
+        "img": "https://image.pollinations.ai/prompt/mother?nologo=1"
+      },
+      {
+        "de": "Vater",
+        "en": "father",
+        "img": "https://image.pollinations.ai/prompt/father?nologo=1"
+      },
+      {
+        "de": "Freund",
+        "en": "friend",
+        "img": "https://image.pollinations.ai/prompt/friend?nologo=1"
+      },
+      {
+        "de": "Familie",
+        "en": "family",
+        "img": "https://image.pollinations.ai/prompt/family?nologo=1"
+      },
+      {
+        "de": "Leute",
+        "en": "people",
+        "img": "https://image.pollinations.ai/prompt/people?nologo=1"
+      },
+      {
+        "de": "Mädchen",
+        "en": "girl",
+        "img": "https://image.pollinations.ai/prompt/girl?nologo=1"
+      },
+      {
+        "de": "Eltern",
+        "en": "parents",
+        "img": "https://image.pollinations.ai/prompt/parents?nologo=1"
+      },
+      {
+        "de": "Bruder",
+        "en": "brother",
+        "img": "https://image.pollinations.ai/prompt/brother?nologo=1"
+      },
+      {
+        "de": "Junge",
+        "en": "boy",
+        "img": "https://image.pollinations.ai/prompt/boy?nologo=1"
+      },
+      {
+        "de": "Schwester",
+        "en": "sister",
+        "img": "https://image.pollinations.ai/prompt/sister?nologo=1"
+      },
+      {
+        "de": "Sohn",
+        "en": "son",
+        "img": "https://image.pollinations.ai/prompt/son?nologo=1"
+      },
+      {
+        "de": "Tochter",
+        "en": "daughter",
+        "img": "https://image.pollinations.ai/prompt/daughter?nologo=1"
+      }
+    ]
+  },
+  "body": {
+    "name": "Body & Health",
+    "emoji": "💪",
+    "color": "from-red-400 to-pink-500",
+    "words": [
+      {
+        "de": "Hand",
+        "en": "hand",
+        "img": "https://image.pollinations.ai/prompt/hand?nologo=1"
+      },
+      {
+        "de": "Auge",
+        "en": "eye",
+        "img": "https://image.pollinations.ai/prompt/eye?nologo=1"
+      },
+      {
+        "de": "Kopf",
+        "en": "head",
+        "img": "https://image.pollinations.ai/prompt/head?nologo=1"
+      },
+      {
+        "de": "Haar",
+        "en": "hair",
+        "img": "https://image.pollinations.ai/prompt/hair?nologo=1"
+      },
+      {
+        "de": "Herz",
+        "en": "heart",
+        "img": "https://image.pollinations.ai/prompt/heart?nologo=1"
+      },
+      {
+        "de": "Arm",
+        "en": "arm",
+        "img": "https://image.pollinations.ai/prompt/arm?nologo=1"
+      },
+      {
+        "de": "Bein",
+        "en": "leg",
+        "img": "https://image.pollinations.ai/prompt/leg?nologo=1"
+      },
+      {
+        "de": "Finger",
+        "en": "finger",
+        "img": "https://image.pollinations.ai/prompt/finger?nologo=1"
+      },
+      {
+        "de": "Fuß",
+        "en": "foot",
+        "img": "https://image.pollinations.ai/prompt/foot?nologo=1"
+      },
+      {
+        "de": "Gesicht",
+        "en": "face",
+        "img": "https://image.pollinations.ai/prompt/face?nologo=1"
+      },
+      {
+        "de": "Mund",
+        "en": "mouth",
+        "img": "https://image.pollinations.ai/prompt/mouth?nologo=1"
+      },
+      {
+        "de": "Nase",
+        "en": "nose",
+        "img": "https://image.pollinations.ai/prompt/nose?nologo=1"
+      },
+      {
+        "de": "Ohr",
+        "en": "ear",
+        "img": "https://image.pollinations.ai/prompt/ear?nologo=1"
+      },
+      {
+        "de": "Rücken",
+        "en": "back",
+        "img": "https://image.pollinations.ai/prompt/back?nologo=1"
+      },
+      {
+        "de": "hinten",
+        "en": "back",
+        "img": "https://image.pollinations.ai/prompt/back?nologo=1"
+      }
+    ]
+  },
+  "home": {
+    "name": "Home & Buildings",
+    "emoji": "🏠",
+    "color": "from-amber-500 to-orange-500",
+    "words": [
+      {
+        "de": "Haus",
+        "en": "house",
+        "img": "https://image.pollinations.ai/prompt/house?nologo=1"
+      },
+      {
+        "de": "Stadt",
+        "en": "city",
+        "img": "https://image.pollinations.ai/prompt/city?nologo=1"
+      },
+      {
+        "de": "Schule",
+        "en": "school",
+        "img": "https://image.pollinations.ai/prompt/school?nologo=1"
+      },
+      {
+        "de": "Straße",
+        "en": "street",
+        "img": "https://image.pollinations.ai/prompt/street?nologo=1"
+      },
+      {
+        "de": "Tür",
+        "en": "door",
+        "img": "https://image.pollinations.ai/prompt/door?nologo=1"
+      },
+      {
+        "de": "Zimmer",
+        "en": "room",
+        "img": "https://image.pollinations.ai/prompt/room?nologo=1"
+      },
+      {
+        "de": "Platz",
+        "en": "place",
+        "img": "https://image.pollinations.ai/prompt/place?nologo=1"
+      },
+      {
+        "de": "Bett",
+        "en": "bed",
+        "img": "https://image.pollinations.ai/prompt/bed?nologo=1"
+      },
+      {
+        "de": "Ort",
+        "en": "place",
+        "img": "https://image.pollinations.ai/prompt/place?nologo=1"
+      },
+      {
+        "de": "Fenster",
+        "en": "window",
+        "img": "https://image.pollinations.ai/prompt/window?nologo=1"
+      },
+      {
+        "de": "Garten",
+        "en": "garden",
+        "img": "https://image.pollinations.ai/prompt/garden?nologo=1"
+      },
+      {
+        "de": "Stuhl",
+        "en": "chair",
+        "img": "https://image.pollinations.ai/prompt/chair?nologo=1"
+      },
+      {
+        "de": "Tisch",
+        "en": "table",
+        "img": "https://image.pollinations.ai/prompt/table?nologo=1"
+      }
+    ]
+  },
+  "nature": {
+    "name": "Nature & World",
+    "emoji": "🌍",
+    "color": "from-green-500 to-emerald-600",
+    "words": [
+      {
+        "de": "Welt",
+        "en": "world",
+        "img": "https://image.pollinations.ai/prompt/world?nologo=1"
+      },
+      {
+        "de": "Leben",
+        "en": "life",
+        "img": "https://image.pollinations.ai/prompt/life?nologo=1"
+      },
+      {
+        "de": "Wasser",
+        "en": "water",
+        "img": "https://image.pollinations.ai/prompt/water?nologo=1"
+      },
+      {
+        "de": "Baum",
+        "en": "tree",
+        "img": "https://image.pollinations.ai/prompt/tree?nologo=1"
+      },
+      {
+        "de": "Licht",
+        "en": "light",
+        "img": "https://image.pollinations.ai/prompt/light?nologo=1"
+      },
+      {
+        "de": "Luft",
+        "en": "air",
+        "img": "https://image.pollinations.ai/prompt/air?nologo=1"
+      },
+      {
+        "de": "Wald",
+        "en": "forest",
+        "img": "https://image.pollinations.ai/prompt/forest?nologo=1"
+      },
+      {
+        "de": "Fluss",
+        "en": "river",
+        "img": "https://image.pollinations.ai/prompt/river?nologo=1"
+      },
+      {
+        "de": "Himmel",
+        "en": "sky",
+        "img": "https://image.pollinations.ai/prompt/sky?nologo=1"
+      },
+      {
+        "de": "Meer",
+        "en": "sea",
+        "img": "https://image.pollinations.ai/prompt/sea?nologo=1"
+      },
+      {
+        "de": "Berg",
+        "en": "mountain",
+        "img": "https://image.pollinations.ai/prompt/mountain?nologo=1"
+      },
+      {
+        "de": "Sonne",
+        "en": "sun",
+        "img": "https://image.pollinations.ai/prompt/sun?nologo=1"
+      },
+      {
+        "de": "Stern",
+        "en": "star",
+        "img": "https://image.pollinations.ai/prompt/star?nologo=1"
+      },
+      {
+        "de": "Mond",
+        "en": "moon",
+        "img": "https://image.pollinations.ai/prompt/moon?nologo=1"
+      },
+      {
+        "de": "landen",
+        "en": "land",
+        "img": "https://image.pollinations.ai/prompt/land?nologo=1"
+      },
+      {
+        "de": "licht",
+        "en": "light",
+        "img": "https://image.pollinations.ai/prompt/light?nologo=1"
+      }
+    ]
+  },
+  "feelings": {
+    "name": "Feelings & Mind",
+    "emoji": "💭",
+    "color": "from-indigo-400 to-purple-500",
+    "words": [
+      {
+        "de": "Grund",
+        "en": "reason",
+        "img": "https://image.pollinations.ai/prompt/reason?nologo=1"
+      },
+      {
+        "de": "Sinn",
+        "en": "sense",
+        "img": "https://image.pollinations.ai/prompt/sense?nologo=1"
+      },
+      {
+        "de": "Freude",
+        "en": "joy",
+        "img": "https://image.pollinations.ai/prompt/joy?nologo=1"
+      },
+      {
+        "de": "lieben",
+        "en": "love",
+        "img": "https://image.pollinations.ai/prompt/love?nologo=1"
+      },
+      {
+        "de": "hoffen",
+        "en": "hope",
+        "img": "https://image.pollinations.ai/prompt/hope?nologo=1"
+      },
+      {
+        "de": "befürchten",
+        "en": "fear",
+        "img": "https://image.pollinations.ai/prompt/fear?nologo=1"
+      },
+      {
+        "de": "träumen",
+        "en": "dream",
+        "img": "https://image.pollinations.ai/prompt/dream?nologo=1"
+      },
+      {
+        "de": "fürchten",
+        "en": "fear",
+        "img": "https://image.pollinations.ai/prompt/fear?nologo=1"
+      }
+    ]
+  },
+  "work": {
+    "name": "Work & Economy",
+    "emoji": "💼",
+    "color": "from-stone-500 to-gray-700",
+    "words": [
+      {
+        "de": "Beispiel",
+        "en": "example",
+        "img": "https://image.pollinations.ai/prompt/example?nologo=1"
+      },
+      {
+        "de": "Frage",
+        "en": "question",
+        "img": "https://image.pollinations.ai/prompt/question?nologo=1"
+      },
+      {
+        "de": "Problem",
+        "en": "problem",
+        "img": "https://image.pollinations.ai/prompt/problem?nologo=1"
+      },
+      {
+        "de": "Teil",
+        "en": "part",
+        "img": "https://image.pollinations.ai/prompt/part?nologo=1"
+      },
+      {
+        "de": "Geld",
+        "en": "money",
+        "img": "https://image.pollinations.ai/prompt/money?nologo=1"
+      },
+      {
+        "de": "Wort",
+        "en": "word",
+        "img": "https://image.pollinations.ai/prompt/word?nologo=1"
+      },
+      {
+        "de": "Recht",
+        "en": "right",
+        "img": "https://image.pollinations.ai/prompt/right?nologo=1"
+      },
+      {
+        "de": "Fall",
+        "en": "case",
+        "img": "https://image.pollinations.ai/prompt/case?nologo=1"
+      },
+      {
+        "de": "Weg",
+        "en": "way",
+        "img": "https://image.pollinations.ai/prompt/way?nologo=1"
+      },
+      {
+        "de": "Art",
+        "en": "kind",
+        "img": "https://image.pollinations.ai/prompt/kind?nologo=1"
+      },
+      {
+        "de": "Ende",
+        "en": "end",
+        "img": "https://image.pollinations.ai/prompt/end?nologo=1"
+      },
+      {
+        "de": "Seite",
+        "en": "page",
+        "img": "https://image.pollinations.ai/prompt/page?nologo=1"
+      },
+      {
+        "de": "Staat",
+        "en": "state",
+        "img": "https://image.pollinations.ai/prompt/state?nologo=1"
+      },
+      {
+        "de": "Antwort",
+        "en": "answer",
+        "img": "https://image.pollinations.ai/prompt/answer?nologo=1"
+      },
+      {
+        "de": "Ding",
+        "en": "thing",
+        "img": "https://image.pollinations.ai/prompt/thing?nologo=1"
+      },
+      {
+        "de": "Sache",
+        "en": "thing",
+        "img": "https://image.pollinations.ai/prompt/thing?nologo=1"
+      },
+      {
+        "de": "rechts",
+        "en": "right",
+        "img": "https://image.pollinations.ai/prompt/right?nologo=1"
+      },
+      {
+        "de": "antworten",
+        "en": "answer",
+        "img": "https://image.pollinations.ai/prompt/answer?nologo=1"
+      },
+      {
+        "de": "enden",
+        "en": "end",
+        "img": "https://image.pollinations.ai/prompt/end?nologo=1"
+      }
+    ]
+  },
+  "travel": {
+    "name": "Travel & Movement",
+    "emoji": "🚗",
+    "color": "from-blue-400 to-sky-500",
+    "words": [
+      {
+        "de": "Auto",
+        "en": "car",
+        "img": "https://image.pollinations.ai/prompt/car?nologo=1"
+      },
+      {
+        "de": "Wagen",
+        "en": "car",
+        "img": "https://image.pollinations.ai/prompt/car?nologo=1"
+      },
+      {
+        "de": "Zug",
+        "en": "train",
+        "img": "https://image.pollinations.ai/prompt/train?nologo=1"
+      },
+      {
+        "de": "Schiff",
+        "en": "ship",
+        "img": "https://image.pollinations.ai/prompt/ship?nologo=1"
+      },
+      {
+        "de": "laufen",
+        "en": "run",
+        "img": "https://image.pollinations.ai/prompt/run?nologo=1"
+      },
+      {
+        "de": "fliegen",
+        "en": "fly",
+        "img": "https://image.pollinations.ai/prompt/fly?nologo=1"
+      },
+      {
+        "de": "fahren",
+        "en": "drive",
+        "img": "https://image.pollinations.ai/prompt/drive?nologo=1"
+      },
+      {
+        "de": "trainieren",
+        "en": "train",
+        "img": "https://image.pollinations.ai/prompt/train?nologo=1"
+      },
+      {
+        "de": "rennen",
+        "en": "run",
+        "img": "https://image.pollinations.ai/prompt/run?nologo=1"
+      }
+    ]
+  },
+  "colors": {
+    "name": "Colors & Descriptions",
+    "emoji": "🎨",
+    "color": "from-rose-400 to-pink-600",
+    "words": [
+      {
+        "de": "groß",
+        "en": "big",
+        "img": "https://image.pollinations.ai/prompt/big?nologo=1"
+      },
+      {
+        "de": "gut",
+        "en": "good",
+        "img": "https://image.pollinations.ai/prompt/good?nologo=1"
+      },
+      {
+        "de": "neu",
+        "en": "new",
+        "img": "https://image.pollinations.ai/prompt/new?nologo=1"
+      },
+      {
+        "de": "lang",
+        "en": "long",
+        "img": "https://image.pollinations.ai/prompt/long?nologo=1"
+      },
+      {
+        "de": "klein",
+        "en": "small",
+        "img": "https://image.pollinations.ai/prompt/small?nologo=1"
+      },
+      {
+        "de": "schlecht",
+        "en": "bad",
+        "img": "https://image.pollinations.ai/prompt/bad?nologo=1"
+      },
+      {
+        "de": "alt",
+        "en": "old",
+        "img": "https://image.pollinations.ai/prompt/old?nologo=1"
+      },
+      {
+        "de": "schön",
+        "en": "beautiful",
+        "img": "https://image.pollinations.ai/prompt/beautiful?nologo=1"
+      },
+      {
+        "de": "hoch",
+        "en": "high",
+        "img": "https://image.pollinations.ai/prompt/high?nologo=1"
+      },
+      {
+        "de": "kurz",
+        "en": "short",
+        "img": "https://image.pollinations.ai/prompt/short?nologo=1"
+      },
+      {
+        "de": "hell",
+        "en": "bright",
+        "img": "https://image.pollinations.ai/prompt/bright?nologo=1"
+      },
+      {
+        "de": "dunkel",
+        "en": "dark",
+        "img": "https://image.pollinations.ai/prompt/dark?nologo=1"
+      },
+      {
+        "de": "brav",
+        "en": "good",
+        "img": "https://image.pollinations.ai/prompt/good?nologo=1"
+      },
+      {
+        "de": "schlimm",
+        "en": "bad",
+        "img": "https://image.pollinations.ai/prompt/bad?nologo=1"
+      },
+      {
+        "de": "einfach",
+        "en": "simple",
+        "img": "https://image.pollinations.ai/prompt/simple?nologo=1"
+      }
+    ]
+  },
+  "other": {
+    "name": "Everything Else",
+    "emoji": "🌟",
+    "color": "from-purple-400 to-blue-400",
+    "words": [
+      {
+        "de": "auch",
+        "en": "also",
+        "img": "https://image.pollinations.ai/prompt/also?nologo=1"
+      },
+      {
+        "de": "dass",
+        "en": "that",
+        "img": "https://image.pollinations.ai/prompt/that?nologo=1"
+      },
+      {
+        "de": "können",
+        "en": "can",
+        "img": "https://image.pollinations.ai/prompt/can?nologo=1"
+      },
+      {
+        "de": "dies",
+        "en": "this",
+        "img": "https://image.pollinations.ai/prompt/this?nologo=1"
+      },
+      {
+        "de": "als",
+        "en": "as",
+        "img": "https://image.pollinations.ai/prompt/as?nologo=1"
+      },
+      {
+        "de": "nur",
+        "en": "only",
+        "img": "https://image.pollinations.ai/prompt/only?nologo=1"
+      },
+      {
+        "de": "müssen",
+        "en": "must",
+        "img": "https://image.pollinations.ai/prompt/must?nologo=1"
+      },
+      {
+        "de": "mehr",
+        "en": "more",
+        "img": "https://image.pollinations.ai/prompt/more?nologo=1"
+      },
+      {
+        "de": "andere",
+        "en": "other",
+        "img": "https://image.pollinations.ai/prompt/other?nologo=1"
+      },
+      {
+        "de": "viel",
+        "en": "much",
+        "img": "https://image.pollinations.ai/prompt/much?nologo=1"
+      },
+      {
+        "de": "sollen",
+        "en": "should",
+        "img": "https://image.pollinations.ai/prompt/should?nologo=1"
+      },
+      {
+        "de": "ganz",
+        "en": "whole",
+        "img": "https://image.pollinations.ai/prompt/whole?nologo=1"
+      },
+      {
+        "de": "sehr",
+        "en": "very",
+        "img": "https://image.pollinations.ai/prompt/very?nologo=1"
+      },
+      {
+        "de": "doch",
+        "en": "however",
+        "img": "https://image.pollinations.ai/prompt/however?nologo=1"
+      },
+      {
+        "de": "bis",
+        "en": "until",
+        "img": "https://image.pollinations.ai/prompt/until?nologo=1"
+      },
+      {
+        "de": "wieder",
+        "en": "again",
+        "img": "https://image.pollinations.ai/prompt/again?nologo=1"
+      },
+      {
+        "de": "weil",
+        "en": "because",
+        "img": "https://image.pollinations.ai/prompt/because?nologo=1"
+      },
+      {
+        "de": "denn",
+        "en": "because",
+        "img": "https://image.pollinations.ai/prompt/because?nologo=1"
+      },
+      {
+        "de": "eigentlich",
+        "en": "actually",
+        "img": "https://image.pollinations.ai/prompt/actually?nologo=1"
+      },
+      {
+        "de": "Land",
+        "en": "country",
+        "img": "https://image.pollinations.ai/prompt/country?nologo=1"
+      },
+      {
+        "de": "Buch",
+        "en": "book",
+        "img": "https://image.pollinations.ai/prompt/book?nologo=1"
+      },
+      {
+        "de": "Name",
+        "en": "name",
+        "img": "https://image.pollinations.ai/prompt/name?nologo=1"
+      },
+      {
+        "de": "Bild",
+        "en": "picture",
+        "img": "https://image.pollinations.ai/prompt/picture?nologo=1"
+      },
+      {
+        "de": "Gott",
+        "en": "god",
+        "img": "https://image.pollinations.ai/prompt/god?nologo=1"
+      },
+      {
+        "de": "Tier",
+        "en": "animal",
+        "img": "https://image.pollinations.ai/prompt/animal?nologo=1"
+      },
+      {
+        "de": "Fehler",
+        "en": "mistake",
+        "img": "https://image.pollinations.ai/prompt/mistake?nologo=1"
+      },
+      {
+        "de": "Geschichte",
+        "en": "history",
+        "img": "https://image.pollinations.ai/prompt/history?nologo=1"
+      },
+      {
+        "de": "Klasse",
+        "en": "class",
+        "img": "https://image.pollinations.ai/prompt/class?nologo=1"
+      },
+      {
+        "de": "Schritt",
+        "en": "step",
+        "img": "https://image.pollinations.ai/prompt/step?nologo=1"
+      },
+      {
+        "de": "Schuh",
+        "en": "shoe",
+        "img": "https://image.pollinations.ai/prompt/shoe?nologo=1"
+      },
+      {
+        "de": "Stimme",
+        "en": "voice",
+        "img": "https://image.pollinations.ai/prompt/voice?nologo=1"
+      },
+      {
+        "de": "Stück",
+        "en": "piece",
+        "img": "https://image.pollinations.ai/prompt/piece?nologo=1"
+      },
+      {
+        "de": "Apfel",
+        "en": "apple",
+        "img": "https://image.pollinations.ai/prompt/apple?nologo=1"
+      },
+      {
+        "de": "Brot",
+        "en": "bread",
+        "img": "https://image.pollinations.ai/prompt/bread?nologo=1"
+      },
+      {
+        "de": "Glas",
+        "en": "glass",
+        "img": "https://image.pollinations.ai/prompt/glass?nologo=1"
+      },
+      {
+        "de": "Hund",
+        "en": "dog",
+        "img": "https://image.pollinations.ai/prompt/dog?nologo=1"
+      },
+      {
+        "de": "Katze",
+        "en": "cat",
+        "img": "https://image.pollinations.ai/prompt/cat?nologo=1"
+      },
+      {
+        "de": "Kleid",
+        "en": "dress",
+        "img": "https://image.pollinations.ai/prompt/dress?nologo=1"
+      },
+      {
+        "de": "Kuchen",
+        "en": "cake",
+        "img": "https://image.pollinations.ai/prompt/cake?nologo=1"
+      },
+      {
+        "de": "Milch",
+        "en": "milk",
+        "img": "https://image.pollinations.ai/prompt/milk?nologo=1"
+      },
+      {
+        "de": "Schreibtisch",
+        "en": "desk",
+        "img": "https://image.pollinations.ai/prompt/desk?nologo=1"
+      },
+      {
+        "de": "Vogel",
+        "en": "bird",
+        "img": "https://image.pollinations.ai/prompt/bird?nologo=1"
+      },
+      {
+        "de": "Blume",
+        "en": "flower",
+        "img": "https://image.pollinations.ai/prompt/flower?nologo=1"
+      },
+      {
+        "de": "Brief",
+        "en": "letter",
+        "img": "https://image.pollinations.ai/prompt/letter?nologo=1"
+      },
+      {
+        "de": "Dorf",
+        "en": "village",
+        "img": "https://image.pollinations.ai/prompt/village?nologo=1"
+      },
+      {
+        "de": "Fisch",
+        "en": "fish",
+        "img": "https://image.pollinations.ai/prompt/fish?nologo=1"
+      },
+      {
+        "de": "Pferd",
+        "en": "horse",
+        "img": "https://image.pollinations.ai/prompt/horse?nologo=1"
+      },
+      {
+        "de": "Stein",
+        "en": "stone",
+        "img": "https://image.pollinations.ai/prompt/stone?nologo=1"
+      },
+      {
+        "de": "Wind",
+        "en": "wind",
+        "img": "https://image.pollinations.ai/prompt/wind?nologo=1"
+      },
+      {
+        "de": "Zahn",
+        "en": "tooth",
+        "img": "https://image.pollinations.ai/prompt/tooth?nologo=1"
+      },
+      {
+        "de": "Blut",
+        "en": "blood",
+        "img": "https://image.pollinations.ai/prompt/blood?nologo=1"
+      },
+      {
+        "de": "Hals",
+        "en": "neck",
+        "img": "https://image.pollinations.ai/prompt/neck?nologo=1"
+      },
+      {
+        "de": "Bauch",
+        "en": "stomach",
+        "img": "https://image.pollinations.ai/prompt/stomach?nologo=1"
+      },
+      {
+        "de": "Banane",
+        "en": "banana",
+        "img": "https://image.pollinations.ai/prompt/banana?nologo=1"
+      },
+      {
+        "de": "Birne",
+        "en": "pear",
+        "img": "https://image.pollinations.ai/prompt/pear?nologo=1"
+      },
+      {
+        "de": "Butter",
+        "en": "butter",
+        "img": "https://image.pollinations.ai/prompt/butter?nologo=1"
+      },
+      {
+        "de": "Ei",
+        "en": "egg",
+        "img": "https://image.pollinations.ai/prompt/egg?nologo=1"
+      },
+      {
+        "de": "Fleisch",
+        "en": "meat",
+        "img": "https://image.pollinations.ai/prompt/meat?nologo=1"
+      },
+      {
+        "de": "Käse",
+        "en": "cheese",
+        "img": "https://image.pollinations.ai/prompt/cheese?nologo=1"
+      },
+      {
+        "de": "Obst",
+        "en": "fruit",
+        "img": "https://image.pollinations.ai/prompt/fruit?nologo=1"
+      },
+      {
+        "de": "Reis",
+        "en": "rice",
+        "img": "https://image.pollinations.ai/prompt/rice?nologo=1"
+      },
+      {
+        "de": "Saft",
+        "en": "juice",
+        "img": "https://image.pollinations.ai/prompt/juice?nologo=1"
+      },
+      {
+        "de": "Wein",
+        "en": "wine",
+        "img": "https://image.pollinations.ai/prompt/wine?nologo=1"
+      },
+      {
+        "de": "Wurst",
+        "en": "sausage",
+        "img": "https://image.pollinations.ai/prompt/sausage?nologo=1"
+      },
+      {
+        "de": "Bier",
+        "en": "beer",
+        "img": "https://image.pollinations.ai/prompt/beer?nologo=1"
+      },
+      {
+        "de": "Gemüse",
+        "en": "vegetables",
+        "img": "https://image.pollinations.ai/prompt/vegetables?nologo=1"
+      },
+      {
+        "de": "Hemd",
+        "en": "shirt",
+        "img": "https://image.pollinations.ai/prompt/shirt?nologo=1"
+      },
+      {
+        "de": "Hose",
+        "en": "trousers",
+        "img": "https://image.pollinations.ai/prompt/trousers?nologo=1"
+      },
+      {
+        "de": "Jacke",
+        "en": "jacket",
+        "img": "https://image.pollinations.ai/prompt/jacket?nologo=1"
+      },
+      {
+        "de": "Mantel",
+        "en": "coat",
+        "img": "https://image.pollinations.ai/prompt/coat?nologo=1"
+      },
+      {
+        "de": "Pullover",
+        "en": "sweater",
+        "img": "https://image.pollinations.ai/prompt/sweater?nologo=1"
+      },
+      {
+        "de": "Socke",
+        "en": "sock",
+        "img": "https://image.pollinations.ai/prompt/sock?nologo=1"
+      },
+      {
+        "de": "Tasche",
+        "en": "bag",
+        "img": "https://image.pollinations.ai/prompt/bag?nologo=1"
+      },
+      {
+        "de": "T-Shirt",
+        "en": "tshirt",
+        "img": "https://image.pollinations.ai/prompt/tshirt?nologo=1"
+      },
+      {
+        "de": "Computer",
+        "en": "computer",
+        "img": "https://image.pollinations.ai/prompt/computer?nologo=1"
+      },
+      {
+        "de": "Fernseher",
+        "en": "television",
+        "img": "https://image.pollinations.ai/prompt/television?nologo=1"
+      },
+      {
+        "de": "Lampe",
+        "en": "lamp",
+        "img": "https://image.pollinations.ai/prompt/lamp?nologo=1"
+      },
+      {
+        "de": "Schrank",
+        "en": "cupboard",
+        "img": "https://image.pollinations.ai/prompt/cupboard?nologo=1"
+      },
+      {
+        "de": "Sofa",
+        "en": "sofa",
+        "img": "https://image.pollinations.ai/prompt/sofa?nologo=1"
+      },
+      {
+        "de": "Spiegel",
+        "en": "mirror",
+        "img": "https://image.pollinations.ai/prompt/mirror?nologo=1"
+      },
+      {
+        "de": "Bus",
+        "en": "bus",
+        "img": "https://image.pollinations.ai/prompt/bus?nologo=1"
+      },
+      {
+        "de": "Fahrrad",
+        "en": "bicycle",
+        "img": "https://image.pollinations.ai/prompt/bicycle?nologo=1"
+      },
+      {
+        "de": "Flugzeug",
+        "en": "airplane",
+        "img": "https://image.pollinations.ai/prompt/airplane?nologo=1"
+      },
+      {
+        "de": "Bahnhof",
+        "en": "station",
+        "img": "https://image.pollinations.ai/prompt/station?nologo=1"
+      },
+      {
+        "de": "Flughafen",
+        "en": "airport",
+        "img": "https://image.pollinations.ai/prompt/airport?nologo=1"
+      },
+      {
+        "de": "Wolke",
+        "en": "cloud",
+        "img": "https://image.pollinations.ai/prompt/cloud?nologo=1"
+      },
+      {
+        "de": "Regen",
+        "en": "rain",
+        "img": "https://image.pollinations.ai/prompt/rain?nologo=1"
+      },
+      {
+        "de": "Schnee",
+        "en": "snow",
+        "img": "https://image.pollinations.ai/prompt/snow?nologo=1"
+      },
+      {
+        "de": "Arzt",
+        "en": "doctor",
+        "img": "https://image.pollinations.ai/prompt/doctor?nologo=1"
+      },
+      {
+        "de": "Bauer",
+        "en": "farmer",
+        "img": "https://image.pollinations.ai/prompt/farmer?nologo=1"
+      },
+      {
+        "de": "Lehrer",
+        "en": "teacher",
+        "img": "https://image.pollinations.ai/prompt/teacher?nologo=1"
+      },
+      {
+        "de": "Polizist",
+        "en": "policeman",
+        "img": "https://image.pollinations.ai/prompt/policeman?nologo=1"
+      },
+      {
+        "de": "Krankenschwester",
+        "en": "nurse",
+        "img": "https://image.pollinations.ai/prompt/nurse?nologo=1"
+      },
+      {
+        "de": "Schüler",
+        "en": "student",
+        "img": "https://image.pollinations.ai/prompt/student?nologo=1"
+      },
+      {
+        "de": "Student",
+        "en": "student",
+        "img": "https://image.pollinations.ai/prompt/student?nologo=1"
+      },
+      {
+        "de": "rot",
+        "en": "red",
+        "img": "https://image.pollinations.ai/prompt/red?nologo=1"
+      },
+      {
+        "de": "blau",
+        "en": "blue",
+        "img": "https://image.pollinations.ai/prompt/blue?nologo=1"
+      },
+      {
+        "de": "gelb",
+        "en": "yellow",
+        "img": "https://image.pollinations.ai/prompt/yellow?nologo=1"
+      },
+      {
+        "de": "grün",
+        "en": "green",
+        "img": "https://image.pollinations.ai/prompt/green?nologo=1"
+      },
+      {
+        "de": "schwarz",
+        "en": "black",
+        "img": "https://image.pollinations.ai/prompt/black?nologo=1"
+      },
+      {
+        "de": "weiß",
+        "en": "white",
+        "img": "https://image.pollinations.ai/prompt/white?nologo=1"
+      },
+      {
+        "de": "braun",
+        "en": "brown",
+        "img": "https://image.pollinations.ai/prompt/brown?nologo=1"
+      },
+      {
+        "de": "grau",
+        "en": "gray",
+        "img": "https://image.pollinations.ai/prompt/gray?nologo=1"
+      },
+      {
+        "de": "rosa",
+        "en": "pink",
+        "img": "https://image.pollinations.ai/prompt/pink?nologo=1"
+      },
+      {
+        "de": "orange",
+        "en": "orange",
+        "img": "https://image.pollinations.ai/prompt/orange?nologo=1"
+      },
+      {
+        "de": "schnell",
+        "en": "fast",
+        "img": "https://image.pollinations.ai/prompt/fast?nologo=1"
+      },
+      {
+        "de": "langsam",
+        "en": "slow",
+        "img": "https://image.pollinations.ai/prompt/slow?nologo=1"
+      },
+      {
+        "de": "heiß",
+        "en": "hot",
+        "img": "https://image.pollinations.ai/prompt/hot?nologo=1"
+      },
+      {
+        "de": "kalt",
+        "en": "cold",
+        "img": "https://image.pollinations.ai/prompt/cold?nologo=1"
+      },
+      {
+        "de": "jung",
+        "en": "young",
+        "img": "https://image.pollinations.ai/prompt/young?nologo=1"
+      },
+      {
+        "de": "hässlich",
+        "en": "ugly",
+        "img": "https://image.pollinations.ai/prompt/ugly?nologo=1"
+      },
+      {
+        "de": "teuer",
+        "en": "expensive",
+        "img": "https://image.pollinations.ai/prompt/expensive?nologo=1"
+      },
+      {
+        "de": "billig",
+        "en": "cheap",
+        "img": "https://image.pollinations.ai/prompt/cheap?nologo=1"
+      },
+      {
+        "de": "leicht",
+        "en": "easy",
+        "img": "https://image.pollinations.ai/prompt/easy?nologo=1"
+      },
+      {
+        "de": "schwer",
+        "en": "heavy",
+        "img": "https://image.pollinations.ai/prompt/heavy?nologo=1"
+      },
+      {
+        "de": "stark",
+        "en": "strong",
+        "img": "https://image.pollinations.ai/prompt/strong?nologo=1"
+      },
+      {
+        "de": "schwach",
+        "en": "weak",
+        "img": "https://image.pollinations.ai/prompt/weak?nologo=1"
+      },
+      {
+        "de": "sauber",
+        "en": "clean",
+        "img": "https://image.pollinations.ai/prompt/clean?nologo=1"
+      },
+      {
+        "de": "schmutzig",
+        "en": "dirty",
+        "img": "https://image.pollinations.ai/prompt/dirty?nologo=1"
+      },
+      {
+        "de": "tief",
+        "en": "deep",
+        "img": "https://image.pollinations.ai/prompt/deep?nologo=1"
+      },
+      {
+        "de": "nah",
+        "en": "near",
+        "img": "https://image.pollinations.ai/prompt/near?nologo=1"
+      },
+      {
+        "de": "fern",
+        "en": "far",
+        "img": "https://image.pollinations.ai/prompt/far?nologo=1"
+      },
+      {
+        "de": "voll",
+        "en": "full",
+        "img": "https://image.pollinations.ai/prompt/full?nologo=1"
+      },
+      {
+        "de": "leer",
+        "en": "empty",
+        "img": "https://image.pollinations.ai/prompt/empty?nologo=1"
+      },
+      {
+        "de": "hart",
+        "en": "hard",
+        "img": "https://image.pollinations.ai/prompt/hard?nologo=1"
+      },
+      {
+        "de": "weich",
+        "en": "soft",
+        "img": "https://image.pollinations.ai/prompt/soft?nologo=1"
+      },
+      {
+        "de": "wahr",
+        "en": "true",
+        "img": "https://image.pollinations.ai/prompt/true?nologo=1"
+      },
+      {
+        "de": "falsch",
+        "en": "false",
+        "img": "https://image.pollinations.ai/prompt/false?nologo=1"
+      },
+      {
+        "de": "richtig",
+        "en": "correct",
+        "img": "https://image.pollinations.ai/prompt/correct?nologo=1"
+      },
+      {
+        "de": "früh",
+        "en": "early",
+        "img": "https://image.pollinations.ai/prompt/early?nologo=1"
+      },
+      {
+        "de": "spät",
+        "en": "late",
+        "img": "https://image.pollinations.ai/prompt/late?nologo=1"
+      },
+      {
+        "de": "laut",
+        "en": "loud",
+        "img": "https://image.pollinations.ai/prompt/loud?nologo=1"
+      },
+      {
+        "de": "leise",
+        "en": "quiet",
+        "img": "https://image.pollinations.ai/prompt/quiet?nologo=1"
+      },
+      {
+        "de": "reich",
+        "en": "rich",
+        "img": "https://image.pollinations.ai/prompt/rich?nologo=1"
+      },
+      {
+        "de": "arm",
+        "en": "poor",
+        "img": "https://image.pollinations.ai/prompt/poor?nologo=1"
+      },
+      {
+        "de": "glücklich",
+        "en": "happy",
+        "img": "https://image.pollinations.ai/prompt/happy?nologo=1"
+      },
+      {
+        "de": "traurig",
+        "en": "sad",
+        "img": "https://image.pollinations.ai/prompt/sad?nologo=1"
+      },
+      {
+        "de": "gesund",
+        "en": "healthy",
+        "img": "https://image.pollinations.ai/prompt/healthy?nologo=1"
+      },
+      {
+        "de": "krank",
+        "en": "sick",
+        "img": "https://image.pollinations.ai/prompt/sick?nologo=1"
+      },
+      {
+        "de": "offen",
+        "en": "open",
+        "img": "https://image.pollinations.ai/prompt/open?nologo=1"
+      },
+      {
+        "de": "geschlossen",
+        "en": "closed",
+        "img": "https://image.pollinations.ai/prompt/closed?nologo=1"
+      },
+      {
+        "de": "warm",
+        "en": "warm",
+        "img": "https://image.pollinations.ai/prompt/warm?nologo=1"
+      },
+      {
+        "de": "trocken",
+        "en": "dry",
+        "img": "https://image.pollinations.ai/prompt/dry?nologo=1"
+      },
+      {
+        "de": "nass",
+        "en": "wet",
+        "img": "https://image.pollinations.ai/prompt/wet?nologo=1"
+      },
+      {
+        "de": "breit",
+        "en": "broad",
+        "img": "https://image.pollinations.ai/prompt/broad?nologo=1"
+      },
+      {
+        "de": "schmal",
+        "en": "narrow",
+        "img": "https://image.pollinations.ai/prompt/narrow?nologo=1"
+      },
+      {
+        "de": "dick",
+        "en": "thick",
+        "img": "https://image.pollinations.ai/prompt/thick?nologo=1"
+      },
+      {
+        "de": "dünn",
+        "en": "thin",
+        "img": "https://image.pollinations.ai/prompt/thin?nologo=1"
+      },
+      {
+        "de": "rund",
+        "en": "round",
+        "img": "https://image.pollinations.ai/prompt/round?nologo=1"
+      },
+      {
+        "de": "flach",
+        "en": "flat",
+        "img": "https://image.pollinations.ai/prompt/flat?nologo=1"
+      },
+      {
+        "de": "süß",
+        "en": "sweet",
+        "img": "https://image.pollinations.ai/prompt/sweet?nologo=1"
+      },
+      {
+        "de": "sauer",
+        "en": "sour",
+        "img": "https://image.pollinations.ai/prompt/sour?nologo=1"
+      },
+      {
+        "de": "bitter",
+        "en": "bitter",
+        "img": "https://image.pollinations.ai/prompt/bitter?nologo=1"
+      },
+      {
+        "de": "salzig",
+        "en": "salty",
+        "img": "https://image.pollinations.ai/prompt/salty?nologo=1"
+      },
+      {
+        "de": "scharf",
+        "en": "spicy",
+        "img": "https://image.pollinations.ai/prompt/spicy?nologo=1"
+      },
+      {
+        "de": "müde",
+        "en": "tired",
+        "img": "https://image.pollinations.ai/prompt/tired?nologo=1"
+      },
+      {
+        "de": "wach",
+        "en": "awake",
+        "img": "https://image.pollinations.ai/prompt/awake?nologo=1"
+      },
+      {
+        "de": "hungrig",
+        "en": "hungry",
+        "img": "https://image.pollinations.ai/prompt/hungry?nologo=1"
+      },
+      {
+        "de": "durstig",
+        "en": "thirsty",
+        "img": "https://image.pollinations.ai/prompt/thirsty?nologo=1"
+      },
+      {
+        "de": "elf",
+        "en": "eleven",
+        "img": "https://image.pollinations.ai/prompt/eleven?nologo=1"
+      },
+      {
+        "de": "zwölf",
+        "en": "twelve",
+        "img": "https://image.pollinations.ai/prompt/twelve?nologo=1"
+      },
+      {
+        "de": "zwanzig",
+        "en": "twenty",
+        "img": "https://image.pollinations.ai/prompt/twenty?nologo=1"
+      },
+      {
+        "de": "Montag",
+        "en": "Monday",
+        "img": "https://image.pollinations.ai/prompt/Monday?nologo=1"
+      },
+      {
+        "de": "Dienstag",
+        "en": "Tuesday",
+        "img": "https://image.pollinations.ai/prompt/Tuesday?nologo=1"
+      },
+      {
+        "de": "Mittwoch",
+        "en": "Wednesday",
+        "img": "https://image.pollinations.ai/prompt/Wednesday?nologo=1"
+      },
+      {
+        "de": "Donnerstag",
+        "en": "Thursday",
+        "img": "https://image.pollinations.ai/prompt/Thursday?nologo=1"
+      },
+      {
+        "de": "Freitag",
+        "en": "Friday",
+        "img": "https://image.pollinations.ai/prompt/Friday?nologo=1"
+      },
+      {
+        "de": "Samstag",
+        "en": "Saturday",
+        "img": "https://image.pollinations.ai/prompt/Saturday?nologo=1"
+      },
+      {
+        "de": "Sonntag",
+        "en": "Sunday",
+        "img": "https://image.pollinations.ai/prompt/Sunday?nologo=1"
+      },
+      {
+        "de": "Januar",
+        "en": "January",
+        "img": "https://image.pollinations.ai/prompt/January?nologo=1"
+      },
+      {
+        "de": "Februar",
+        "en": "February",
+        "img": "https://image.pollinations.ai/prompt/February?nologo=1"
+      },
+      {
+        "de": "März",
+        "en": "March",
+        "img": "https://image.pollinations.ai/prompt/March?nologo=1"
+      },
+      {
+        "de": "April",
+        "en": "April",
+        "img": "https://image.pollinations.ai/prompt/April?nologo=1"
+      },
+      {
+        "de": "Mai",
+        "en": "May",
+        "img": "https://image.pollinations.ai/prompt/May?nologo=1"
+      },
+      {
+        "de": "Juni",
+        "en": "June",
+        "img": "https://image.pollinations.ai/prompt/June?nologo=1"
+      },
+      {
+        "de": "Juli",
+        "en": "July",
+        "img": "https://image.pollinations.ai/prompt/July?nologo=1"
+      },
+      {
+        "de": "August",
+        "en": "August",
+        "img": "https://image.pollinations.ai/prompt/August?nologo=1"
+      },
+      {
+        "de": "September",
+        "en": "September",
+        "img": "https://image.pollinations.ai/prompt/September?nologo=1"
+      },
+      {
+        "de": "Oktober",
+        "en": "October",
+        "img": "https://image.pollinations.ai/prompt/October?nologo=1"
+      },
+      {
+        "de": "November",
+        "en": "November",
+        "img": "https://image.pollinations.ai/prompt/November?nologo=1"
+      },
+      {
+        "de": "Dezember",
+        "en": "December",
+        "img": "https://image.pollinations.ai/prompt/December?nologo=1"
+      },
+      {
+        "de": "Frühling",
+        "en": "spring",
+        "img": "https://image.pollinations.ai/prompt/spring?nologo=1"
+      },
+      {
+        "de": "Sommer",
+        "en": "summer",
+        "img": "https://image.pollinations.ai/prompt/summer?nologo=1"
+      },
+      {
+        "de": "Herbst",
+        "en": "autumn",
+        "img": "https://image.pollinations.ai/prompt/autumn?nologo=1"
+      },
+      {
+        "de": "Winter",
+        "en": "winter",
+        "img": "https://image.pollinations.ai/prompt/winter?nologo=1"
+      },
+      {
+        "de": "später",
+        "en": "later",
+        "img": "https://image.pollinations.ai/prompt/later?nologo=1"
+      },
+      {
+        "de": "nie",
+        "en": "never",
+        "img": "https://image.pollinations.ai/prompt/never?nologo=1"
+      },
+      {
+        "de": "manchmal",
+        "en": "sometimes",
+        "img": "https://image.pollinations.ai/prompt/sometimes?nologo=1"
+      },
+      {
+        "de": "oft",
+        "en": "often",
+        "img": "https://image.pollinations.ai/prompt/often?nologo=1"
+      },
+      {
+        "de": "selten",
+        "en": "rarely",
+        "img": "https://image.pollinations.ai/prompt/rarely?nologo=1"
+      },
+      {
+        "de": "überall",
+        "en": "everywhere",
+        "img": "https://image.pollinations.ai/prompt/everywhere?nologo=1"
+      },
+      {
+        "de": "nirgends",
+        "en": "nowhere",
+        "img": "https://image.pollinations.ai/prompt/nowhere?nologo=1"
+      },
+      {
+        "de": "links",
+        "en": "left",
+        "img": "https://image.pollinations.ai/prompt/left?nologo=1"
+      },
+      {
+        "de": "unten",
+        "en": "down",
+        "img": "https://image.pollinations.ai/prompt/down?nologo=1"
+      },
+      {
+        "de": "vorn",
+        "en": "front",
+        "img": "https://image.pollinations.ai/prompt/front?nologo=1"
+      },
+      {
+        "de": "innen",
+        "en": "inside",
+        "img": "https://image.pollinations.ai/prompt/inside?nologo=1"
+      },
+      {
+        "de": "außen",
+        "en": "outside",
+        "img": "https://image.pollinations.ai/prompt/outside?nologo=1"
+      },
+      {
+        "de": "bitte",
+        "en": "please",
+        "img": "https://image.pollinations.ai/prompt/please?nologo=1"
+      },
+      {
+        "de": "danke",
+        "en": "thanks",
+        "img": "https://image.pollinations.ai/prompt/thanks?nologo=1"
+      },
+      {
+        "de": "hallo",
+        "en": "hello",
+        "img": "https://image.pollinations.ai/prompt/hello?nologo=1"
+      },
+      {
+        "de": "tschüss",
+        "en": "bye",
+        "img": "https://image.pollinations.ai/prompt/bye?nologo=1"
+      },
+      {
+        "de": "willkommen",
+        "en": "welcome",
+        "img": "https://image.pollinations.ai/prompt/welcome?nologo=1"
+      },
+      {
+        "de": "Entschuldigung",
+        "en": "sorry",
+        "img": "https://image.pollinations.ai/prompt/sorry?nologo=1"
+      },
+      {
+        "de": "lernen",
+        "en": "learn",
+        "img": "https://image.pollinations.ai/prompt/learn?nologo=1"
+      },
+      {
+        "de": "hören",
+        "en": "hear",
+        "img": "https://image.pollinations.ai/prompt/hear?nologo=1"
+      },
+      {
+        "de": "essen",
+        "en": "eat",
+        "img": "https://image.pollinations.ai/prompt/eat?nologo=1"
+      },
+      {
+        "de": "trinken",
+        "en": "drink",
+        "img": "https://image.pollinations.ai/prompt/drink?nologo=1"
+      },
+      {
+        "de": "schlafen",
+        "en": "sleep",
+        "img": "https://image.pollinations.ai/prompt/sleep?nologo=1"
+      },
+      {
+        "de": "aufwachen",
+        "en": "wake",
+        "img": "https://image.pollinations.ai/prompt/wake?nologo=1"
+      },
+      {
+        "de": "springen",
+        "en": "jump",
+        "img": "https://image.pollinations.ai/prompt/jump?nologo=1"
+      },
+      {
+        "de": "schwimmen",
+        "en": "swim",
+        "img": "https://image.pollinations.ai/prompt/swim?nologo=1"
+      },
+      {
+        "de": "reisen",
+        "en": "travel",
+        "img": "https://image.pollinations.ai/prompt/travel?nologo=1"
+      },
+      {
+        "de": "kaufen",
+        "en": "buy",
+        "img": "https://image.pollinations.ai/prompt/buy?nologo=1"
+      },
+      {
+        "de": "verkaufen",
+        "en": "sell",
+        "img": "https://image.pollinations.ai/prompt/sell?nologo=1"
+      },
+      {
+        "de": "bezahlen",
+        "en": "pay",
+        "img": "https://image.pollinations.ai/prompt/pay?nologo=1"
+      },
+      {
+        "de": "kosten",
+        "en": "cost",
+        "img": "https://image.pollinations.ai/prompt/cost?nologo=1"
+      },
+      {
+        "de": "öffnen",
+        "en": "open",
+        "img": "https://image.pollinations.ai/prompt/open?nologo=1"
+      },
+      {
+        "de": "schließen",
+        "en": "close",
+        "img": "https://image.pollinations.ai/prompt/close?nologo=1"
+      },
+      {
+        "de": "ziehen",
+        "en": "pull",
+        "img": "https://image.pollinations.ai/prompt/pull?nologo=1"
+      },
+      {
+        "de": "schieben",
+        "en": "push",
+        "img": "https://image.pollinations.ai/prompt/push?nologo=1"
+      },
+      {
+        "de": "werfen",
+        "en": "throw",
+        "img": "https://image.pollinations.ai/prompt/throw?nologo=1"
+      },
+      {
+        "de": "fangen",
+        "en": "catch",
+        "img": "https://image.pollinations.ai/prompt/catch?nologo=1"
+      },
+      {
+        "de": "bringen",
+        "en": "bring",
+        "img": "https://image.pollinations.ai/prompt/bring?nologo=1"
+      },
+      {
+        "de": "holen",
+        "en": "fetch",
+        "img": "https://image.pollinations.ai/prompt/fetch?nologo=1"
+      },
+      {
+        "de": "suchen",
+        "en": "search",
+        "img": "https://image.pollinations.ai/prompt/search?nologo=1"
+      },
+      {
+        "de": "verlieren",
+        "en": "lose",
+        "img": "https://image.pollinations.ai/prompt/lose?nologo=1"
+      },
+      {
+        "de": "gewinnen",
+        "en": "win",
+        "img": "https://image.pollinations.ai/prompt/win?nologo=1"
+      },
+      {
+        "de": "mögen",
+        "en": "like",
+        "img": "https://image.pollinations.ai/prompt/like?nologo=1"
+      },
+      {
+        "de": "hassen",
+        "en": "hate",
+        "img": "https://image.pollinations.ai/prompt/hate?nologo=1"
+      },
+      {
+        "de": "glauben",
+        "en": "believe",
+        "img": "https://image.pollinations.ai/prompt/believe?nologo=1"
+      },
+      {
+        "de": "verstehen",
+        "en": "understand",
+        "img": "https://image.pollinations.ai/prompt/understand?nologo=1"
+      },
+      {
+        "de": "erinnern",
+        "en": "remember",
+        "img": "https://image.pollinations.ai/prompt/remember?nologo=1"
+      },
+      {
+        "de": "vergessen",
+        "en": "forget",
+        "img": "https://image.pollinations.ai/prompt/forget?nologo=1"
+      },
+      {
+        "de": "lachen",
+        "en": "laugh",
+        "img": "https://image.pollinations.ai/prompt/laugh?nologo=1"
+      },
+      {
+        "de": "weinen",
+        "en": "cry",
+        "img": "https://image.pollinations.ai/prompt/cry?nologo=1"
+      },
+      {
+        "de": "lächeln",
+        "en": "smile",
+        "img": "https://image.pollinations.ai/prompt/smile?nologo=1"
+      },
+      {
+        "de": "schreien",
+        "en": "shout",
+        "img": "https://image.pollinations.ai/prompt/shout?nologo=1"
+      },
+      {
+        "de": "singen",
+        "en": "sing",
+        "img": "https://image.pollinations.ai/prompt/sing?nologo=1"
+      },
+      {
+        "de": "tanzen",
+        "en": "dance",
+        "img": "https://image.pollinations.ai/prompt/dance?nologo=1"
+      },
+      {
+        "de": "kochen",
+        "en": "cook",
+        "img": "https://image.pollinations.ai/prompt/cook?nologo=1"
+      },
+      {
+        "de": "backen",
+        "en": "bake",
+        "img": "https://image.pollinations.ai/prompt/bake?nologo=1"
+      },
+      {
+        "de": "putzen",
+        "en": "clean",
+        "img": "https://image.pollinations.ai/prompt/clean?nologo=1"
+      },
+      {
+        "de": "waschen",
+        "en": "wash",
+        "img": "https://image.pollinations.ai/prompt/wash?nologo=1"
+      },
+      {
+        "de": "duschen",
+        "en": "shower",
+        "img": "https://image.pollinations.ai/prompt/shower?nologo=1"
+      },
+      {
+        "de": "baden",
+        "en": "bathe",
+        "img": "https://image.pollinations.ai/prompt/bathe?nologo=1"
+      },
+      {
+        "de": "kämmen",
+        "en": "comb",
+        "img": "https://image.pollinations.ai/prompt/comb?nologo=1"
+      },
+      {
+        "de": "rasieren",
+        "en": "shave",
+        "img": "https://image.pollinations.ai/prompt/shave?nologo=1"
+      },
+      {
+        "de": "anziehen",
+        "en": "dress",
+        "img": "https://image.pollinations.ai/prompt/dress?nologo=1"
+      },
+      {
+        "de": "ausziehen",
+        "en": "undress",
+        "img": "https://image.pollinations.ai/prompt/undress?nologo=1"
+      },
+      {
+        "de": "sitzen",
+        "en": "sit",
+        "img": "https://image.pollinations.ai/prompt/sit?nologo=1"
+      },
+      {
+        "de": "liegen",
+        "en": "lie",
+        "img": "https://image.pollinations.ai/prompt/lie?nologo=1"
+      },
+      {
+        "de": "warten",
+        "en": "wait",
+        "img": "https://image.pollinations.ai/prompt/wait?nologo=1"
+      },
+      {
+        "de": "bleiben",
+        "en": "stay",
+        "img": "https://image.pollinations.ai/prompt/stay?nologo=1"
+      },
+      {
+        "de": "beginnen",
+        "en": "begin",
+        "img": "https://image.pollinations.ai/prompt/begin?nologo=1"
+      },
+      {
+        "de": "schaffen",
+        "en": "manage",
+        "img": "https://image.pollinations.ai/prompt/manage?nologo=1"
+      },
+      {
+        "de": "erklären",
+        "en": "explain",
+        "img": "https://image.pollinations.ai/prompt/explain?nologo=1"
+      },
+      {
+        "de": "vergleichen",
+        "en": "compare",
+        "img": "https://image.pollinations.ai/prompt/compare?nologo=1"
+      },
+      {
+        "de": "ändern",
+        "en": "change",
+        "img": "https://image.pollinations.ai/prompt/change?nologo=1"
+      },
+      {
+        "de": "wachsen",
+        "en": "grow",
+        "img": "https://image.pollinations.ai/prompt/grow?nologo=1"
+      },
+      {
+        "de": "sterben",
+        "en": "die",
+        "img": "https://image.pollinations.ai/prompt/die?nologo=1"
+      },
+      {
+        "de": "töten",
+        "en": "kill",
+        "img": "https://image.pollinations.ai/prompt/kill?nologo=1"
+      },
+      {
+        "de": "schlagen",
+        "en": "hit",
+        "img": "https://image.pollinations.ai/prompt/hit?nologo=1"
+      },
+      {
+        "de": "treffen",
+        "en": "meet",
+        "img": "https://image.pollinations.ai/prompt/meet?nologo=1"
+      },
+      {
+        "de": "besuchen",
+        "en": "visit",
+        "img": "https://image.pollinations.ai/prompt/visit?nologo=1"
+      },
+      {
+        "de": "feiern",
+        "en": "celebrate",
+        "img": "https://image.pollinations.ai/prompt/celebrate?nologo=1"
+      },
+      {
+        "de": "heiraten",
+        "en": "marry",
+        "img": "https://image.pollinations.ai/prompt/marry?nologo=1"
+      },
+      {
+        "de": "studieren",
+        "en": "study",
+        "img": "https://image.pollinations.ai/prompt/study?nologo=1"
+      },
+      {
+        "de": "lehren",
+        "en": "teach",
+        "img": "https://image.pollinations.ai/prompt/teach?nologo=1"
+      },
+      {
+        "de": "zeichnen",
+        "en": "draw",
+        "img": "https://image.pollinations.ai/prompt/draw?nologo=1"
+      },
+      {
+        "de": "malen",
+        "en": "paint",
+        "img": "https://image.pollinations.ai/prompt/paint?nologo=1"
+      },
+      {
+        "de": "bauen",
+        "en": "build",
+        "img": "https://image.pollinations.ai/prompt/build?nologo=1"
+      },
+      {
+        "de": "reparieren",
+        "en": "repair",
+        "img": "https://image.pollinations.ai/prompt/repair?nologo=1"
+      },
+      {
+        "de": "zerstören",
+        "en": "destroy",
+        "img": "https://image.pollinations.ai/prompt/destroy?nologo=1"
+      },
+      {
+        "de": "schneiden",
+        "en": "cut",
+        "img": "https://image.pollinations.ai/prompt/cut?nologo=1"
+      },
+      {
+        "de": "teilen",
+        "en": "share",
+        "img": "https://image.pollinations.ai/prompt/share?nologo=1"
+      },
+      {
+        "de": "verstecken",
+        "en": "hide",
+        "img": "https://image.pollinations.ai/prompt/hide?nologo=1"
+      },
+      {
+        "de": "zeigen",
+        "en": "show",
+        "img": "https://image.pollinations.ai/prompt/show?nologo=1"
+      },
+      {
+        "de": "bitten",
+        "en": "request",
+        "img": "https://image.pollinations.ai/prompt/request?nologo=1"
+      },
+      {
+        "de": "danken",
+        "en": "thank",
+        "img": "https://image.pollinations.ai/prompt/thank?nologo=1"
+      },
+      {
+        "de": "gratulieren",
+        "en": "congratulate",
+        "img": "https://image.pollinations.ai/prompt/congratulate?nologo=1"
+      },
+      {
+        "de": "entschuldigen",
+        "en": "apologize",
+        "img": "https://image.pollinations.ai/prompt/apologize?nologo=1"
+      },
+      {
+        "de": "streiten",
+        "en": "argue",
+        "img": "https://image.pollinations.ai/prompt/argue?nologo=1"
+      },
+      {
+        "de": "kämpfen",
+        "en": "fight",
+        "img": "https://image.pollinations.ai/prompt/fight?nologo=1"
+      },
+      {
+        "de": "siegen",
+        "en": "win",
+        "img": "https://image.pollinations.ai/prompt/win?nologo=1"
+      },
+      {
+        "de": "brennen",
+        "en": "burn",
+        "img": "https://image.pollinations.ai/prompt/burn?nologo=1"
+      },
+      {
+        "de": "leuchten",
+        "en": "shine",
+        "img": "https://image.pollinations.ai/prompt/shine?nologo=1"
+      },
+      {
+        "de": "regnen",
+        "en": "rain",
+        "img": "https://image.pollinations.ai/prompt/rain?nologo=1"
+      },
+      {
+        "de": "schneien",
+        "en": "snow",
+        "img": "https://image.pollinations.ai/prompt/snow?nologo=1"
+      },
+      {
+        "de": "frieren",
+        "en": "freeze",
+        "img": "https://image.pollinations.ai/prompt/freeze?nologo=1"
+      },
+      {
+        "de": "schmelzen",
+        "en": "melt",
+        "img": "https://image.pollinations.ai/prompt/melt?nologo=1"
+      },
+      {
+        "de": "braten",
+        "en": "fry",
+        "img": "https://image.pollinations.ai/prompt/fry?nologo=1"
+      },
+      {
+        "de": "mischen",
+        "en": "mix",
+        "img": "https://image.pollinations.ai/prompt/mix?nologo=1"
+      },
+      {
+        "de": "füllen",
+        "en": "fill",
+        "img": "https://image.pollinations.ai/prompt/fill?nologo=1"
+      },
+      {
+        "de": "leeren",
+        "en": "empty",
+        "img": "https://image.pollinations.ai/prompt/empty?nologo=1"
+      },
+      {
+        "de": "gießen",
+        "en": "pour",
+        "img": "https://image.pollinations.ai/prompt/pour?nologo=1"
+      },
+      {
+        "de": "wiegen",
+        "en": "weigh",
+        "img": "https://image.pollinations.ai/prompt/weigh?nologo=1"
+      },
+      {
+        "de": "messen",
+        "en": "measure",
+        "img": "https://image.pollinations.ai/prompt/measure?nologo=1"
+      },
+      {
+        "de": "zählen",
+        "en": "count",
+        "img": "https://image.pollinations.ai/prompt/count?nologo=1"
+      },
+      {
+        "de": "rechnen",
+        "en": "calculate",
+        "img": "https://image.pollinations.ai/prompt/calculate?nologo=1"
+      },
+      {
+        "de": "buchstabieren",
+        "en": "spell",
+        "img": "https://image.pollinations.ai/prompt/spell?nologo=1"
+      },
+      {
+        "de": "übersetzen",
+        "en": "translate",
+        "img": "https://image.pollinations.ai/prompt/translate?nologo=1"
+      },
+      {
+        "de": "nennen",
+        "en": "name",
+        "img": "https://image.pollinations.ai/prompt/name?nologo=1"
+      },
+      {
+        "de": "telefonieren",
+        "en": "telephone",
+        "img": "https://image.pollinations.ai/prompt/telephone?nologo=1"
+      },
+      {
+        "de": "schicken",
+        "en": "send",
+        "img": "https://image.pollinations.ai/prompt/send?nologo=1"
+      },
+      {
+        "de": "empfangen",
+        "en": "receive",
+        "img": "https://image.pollinations.ai/prompt/receive?nologo=1"
+      },
+      {
+        "de": "dürfen",
+        "en": "may",
+        "img": "https://image.pollinations.ai/prompt/may?nologo=1"
+      },
+      {
+        "de": "möchten",
+        "en": "would_like",
+        "img": "https://image.pollinations.ai/prompt/would_like?nologo=1"
+      },
+      {
+        "de": "gelten",
+        "en": "be_valid",
+        "img": "https://image.pollinations.ai/prompt/be_valid?nologo=1"
+      },
+      {
+        "de": "gehören",
+        "en": "belong",
+        "img": "https://image.pollinations.ai/prompt/belong?nologo=1"
+      },
+      {
+        "de": "passen",
+        "en": "fit",
+        "img": "https://image.pollinations.ai/prompt/fit?nologo=1"
+      },
+      {
+        "de": "stimmen",
+        "en": "be_correct",
+        "img": "https://image.pollinations.ai/prompt/be_correct?nologo=1"
+      },
+      {
+        "de": "fehlen",
+        "en": "lack",
+        "img": "https://image.pollinations.ai/prompt/lack?nologo=1"
+      },
+      {
+        "de": "passieren",
+        "en": "happen",
+        "img": "https://image.pollinations.ai/prompt/happen?nologo=1"
+      },
+      {
+        "de": "geschehen",
+        "en": "occur",
+        "img": "https://image.pollinations.ai/prompt/occur?nologo=1"
+      },
+      {
+        "de": "stattfinden",
+        "en": "take_place",
+        "img": "https://image.pollinations.ai/prompt/take_place?nologo=1"
+      },
+      {
+        "de": "existieren",
+        "en": "exist",
+        "img": "https://image.pollinations.ai/prompt/exist?nologo=1"
+      },
+      {
+        "de": "folgen",
+        "en": "follow",
+        "img": "https://image.pollinations.ai/prompt/follow?nologo=1"
+      },
+      {
+        "de": "führen",
+        "en": "lead",
+        "img": "https://image.pollinations.ai/prompt/lead?nologo=1"
+      },
+      {
+        "de": "begleiten",
+        "en": "accompany",
+        "img": "https://image.pollinations.ai/prompt/accompany?nologo=1"
+      },
+      {
+        "de": "verlassen",
+        "en": "leave",
+        "img": "https://image.pollinations.ai/prompt/leave?nologo=1"
+      },
+      {
+        "de": "ankommen",
+        "en": "arrive",
+        "img": "https://image.pollinations.ai/prompt/arrive?nologo=1"
+      },
+      {
+        "de": "abfahren",
+        "en": "depart",
+        "img": "https://image.pollinations.ai/prompt/depart?nologo=1"
+      },
+      {
+        "de": "einsteigen",
+        "en": "board",
+        "img": "https://image.pollinations.ai/prompt/board?nologo=1"
+      },
+      {
+        "de": "aussteigen",
+        "en": "alight",
+        "img": "https://image.pollinations.ai/prompt/alight?nologo=1"
+      },
+      {
+        "de": "umsteigen",
+        "en": "transfer",
+        "img": "https://image.pollinations.ai/prompt/transfer?nologo=1"
+      },
+      {
+        "de": "starten",
+        "en": "take_off",
+        "img": "https://image.pollinations.ai/prompt/take_off?nologo=1"
+      },
+      {
+        "de": "segeln",
+        "en": "sail",
+        "img": "https://image.pollinations.ai/prompt/sail?nologo=1"
+      },
+      {
+        "de": "tauchen",
+        "en": "dive",
+        "img": "https://image.pollinations.ai/prompt/dive?nologo=1"
+      },
+      {
+        "de": "rudern",
+        "en": "row",
+        "img": "https://image.pollinations.ai/prompt/row?nologo=1"
+      },
+      {
+        "de": "reiten",
+        "en": "ride",
+        "img": "https://image.pollinations.ai/prompt/ride?nologo=1"
+      },
+      {
+        "de": "wandern",
+        "en": "hike",
+        "img": "https://image.pollinations.ai/prompt/hike?nologo=1"
+      },
+      {
+        "de": "klettern",
+        "en": "climb",
+        "img": "https://image.pollinations.ai/prompt/climb?nologo=1"
+      },
+      {
+        "de": "rutschen",
+        "en": "slide",
+        "img": "https://image.pollinations.ai/prompt/slide?nologo=1"
+      },
+      {
+        "de": "fallen",
+        "en": "fall",
+        "img": "https://image.pollinations.ai/prompt/fall?nologo=1"
+      },
+      {
+        "de": "stürzen",
+        "en": "crash",
+        "img": "https://image.pollinations.ai/prompt/crash?nologo=1"
+      },
+      {
+        "de": "stolpern",
+        "en": "stumble",
+        "img": "https://image.pollinations.ai/prompt/stumble?nologo=1"
+      },
+      {
+        "de": "aufstehen",
+        "en": "stand_up",
+        "img": "https://image.pollinations.ai/prompt/stand_up?nologo=1"
+      },
+      {
+        "de": "hinsetzen",
+        "en": "sit_down",
+        "img": "https://image.pollinations.ai/prompt/sit_down?nologo=1"
+      },
+      {
+        "de": "hinlegen",
+        "en": "lie_down",
+        "img": "https://image.pollinations.ai/prompt/lie_down?nologo=1"
+      },
+      {
+        "de": "bücken",
+        "en": "bend_down",
+        "img": "https://image.pollinations.ai/prompt/bend_down?nologo=1"
+      },
+      {
+        "de": "drehen",
+        "en": "turn",
+        "img": "https://image.pollinations.ai/prompt/turn?nologo=1"
+      },
+      {
+        "de": "wenden",
+        "en": "flip",
+        "img": "https://image.pollinations.ai/prompt/flip?nologo=1"
+      },
+      {
+        "de": "rollen",
+        "en": "roll",
+        "img": "https://image.pollinations.ai/prompt/roll?nologo=1"
+      },
+      {
+        "de": "tragen",
+        "en": "carry",
+        "img": "https://image.pollinations.ai/prompt/carry?nologo=1"
+      },
+      {
+        "de": "heben",
+        "en": "lift",
+        "img": "https://image.pollinations.ai/prompt/lift?nologo=1"
+      },
+      {
+        "de": "senken",
+        "en": "lower",
+        "img": "https://image.pollinations.ai/prompt/lower?nologo=1"
+      },
+      {
+        "de": "drücken",
+        "en": "press",
+        "img": "https://image.pollinations.ai/prompt/press?nologo=1"
+      },
+      {
+        "de": "streichen",
+        "en": "stroke",
+        "img": "https://image.pollinations.ai/prompt/stroke?nologo=1"
+      },
+      {
+        "de": "kratzen",
+        "en": "scratch",
+        "img": "https://image.pollinations.ai/prompt/scratch?nologo=1"
+      },
+      {
+        "de": "reiben",
+        "en": "rub",
+        "img": "https://image.pollinations.ai/prompt/rub?nologo=1"
+      },
+      {
+        "de": "wischen",
+        "en": "wipe",
+        "img": "https://image.pollinations.ai/prompt/wipe?nologo=1"
+      },
+      {
+        "de": "kehren",
+        "en": "sweep",
+        "img": "https://image.pollinations.ai/prompt/sweep?nologo=1"
+      },
+      {
+        "de": "saugen",
+        "en": "vacuum",
+        "img": "https://image.pollinations.ai/prompt/vacuum?nologo=1"
+      },
+      {
+        "de": "spülen",
+        "en": "rinse",
+        "img": "https://image.pollinations.ai/prompt/rinse?nologo=1"
+      },
+      {
+        "de": "trocknen",
+        "en": "dry",
+        "img": "https://image.pollinations.ai/prompt/dry?nologo=1"
+      },
+      {
+        "de": "bügeln",
+        "en": "iron",
+        "img": "https://image.pollinations.ai/prompt/iron?nologo=1"
+      },
+      {
+        "de": "falten",
+        "en": "fold",
+        "img": "https://image.pollinations.ai/prompt/fold?nologo=1"
+      },
+      {
+        "de": "hängen",
+        "en": "hang",
+        "img": "https://image.pollinations.ai/prompt/hang?nologo=1"
+      },
+      {
+        "de": "legen",
+        "en": "lay",
+        "img": "https://image.pollinations.ai/prompt/lay?nologo=1"
+      },
+      {
+        "de": "stellen",
+        "en": "put",
+        "img": "https://image.pollinations.ai/prompt/put?nologo=1"
+      },
+      {
+        "de": "setzen",
+        "en": "set",
+        "img": "https://image.pollinations.ai/prompt/set?nologo=1"
+      },
+      {
+        "de": "stecken",
+        "en": "insert",
+        "img": "https://image.pollinations.ai/prompt/insert?nologo=1"
+      },
+      {
+        "de": "packen",
+        "en": "pack",
+        "img": "https://image.pollinations.ai/prompt/pack?nologo=1"
+      },
+      {
+        "de": "binden",
+        "en": "tie",
+        "img": "https://image.pollinations.ai/prompt/tie?nologo=1"
+      },
+      {
+        "de": "lösen",
+        "en": "untie",
+        "img": "https://image.pollinations.ai/prompt/untie?nologo=1"
+      },
+      {
+        "de": "kleben",
+        "en": "glue",
+        "img": "https://image.pollinations.ai/prompt/glue?nologo=1"
+      },
+      {
+        "de": "reißen",
+        "en": "tear",
+        "img": "https://image.pollinations.ai/prompt/tear?nologo=1"
+      },
+      {
+        "de": "brechen",
+        "en": "break",
+        "img": "https://image.pollinations.ai/prompt/break?nologo=1"
+      },
+      {
+        "de": "konstruieren",
+        "en": "construct",
+        "img": "https://image.pollinations.ai/prompt/construct?nologo=1"
+      },
+      {
+        "de": "erfinden",
+        "en": "invent",
+        "img": "https://image.pollinations.ai/prompt/invent?nologo=1"
+      },
+      {
+        "de": "entdecken",
+        "en": "discover",
+        "img": "https://image.pollinations.ai/prompt/discover?nologo=1"
+      },
+      {
+        "de": "entkommen",
+        "en": "escape",
+        "img": "https://image.pollinations.ai/prompt/escape?nologo=1"
+      },
+      {
+        "de": "retten",
+        "en": "save",
+        "img": "https://image.pollinations.ai/prompt/save?nologo=1"
+      },
+      {
+        "de": "schützen",
+        "en": "protect",
+        "img": "https://image.pollinations.ai/prompt/protect?nologo=1"
+      },
+      {
+        "de": "verteidigen",
+        "en": "defend",
+        "img": "https://image.pollinations.ai/prompt/defend?nologo=1"
+      },
+      {
+        "de": "angreifen",
+        "en": "attack",
+        "img": "https://image.pollinations.ai/prompt/attack?nologo=1"
+      },
+      {
+        "de": "treten",
+        "en": "kick",
+        "img": "https://image.pollinations.ai/prompt/kick?nologo=1"
+      },
+      {
+        "de": "beißen",
+        "en": "bite",
+        "img": "https://image.pollinations.ai/prompt/bite?nologo=1"
+      },
+      {
+        "de": "stechen",
+        "en": "sting",
+        "img": "https://image.pollinations.ai/prompt/sting?nologo=1"
+      },
+      {
+        "de": "löschen",
+        "en": "extinguish",
+        "img": "https://image.pollinations.ai/prompt/extinguish?nologo=1"
+      },
+      {
+        "de": "rauchen",
+        "en": "smoke",
+        "img": "https://image.pollinations.ai/prompt/smoke?nologo=1"
+      },
+      {
+        "de": "atmen",
+        "en": "breathe",
+        "img": "https://image.pollinations.ai/prompt/breathe?nologo=1"
+      },
+      {
+        "de": "riechen",
+        "en": "smell",
+        "img": "https://image.pollinations.ai/prompt/smell?nologo=1"
+      },
+      {
+        "de": "schmecken",
+        "en": "taste",
+        "img": "https://image.pollinations.ai/prompt/taste?nologo=1"
+      },
+      {
+        "de": "beobachten",
+        "en": "observe",
+        "img": "https://image.pollinations.ai/prompt/observe?nologo=1"
+      },
+      {
+        "de": "bemerken",
+        "en": "notice",
+        "img": "https://image.pollinations.ai/prompt/notice?nologo=1"
+      },
+      {
+        "de": "erkennen",
+        "en": "recognize",
+        "img": "https://image.pollinations.ai/prompt/recognize?nologo=1"
+      },
+      {
+        "de": "begreifen",
+        "en": "comprehend",
+        "img": "https://image.pollinations.ai/prompt/comprehend?nologo=1"
+      },
+      {
+        "de": "merken",
+        "en": "memorize",
+        "img": "https://image.pollinations.ai/prompt/memorize?nologo=1"
+      },
+      {
+        "de": "zweifeln",
+        "en": "doubt",
+        "img": "https://image.pollinations.ai/prompt/doubt?nologo=1"
+      },
+      {
+        "de": "vermuten",
+        "en": "suspect",
+        "img": "https://image.pollinations.ai/prompt/suspect?nologo=1"
+      },
+      {
+        "de": "erwarten",
+        "en": "expect",
+        "img": "https://image.pollinations.ai/prompt/expect?nologo=1"
+      },
+      {
+        "de": "bevorzugen",
+        "en": "prefer",
+        "img": "https://image.pollinations.ai/prompt/prefer?nologo=1"
+      },
+      {
+        "de": "bewundern",
+        "en": "admire",
+        "img": "https://image.pollinations.ai/prompt/admire?nologo=1"
+      },
+      {
+        "de": "verachten",
+        "en": "despise",
+        "img": "https://image.pollinations.ai/prompt/despise?nologo=1"
+      },
+      {
+        "de": "freuen",
+        "en": "rejoice",
+        "img": "https://image.pollinations.ai/prompt/rejoice?nologo=1"
+      },
+      {
+        "de": "ärgern",
+        "en": "annoy",
+        "img": "https://image.pollinations.ai/prompt/annoy?nologo=1"
+      },
+      {
+        "de": "wundern",
+        "en": "wonder",
+        "img": "https://image.pollinations.ai/prompt/wonder?nologo=1"
+      },
+      {
+        "de": "erschrecken",
+        "en": "frighten",
+        "img": "https://image.pollinations.ai/prompt/frighten?nologo=1"
+      },
+      {
+        "de": "beruhigen",
+        "en": "calm",
+        "img": "https://image.pollinations.ai/prompt/calm?nologo=1"
+      },
+      {
+        "de": "trösten",
+        "en": "comfort",
+        "img": "https://image.pollinations.ai/prompt/comfort?nologo=1"
+      },
+      {
+        "de": "seufzen",
+        "en": "sigh",
+        "img": "https://image.pollinations.ai/prompt/sigh?nologo=1"
+      },
+      {
+        "de": "gähnen",
+        "en": "yawn",
+        "img": "https://image.pollinations.ai/prompt/yawn?nologo=1"
+      },
+      {
+        "de": "husten",
+        "en": "cough",
+        "img": "https://image.pollinations.ai/prompt/cough?nologo=1"
+      },
+      {
+        "de": "niesen",
+        "en": "sneeze",
+        "img": "https://image.pollinations.ai/prompt/sneeze?nologo=1"
+      },
+      {
+        "de": "schwitzen",
+        "en": "sweat",
+        "img": "https://image.pollinations.ai/prompt/sweat?nologo=1"
+      },
+      {
+        "de": "bluten",
+        "en": "bleed",
+        "img": "https://image.pollinations.ai/prompt/bleed?nologo=1"
+      },
+      {
+        "de": "heilen",
+        "en": "heal",
+        "img": "https://image.pollinations.ai/prompt/heal?nologo=1"
+      },
+      {
+        "de": "pflegen",
+        "en": "nurse",
+        "img": "https://image.pollinations.ai/prompt/nurse?nologo=1"
+      },
+      {
+        "de": "untersuchen",
+        "en": "examine",
+        "img": "https://image.pollinations.ai/prompt/examine?nologo=1"
+      },
+      {
+        "de": "behandeln",
+        "en": "treat",
+        "img": "https://image.pollinations.ai/prompt/treat?nologo=1"
+      },
+      {
+        "de": "operieren",
+        "en": "operate",
+        "img": "https://image.pollinations.ai/prompt/operate?nologo=1"
+      },
+      {
+        "de": "impfen",
+        "en": "vaccinate",
+        "img": "https://image.pollinations.ai/prompt/vaccinate?nologo=1"
+      },
+      {
+        "de": "reden",
+        "en": "talk",
+        "img": "https://image.pollinations.ai/prompt/talk?nologo=1"
+      },
+      {
+        "de": "berichten",
+        "en": "report",
+        "img": "https://image.pollinations.ai/prompt/report?nologo=1"
+      },
+      {
+        "de": "beschreiben",
+        "en": "describe",
+        "img": "https://image.pollinations.ai/prompt/describe?nologo=1"
+      },
+      {
+        "de": "behaupten",
+        "en": "claim",
+        "img": "https://image.pollinations.ai/prompt/claim?nologo=1"
+      },
+      {
+        "de": "beweisen",
+        "en": "prove",
+        "img": "https://image.pollinations.ai/prompt/prove?nologo=1"
+      },
+      {
+        "de": "befehlen",
+        "en": "command",
+        "img": "https://image.pollinations.ai/prompt/command?nologo=1"
+      },
+      {
+        "de": "verbieten",
+        "en": "forbid",
+        "img": "https://image.pollinations.ai/prompt/forbid?nologo=1"
+      },
+      {
+        "de": "erlauben",
+        "en": "allow",
+        "img": "https://image.pollinations.ai/prompt/allow?nologo=1"
+      },
+      {
+        "de": "versprechen",
+        "en": "promise",
+        "img": "https://image.pollinations.ai/prompt/promise?nologo=1"
+      },
+      {
+        "de": "drohen",
+        "en": "threaten",
+        "img": "https://image.pollinations.ai/prompt/threaten?nologo=1"
+      },
+      {
+        "de": "warnen",
+        "en": "warn",
+        "img": "https://image.pollinations.ai/prompt/warn?nologo=1"
+      },
+      {
+        "de": "raten",
+        "en": "advise",
+        "img": "https://image.pollinations.ai/prompt/advise?nologo=1"
+      },
+      {
+        "de": "empfehlen",
+        "en": "recommend",
+        "img": "https://image.pollinations.ai/prompt/recommend?nologo=1"
+      },
+      {
+        "de": "kritisieren",
+        "en": "criticize",
+        "img": "https://image.pollinations.ai/prompt/criticize?nologo=1"
+      },
+      {
+        "de": "loben",
+        "en": "praise",
+        "img": "https://image.pollinations.ai/prompt/praise?nologo=1"
+      },
+      {
+        "de": "schimpfen",
+        "en": "scold",
+        "img": "https://image.pollinations.ai/prompt/scold?nologo=1"
+      },
+      {
+        "de": "fluchen",
+        "en": "swear",
+        "img": "https://image.pollinations.ai/prompt/swear?nologo=1"
+      },
+      {
+        "de": "musizieren",
+        "en": "play_music",
+        "img": "https://image.pollinations.ai/prompt/play_music?nologo=1"
+      },
+      {
+        "de": "fotografieren",
+        "en": "photograph",
+        "img": "https://image.pollinations.ai/prompt/photograph?nologo=1"
+      },
+      {
+        "de": "filmen",
+        "en": "film",
+        "img": "https://image.pollinations.ai/prompt/film?nologo=1"
+      },
+      {
+        "de": "drucken",
+        "en": "print",
+        "img": "https://image.pollinations.ai/prompt/print?nologo=1"
+      },
+      {
+        "de": "kopieren",
+        "en": "copy",
+        "img": "https://image.pollinations.ai/prompt/copy?nologo=1"
+      },
+      {
+        "de": "schätzen",
+        "en": "estimate",
+        "img": "https://image.pollinations.ai/prompt/estimate?nologo=1"
+      },
+      {
+        "de": "prüfen",
+        "en": "check",
+        "img": "https://image.pollinations.ai/prompt/check?nologo=1"
+      },
+      {
+        "de": "testen",
+        "en": "test",
+        "img": "https://image.pollinations.ai/prompt/test?nologo=1"
+      },
+      {
+        "de": "bewerten",
+        "en": "evaluate",
+        "img": "https://image.pollinations.ai/prompt/evaluate?nologo=1"
+      },
+      {
+        "de": "entscheiden",
+        "en": "decide",
+        "img": "https://image.pollinations.ai/prompt/decide?nologo=1"
+      },
+      {
+        "de": "wählen",
+        "en": "choose",
+        "img": "https://image.pollinations.ai/prompt/choose?nologo=1"
+      },
+      {
+        "de": "planen",
+        "en": "plan",
+        "img": "https://image.pollinations.ai/prompt/plan?nologo=1"
+      },
+      {
+        "de": "organisieren",
+        "en": "organize",
+        "img": "https://image.pollinations.ai/prompt/organize?nologo=1"
+      },
+      {
+        "de": "vorbereiten",
+        "en": "prepare",
+        "img": "https://image.pollinations.ai/prompt/prepare?nologo=1"
+      },
+      {
+        "de": "durchführen",
+        "en": "execute",
+        "img": "https://image.pollinations.ai/prompt/execute?nologo=1"
+      },
+      {
+        "de": "beenden",
+        "en": "finish",
+        "img": "https://image.pollinations.ai/prompt/finish?nologo=1"
+      },
+      {
+        "de": "abbrechen",
+        "en": "cancel",
+        "img": "https://image.pollinations.ai/prompt/cancel?nologo=1"
+      },
+      {
+        "de": "verschieben",
+        "en": "postpone",
+        "img": "https://image.pollinations.ai/prompt/postpone?nologo=1"
+      },
+      {
+        "de": "wiederholen",
+        "en": "repeat",
+        "img": "https://image.pollinations.ai/prompt/repeat?nologo=1"
+      },
+      {
+        "de": "üben",
+        "en": "practice",
+        "img": "https://image.pollinations.ai/prompt/practice?nologo=1"
+      },
+      {
+        "de": "aufgeben",
+        "en": "give_up",
+        "img": "https://image.pollinations.ai/prompt/give_up?nologo=1"
+      },
+      {
+        "de": "fliehen",
+        "en": "flee",
+        "img": "https://image.pollinations.ai/prompt/flee?nologo=1"
+      },
+      {
+        "de": "verfolgen",
+        "en": "pursue",
+        "img": "https://image.pollinations.ai/prompt/pursue?nologo=1"
+      },
+      {
+        "de": "verhaften",
+        "en": "arrest",
+        "img": "https://image.pollinations.ai/prompt/arrest?nologo=1"
+      },
+      {
+        "de": "befreien",
+        "en": "free",
+        "img": "https://image.pollinations.ai/prompt/free?nologo=1"
+      },
+      {
+        "de": "strafen",
+        "en": "punish",
+        "img": "https://image.pollinations.ai/prompt/punish?nologo=1"
+      },
+      {
+        "de": "belohnen",
+        "en": "reward",
+        "img": "https://image.pollinations.ai/prompt/reward?nologo=1"
+      },
+      {
+        "de": "mieten",
+        "en": "rent",
+        "img": "https://image.pollinations.ai/prompt/rent?nologo=1"
+      },
+      {
+        "de": "leihen",
+        "en": "borrow",
+        "img": "https://image.pollinations.ai/prompt/borrow?nologo=1"
+      },
+      {
+        "de": "borgen",
+        "en": "lend",
+        "img": "https://image.pollinations.ai/prompt/lend?nologo=1"
+      },
+      {
+        "de": "spenden",
+        "en": "donate",
+        "img": "https://image.pollinations.ai/prompt/donate?nologo=1"
+      },
+      {
+        "de": "erben",
+        "en": "inherit",
+        "img": "https://image.pollinations.ai/prompt/inherit?nologo=1"
+      },
+      {
+        "de": "verdienen",
+        "en": "earn",
+        "img": "https://image.pollinations.ai/prompt/earn?nologo=1"
+      },
+      {
+        "de": "sparen",
+        "en": "save",
+        "img": "https://image.pollinations.ai/prompt/save?nologo=1"
+      },
+      {
+        "de": "ausgeben",
+        "en": "spend",
+        "img": "https://image.pollinations.ai/prompt/spend?nologo=1"
+      },
+      {
+        "de": "investieren",
+        "en": "invest",
+        "img": "https://image.pollinations.ai/prompt/invest?nologo=1"
+      },
+      {
+        "de": "wechseln",
+        "en": "exchange",
+        "img": "https://image.pollinations.ai/prompt/exchange?nologo=1"
+      },
+      {
+        "de": "tauschen",
+        "en": "swap",
+        "img": "https://image.pollinations.ai/prompt/swap?nologo=1"
+      },
+      {
+        "de": "funktionieren",
+        "en": "function",
+        "img": "https://image.pollinations.ai/prompt/function?nologo=1"
+      },
+      {
+        "de": "produzieren",
+        "en": "produce",
+        "img": "https://image.pollinations.ai/prompt/produce?nologo=1"
+      },
+      {
+        "de": "herstellen",
+        "en": "manufacture",
+        "img": "https://image.pollinations.ai/prompt/manufacture?nologo=1"
+      },
+      {
+        "de": "liefern",
+        "en": "deliver",
+        "img": "https://image.pollinations.ai/prompt/deliver?nologo=1"
+      },
+      {
+        "de": "bestellen",
+        "en": "order",
+        "img": "https://image.pollinations.ai/prompt/order?nologo=1"
+      },
+      {
+        "de": "konsumieren",
+        "en": "consume",
+        "img": "https://image.pollinations.ai/prompt/consume?nologo=1"
+      },
+      {
+        "de": "verwenden",
+        "en": "utilize",
+        "img": "https://image.pollinations.ai/prompt/utilize?nologo=1"
+      },
+      {
+        "de": "verbrauchen",
+        "en": "consume",
+        "img": "https://image.pollinations.ai/prompt/consume?nologo=1"
+      },
+      {
+        "de": "verschwenden",
+        "en": "waste",
+        "img": "https://image.pollinations.ai/prompt/waste?nologo=1"
+      },
+      {
+        "de": "sammeln",
+        "en": "collect",
+        "img": "https://image.pollinations.ai/prompt/collect?nologo=1"
+      },
+      {
+        "de": "sortieren",
+        "en": "sort",
+        "img": "https://image.pollinations.ai/prompt/sort?nologo=1"
+      },
+      {
+        "de": "ordnen",
+        "en": "arrange",
+        "img": "https://image.pollinations.ai/prompt/arrange?nologo=1"
+      },
+      {
+        "de": "aufräumen",
+        "en": "tidy",
+        "img": "https://image.pollinations.ai/prompt/tidy?nologo=1"
+      },
+      {
+        "de": "fegen",
+        "en": "sweep",
+        "img": "https://image.pollinations.ai/prompt/sweep?nologo=1"
+      },
+      {
+        "de": "grillen",
+        "en": "grill",
+        "img": "https://image.pollinations.ai/prompt/grill?nologo=1"
+      },
+      {
+        "de": "schälen",
+        "en": "peel",
+        "img": "https://image.pollinations.ai/prompt/peel?nologo=1"
+      },
+      {
+        "de": "rühren",
+        "en": "stir",
+        "img": "https://image.pollinations.ai/prompt/stir?nologo=1"
+      },
+      {
+        "de": "würzen",
+        "en": "season",
+        "img": "https://image.pollinations.ai/prompt/season?nologo=1"
+      },
+      {
+        "de": "servieren",
+        "en": "serve",
+        "img": "https://image.pollinations.ai/prompt/serve?nologo=1"
+      },
+      {
+        "de": "kauen",
+        "en": "chew",
+        "img": "https://image.pollinations.ai/prompt/chew?nologo=1"
+      },
+      {
+        "de": "schlucken",
+        "en": "swallow",
+        "img": "https://image.pollinations.ai/prompt/swallow?nologo=1"
+      },
+      {
+        "de": "verdauen",
+        "en": "digest",
+        "img": "https://image.pollinations.ai/prompt/digest?nologo=1"
+      },
+      {
+        "de": "überleben",
+        "en": "survive",
+        "img": "https://image.pollinations.ai/prompt/survive?nologo=1"
+      },
+      {
+        "de": "gebären",
+        "en": "give_birth",
+        "img": "https://image.pollinations.ai/prompt/give_birth?nologo=1"
+      },
+      {
+        "de": "gedeihen",
+        "en": "thrive",
+        "img": "https://image.pollinations.ai/prompt/thrive?nologo=1"
+      },
+      {
+        "de": "welken",
+        "en": "wither",
+        "img": "https://image.pollinations.ai/prompt/wither?nologo=1"
+      },
+      {
+        "de": "blühen",
+        "en": "bloom",
+        "img": "https://image.pollinations.ai/prompt/bloom?nologo=1"
+      },
+      {
+        "de": "reifen",
+        "en": "ripen",
+        "img": "https://image.pollinations.ai/prompt/ripen?nologo=1"
+      },
+      {
+        "de": "faulen",
+        "en": "rot",
+        "img": "https://image.pollinations.ai/prompt/rot?nologo=1"
+      },
+      {
+        "de": "gefrieren",
+        "en": "freeze",
+        "img": "https://image.pollinations.ai/prompt/freeze?nologo=1"
+      },
+      {
+        "de": "verdampfen",
+        "en": "evaporate",
+        "img": "https://image.pollinations.ai/prompt/evaporate?nologo=1"
+      },
+      {
+        "de": "glühen",
+        "en": "glow",
+        "img": "https://image.pollinations.ai/prompt/glow?nologo=1"
+      },
+      {
+        "de": "blinken",
+        "en": "flash",
+        "img": "https://image.pollinations.ai/prompt/flash?nologo=1"
+      },
+      {
+        "de": "blitzen",
+        "en": "lightning",
+        "img": "https://image.pollinations.ai/prompt/lightning?nologo=1"
+      },
+      {
+        "de": "donnern",
+        "en": "thunder",
+        "img": "https://image.pollinations.ai/prompt/thunder?nologo=1"
+      },
+      {
+        "de": "hageln",
+        "en": "hail",
+        "img": "https://image.pollinations.ai/prompt/hail?nologo=1"
+      },
+      {
+        "de": "stürmen",
+        "en": "storm",
+        "img": "https://image.pollinations.ai/prompt/storm?nologo=1"
+      },
+      {
+        "de": "wehen",
+        "en": "blow",
+        "img": "https://image.pollinations.ai/prompt/blow?nologo=1"
+      },
+      {
+        "de": "fließen",
+        "en": "flow",
+        "img": "https://image.pollinations.ai/prompt/flow?nologo=1"
+      },
+      {
+        "de": "strömen",
+        "en": "stream",
+        "img": "https://image.pollinations.ai/prompt/stream?nologo=1"
+      },
+      {
+        "de": "tropfen",
+        "en": "drop",
+        "img": "https://image.pollinations.ai/prompt/drop?nologo=1"
+      },
+      {
+        "de": "spritzen",
+        "en": "splash",
+        "img": "https://image.pollinations.ai/prompt/splash?nologo=1"
+      },
+      {
+        "de": "sinken",
+        "en": "sink",
+        "img": "https://image.pollinations.ai/prompt/sink?nologo=1"
+      },
+      {
+        "de": "schweben",
+        "en": "float",
+        "img": "https://image.pollinations.ai/prompt/float?nologo=1"
+      },
+      {
+        "de": "kreisen",
+        "en": "circle",
+        "img": "https://image.pollinations.ai/prompt/circle?nologo=1"
+      },
+      {
+        "de": "gleiten",
+        "en": "glide",
+        "img": "https://image.pollinations.ai/prompt/glide?nologo=1"
+      },
+      {
+        "de": "schleichen",
+        "en": "sneak",
+        "img": "https://image.pollinations.ai/prompt/sneak?nologo=1"
+      },
+      {
+        "de": "kriechen",
+        "en": "crawl",
+        "img": "https://image.pollinations.ai/prompt/crawl?nologo=1"
+      },
+      {
+        "de": "hüpfen",
+        "en": "hop",
+        "img": "https://image.pollinations.ai/prompt/hop?nologo=1"
+      },
+      {
+        "de": "schreiten",
+        "en": "stride",
+        "img": "https://image.pollinations.ai/prompt/stride?nologo=1"
+      },
+      {
+        "de": "spazieren",
+        "en": "stroll",
+        "img": "https://image.pollinations.ai/prompt/stroll?nologo=1"
+      },
+      {
+        "de": "marschieren",
+        "en": "march",
+        "img": "https://image.pollinations.ai/prompt/march?nologo=1"
+      },
+      {
+        "de": "lenken",
+        "en": "steer",
+        "img": "https://image.pollinations.ai/prompt/steer?nologo=1"
+      },
+      {
+        "de": "bremsen",
+        "en": "brake",
+        "img": "https://image.pollinations.ai/prompt/brake?nologo=1"
+      },
+      {
+        "de": "beschleunigen",
+        "en": "accelerate",
+        "img": "https://image.pollinations.ai/prompt/accelerate?nologo=1"
+      },
+      {
+        "de": "parken",
+        "en": "park",
+        "img": "https://image.pollinations.ai/prompt/park?nologo=1"
+      },
+      {
+        "de": "lehnen",
+        "en": "lean",
+        "img": "https://image.pollinations.ai/prompt/lean?nologo=1"
+      },
+      {
+        "de": "klemmen",
+        "en": "jam",
+        "img": "https://image.pollinations.ai/prompt/jam?nologo=1"
+      },
+      {
+        "de": "kleiden",
+        "en": "dress",
+        "img": "https://image.pollinations.ai/prompt/dress?nologo=1"
+      },
+      {
+        "de": "schminken",
+        "en": "makeup",
+        "img": "https://image.pollinations.ai/prompt/makeup?nologo=1"
+      },
+      {
+        "de": "frisieren",
+        "en": "style",
+        "img": "https://image.pollinations.ai/prompt/style?nologo=1"
+      },
+      {
+        "de": "abtrocknen",
+        "en": "dry",
+        "img": "https://image.pollinations.ai/prompt/dry?nologo=1"
+      },
+      {
+        "de": "eincremen",
+        "en": "lotion",
+        "img": "https://image.pollinations.ai/prompt/lotion?nologo=1"
+      },
+      {
+        "de": "parfümieren",
+        "en": "perfume",
+        "img": "https://image.pollinations.ai/prompt/perfume?nologo=1"
+      },
+      {
+        "de": "duften",
+        "en": "smell_good",
+        "img": "https://image.pollinations.ai/prompt/smell_good?nologo=1"
+      },
+      {
+        "de": "stinken",
+        "en": "stink",
+        "img": "https://image.pollinations.ai/prompt/stink?nologo=1"
+      },
+      {
+        "de": "tasten",
+        "en": "touch",
+        "img": "https://image.pollinations.ai/prompt/touch?nologo=1"
+      },
+      {
+        "de": "greifen",
+        "en": "grasp",
+        "img": "https://image.pollinations.ai/prompt/grasp?nologo=1"
+      },
+      {
+        "de": "fassen",
+        "en": "grab",
+        "img": "https://image.pollinations.ai/prompt/grab?nologo=1"
+      },
+      {
+        "de": "quetschen",
+        "en": "squeeze",
+        "img": "https://image.pollinations.ai/prompt/squeeze?nologo=1"
+      },
+      {
+        "de": "kneifen",
+        "en": "pinch",
+        "img": "https://image.pollinations.ai/prompt/pinch?nologo=1"
+      },
+      {
+        "de": "boxen",
+        "en": "box",
+        "img": "https://image.pollinations.ai/prompt/box?nologo=1"
+      },
+      {
+        "de": "stoßen",
+        "en": "push",
+        "img": "https://image.pollinations.ai/prompt/push?nologo=1"
+      },
+      {
+        "de": "zerren",
+        "en": "tug",
+        "img": "https://image.pollinations.ai/prompt/tug?nologo=1"
+      },
+      {
+        "de": "spalten",
+        "en": "split",
+        "img": "https://image.pollinations.ai/prompt/split?nologo=1"
+      },
+      {
+        "de": "knicken",
+        "en": "fold",
+        "img": "https://image.pollinations.ai/prompt/fold?nologo=1"
+      },
+      {
+        "de": "biegen",
+        "en": "bend",
+        "img": "https://image.pollinations.ai/prompt/bend?nologo=1"
+      },
+      {
+        "de": "wickeln",
+        "en": "wrap",
+        "img": "https://image.pollinations.ai/prompt/wrap?nologo=1"
+      },
+      {
+        "de": "knittern",
+        "en": "crease",
+        "img": "https://image.pollinations.ai/prompt/crease?nologo=1"
+      },
+      {
+        "de": "glätten",
+        "en": "smooth",
+        "img": "https://image.pollinations.ai/prompt/smooth?nologo=1"
+      },
+      {
+        "de": "lackieren",
+        "en": "varnish",
+        "img": "https://image.pollinations.ai/prompt/varnish?nologo=1"
+      },
+      {
+        "de": "polieren",
+        "en": "polish",
+        "img": "https://image.pollinations.ai/prompt/polish?nologo=1"
+      },
+      {
+        "de": "schaben",
+        "en": "scrape",
+        "img": "https://image.pollinations.ai/prompt/scrape?nologo=1"
+      },
+      {
+        "de": "feilen",
+        "en": "file",
+        "img": "https://image.pollinations.ai/prompt/file?nologo=1"
+      },
+      {
+        "de": "sägen",
+        "en": "saw",
+        "img": "https://image.pollinations.ai/prompt/saw?nologo=1"
+      },
+      {
+        "de": "bohren",
+        "en": "drill",
+        "img": "https://image.pollinations.ai/prompt/drill?nologo=1"
+      },
+      {
+        "de": "hämmern",
+        "en": "hammer",
+        "img": "https://image.pollinations.ai/prompt/hammer?nologo=1"
+      },
+      {
+        "de": "nageln",
+        "en": "nail",
+        "img": "https://image.pollinations.ai/prompt/nail?nologo=1"
+      },
+      {
+        "de": "schrauben",
+        "en": "screw",
+        "img": "https://image.pollinations.ai/prompt/screw?nologo=1"
+      },
+      {
+        "de": "knoten",
+        "en": "knot",
+        "img": "https://image.pollinations.ai/prompt/knot?nologo=1"
+      },
+      {
+        "de": "flechten",
+        "en": "braid",
+        "img": "https://image.pollinations.ai/prompt/braid?nologo=1"
+      },
+      {
+        "de": "weben",
+        "en": "weave",
+        "img": "https://image.pollinations.ai/prompt/weave?nologo=1"
+      },
+      {
+        "de": "stricken",
+        "en": "knit",
+        "img": "https://image.pollinations.ai/prompt/knit?nologo=1"
+      },
+      {
+        "de": "häkeln",
+        "en": "crochet",
+        "img": "https://image.pollinations.ai/prompt/crochet?nologo=1"
+      },
+      {
+        "de": "nähen",
+        "en": "sew",
+        "img": "https://image.pollinations.ai/prompt/sew?nologo=1"
+      },
+      {
+        "de": "stopfen",
+        "en": "darn",
+        "img": "https://image.pollinations.ai/prompt/darn?nologo=1"
+      },
+      {
+        "de": "flicken",
+        "en": "patch",
+        "img": "https://image.pollinations.ai/prompt/patch?nologo=1"
+      },
+      {
+        "de": "basteln",
+        "en": "craft",
+        "img": "https://image.pollinations.ai/prompt/craft?nologo=1"
+      },
+      {
+        "de": "entwerfen",
+        "en": "design",
+        "img": "https://image.pollinations.ai/prompt/design?nologo=1"
+      },
+      {
+        "de": "skizzieren",
+        "en": "sketch",
+        "img": "https://image.pollinations.ai/prompt/sketch?nologo=1"
+      },
+      {
+        "de": "färben",
+        "en": "dye",
+        "img": "https://image.pollinations.ai/prompt/dye?nologo=1"
+      },
+      {
+        "de": "bleichen",
+        "en": "bleach",
+        "img": "https://image.pollinations.ai/prompt/bleach?nologo=1"
+      },
+      {
+        "de": "scannen",
+        "en": "scan",
+        "img": "https://image.pollinations.ai/prompt/scan?nologo=1"
+      },
+      {
+        "de": "aufnehmen",
+        "en": "record",
+        "img": "https://image.pollinations.ai/prompt/record?nologo=1"
+      },
+      {
+        "de": "abspielen",
+        "en": "play_back",
+        "img": "https://image.pollinations.ai/prompt/play_back?nologo=1"
+      },
+      {
+        "de": "senden",
+        "en": "broadcast",
+        "img": "https://image.pollinations.ai/prompt/broadcast?nologo=1"
+      },
+      {
+        "de": "speichern",
+        "en": "save",
+        "img": "https://image.pollinations.ai/prompt/save?nologo=1"
+      },
+      {
+        "de": "formatieren",
+        "en": "format",
+        "img": "https://image.pollinations.ai/prompt/format?nologo=1"
+      },
+      {
+        "de": "programmieren",
+        "en": "program",
+        "img": "https://image.pollinations.ai/prompt/program?nologo=1"
+      },
+      {
+        "de": "installieren",
+        "en": "install",
+        "img": "https://image.pollinations.ai/prompt/install?nologo=1"
+      },
+      {
+        "de": "abstürzen",
+        "en": "crash",
+        "img": "https://image.pollinations.ai/prompt/crash?nologo=1"
+      },
+      {
+        "de": "kaputtgehen",
+        "en": "break",
+        "img": "https://image.pollinations.ai/prompt/break?nologo=1"
+      },
+      {
+        "de": "reinigen",
+        "en": "clean",
+        "img": "https://image.pollinations.ai/prompt/clean?nologo=1"
+      },
+      {
+        "de": "bewachen",
+        "en": "guard",
+        "img": "https://image.pollinations.ai/prompt/guard?nologo=1"
+      },
+      {
+        "de": "ergeben",
+        "en": "surrender",
+        "img": "https://image.pollinations.ai/prompt/surrender?nologo=1"
+      },
+      {
+        "de": "überlegen",
+        "en": "consider",
+        "img": "https://image.pollinations.ai/prompt/consider?nologo=1"
+      },
+      {
+        "de": "grübeln",
+        "en": "ponder",
+        "img": "https://image.pollinations.ai/prompt/ponder?nologo=1"
+      },
+      {
+        "de": "beten",
+        "en": "pray",
+        "img": "https://image.pollinations.ai/prompt/pray?nologo=1"
+      },
+      {
+        "de": "wünschen",
+        "en": "wish",
+        "img": "https://image.pollinations.ai/prompt/wish?nologo=1"
+      },
+      {
+        "de": "schnarchen",
+        "en": "snore",
+        "img": "https://image.pollinations.ai/prompt/snore?nologo=1"
+      },
+      {
+        "de": "würgen",
+        "en": "choke",
+        "img": "https://image.pollinations.ai/prompt/choke?nologo=1"
+      },
+      {
+        "de": "erbrechen",
+        "en": "vomit",
+        "img": "https://image.pollinations.ai/prompt/vomit?nologo=1"
+      },
+      {
+        "de": "spucken",
+        "en": "spit",
+        "img": "https://image.pollinations.ai/prompt/spit?nologo=1"
+      },
+      {
+        "de": "sabbern",
+        "en": "drool",
+        "img": "https://image.pollinations.ai/prompt/drool?nologo=1"
+      },
+      {
+        "de": "zittern",
+        "en": "tremble",
+        "img": "https://image.pollinations.ai/prompt/tremble?nologo=1"
+      },
+      {
+        "de": "beben",
+        "en": "quake",
+        "img": "https://image.pollinations.ai/prompt/quake?nologo=1"
+      },
+      {
+        "de": "schütteln",
+        "en": "shake",
+        "img": "https://image.pollinations.ai/prompt/shake?nologo=1"
+      },
+      {
+        "de": "nicken",
+        "en": "nod",
+        "img": "https://image.pollinations.ai/prompt/nod?nologo=1"
+      },
+      {
+        "de": "Kopfschütteln",
+        "en": "shake_head",
+        "img": "https://image.pollinations.ai/prompt/shake_head?nologo=1"
+      },
+      {
+        "de": "winken",
+        "en": "wave",
+        "img": "https://image.pollinations.ai/prompt/wave?nologo=1"
+      },
+      {
+        "de": "deuten",
+        "en": "indicate",
+        "img": "https://image.pollinations.ai/prompt/indicate?nologo=1"
+      },
+      {
+        "de": "berühren",
+        "en": "touch",
+        "img": "https://image.pollinations.ai/prompt/touch?nologo=1"
+      },
+      {
+        "de": "streicheln",
+        "en": "stroke",
+        "img": "https://image.pollinations.ai/prompt/stroke?nologo=1"
+      },
+      {
+        "de": "küssen",
+        "en": "kiss",
+        "img": "https://image.pollinations.ai/prompt/kiss?nologo=1"
+      },
+      {
+        "de": "umarmen",
+        "en": "hug",
+        "img": "https://image.pollinations.ai/prompt/hug?nologo=1"
+      },
+      {
+        "de": "verehren",
+        "en": "worship",
+        "img": "https://image.pollinations.ai/prompt/worship?nologo=1"
+      },
+      {
+        "de": "verabscheuen",
+        "en": "detest",
+        "img": "https://image.pollinations.ai/prompt/detest?nologo=1"
+      },
+      {
+        "de": "aufregen",
+        "en": "excite",
+        "img": "https://image.pollinations.ai/prompt/excite?nologo=1"
+      },
+      {
+        "de": "entspannen",
+        "en": "relax",
+        "img": "https://image.pollinations.ai/prompt/relax?nologo=1"
+      },
+      {
+        "de": "langweilen",
+        "en": "bore",
+        "img": "https://image.pollinations.ai/prompt/bore?nologo=1"
+      },
+      {
+        "de": "interessieren",
+        "en": "interest",
+        "img": "https://image.pollinations.ai/prompt/interest?nologo=1"
+      },
+      {
+        "de": "faszinieren",
+        "en": "fascinate",
+        "img": "https://image.pollinations.ai/prompt/fascinate?nologo=1"
+      },
+      {
+        "de": "überraschen",
+        "en": "surprise",
+        "img": "https://image.pollinations.ai/prompt/surprise?nologo=1"
+      },
+      {
+        "de": "panik",
+        "en": "panic",
+        "img": "https://image.pollinations.ai/prompt/panic?nologo=1"
+      },
+      {
+        "de": "schluchzen",
+        "en": "sob",
+        "img": "https://image.pollinations.ai/prompt/sob?nologo=1"
+      },
+      {
+        "de": "jammern",
+        "en": "whine",
+        "img": "https://image.pollinations.ai/prompt/whine?nologo=1"
+      },
+      {
+        "de": "klagen",
+        "en": "complain",
+        "img": "https://image.pollinations.ai/prompt/complain?nologo=1"
+      },
+      {
+        "de": "brüllen",
+        "en": "roar",
+        "img": "https://image.pollinations.ai/prompt/roar?nologo=1"
+      },
+      {
+        "de": "flüstern",
+        "en": "whisper",
+        "img": "https://image.pollinations.ai/prompt/whisper?nologo=1"
+      },
+      {
+        "de": "murmeln",
+        "en": "mumble",
+        "img": "https://image.pollinations.ai/prompt/mumble?nologo=1"
+      },
+      {
+        "de": "stottern",
+        "en": "stutter",
+        "img": "https://image.pollinations.ai/prompt/stutter?nologo=1"
+      },
+      {
+        "de": "lispeln",
+        "en": "lisp",
+        "img": "https://image.pollinations.ai/prompt/lisp?nologo=1"
+      },
+      {
+        "de": "summen",
+        "en": "hum",
+        "img": "https://image.pollinations.ai/prompt/hum?nologo=1"
+      },
+      {
+        "de": "pfeifen",
+        "en": "whistle",
+        "img": "https://image.pollinations.ai/prompt/whistle?nologo=1"
+      },
+      {
+        "de": "kichern",
+        "en": "giggle",
+        "img": "https://image.pollinations.ai/prompt/giggle?nologo=1"
+      },
+      {
+        "de": "grinsen",
+        "en": "grin",
+        "img": "https://image.pollinations.ai/prompt/grin?nologo=1"
+      },
+      {
+        "de": "schmunzeln",
+        "en": "smirk",
+        "img": "https://image.pollinations.ai/prompt/smirk?nologo=1"
+      },
+      {
+        "de": "ernst",
+        "en": "serious",
+        "img": "https://image.pollinations.ai/prompt/serious?nologo=1"
+      },
+      {
+        "de": "fröhlich",
+        "en": "cheerful",
+        "img": "https://image.pollinations.ai/prompt/cheerful?nologo=1"
+      },
+      {
+        "de": "zufrieden",
+        "en": "satisfied",
+        "img": "https://image.pollinations.ai/prompt/satisfied?nologo=1"
+      },
+      {
+        "de": "stolz",
+        "en": "proud",
+        "img": "https://image.pollinations.ai/prompt/proud?nologo=1"
+      },
+      {
+        "de": "schuldig",
+        "en": "guilty",
+        "img": "https://image.pollinations.ai/prompt/guilty?nologo=1"
+      },
+      {
+        "de": "unschuldig",
+        "en": "innocent",
+        "img": "https://image.pollinations.ai/prompt/innocent?nologo=1"
+      },
+      {
+        "de": "böse",
+        "en": "angry",
+        "img": "https://image.pollinations.ai/prompt/angry?nologo=1"
+      },
+      {
+        "de": "wütend",
+        "en": "furious",
+        "img": "https://image.pollinations.ai/prompt/furious?nologo=1"
+      },
+      {
+        "de": "beleidigt",
+        "en": "offended",
+        "img": "https://image.pollinations.ai/prompt/offended?nologo=1"
+      },
+      {
+        "de": "neidisch",
+        "en": "envious",
+        "img": "https://image.pollinations.ai/prompt/envious?nologo=1"
+      },
+      {
+        "de": "eifersüchtig",
+        "en": "jealous",
+        "img": "https://image.pollinations.ai/prompt/jealous?nologo=1"
+      },
+      {
+        "de": "gierig",
+        "en": "greedy",
+        "img": "https://image.pollinations.ai/prompt/greedy?nologo=1"
+      },
+      {
+        "de": "geizig",
+        "en": "stingy",
+        "img": "https://image.pollinations.ai/prompt/stingy?nologo=1"
+      },
+      {
+        "de": "großzügig",
+        "en": "generous",
+        "img": "https://image.pollinations.ai/prompt/generous?nologo=1"
+      },
+      {
+        "de": "hilfsbereit",
+        "en": "helpful",
+        "img": "https://image.pollinations.ai/prompt/helpful?nologo=1"
+      },
+      {
+        "de": "freundlich",
+        "en": "friendly",
+        "img": "https://image.pollinations.ai/prompt/friendly?nologo=1"
+      },
+      {
+        "de": "höflich",
+        "en": "polite",
+        "img": "https://image.pollinations.ai/prompt/polite?nologo=1"
+      },
+      {
+        "de": "unhöflich",
+        "en": "impolite",
+        "img": "https://image.pollinations.ai/prompt/impolite?nologo=1"
+      },
+      {
+        "de": "frech",
+        "en": "cheeky",
+        "img": "https://image.pollinations.ai/prompt/cheeky?nologo=1"
+      },
+      {
+        "de": "artig",
+        "en": "well_behaved",
+        "img": "https://image.pollinations.ai/prompt/well_behaved?nologo=1"
+      },
+      {
+        "de": "gelogen",
+        "en": "lied",
+        "img": "https://image.pollinations.ai/prompt/lied?nologo=1"
+      },
+      {
+        "de": "echt",
+        "en": "real",
+        "img": "https://image.pollinations.ai/prompt/real?nologo=1"
+      },
+      {
+        "de": "künstlich",
+        "en": "artificial",
+        "img": "https://image.pollinations.ai/prompt/artificial?nologo=1"
+      },
+      {
+        "de": "natürlich",
+        "en": "natural",
+        "img": "https://image.pollinations.ai/prompt/natural?nologo=1"
+      },
+      {
+        "de": "hübsch",
+        "en": "pretty",
+        "img": "https://image.pollinations.ai/prompt/pretty?nologo=1"
+      },
+      {
+        "de": "attraktiv",
+        "en": "attractive",
+        "img": "https://image.pollinations.ai/prompt/attractive?nologo=1"
+      },
+      {
+        "de": "sexy",
+        "en": "sexy",
+        "img": "https://image.pollinations.ai/prompt/sexy?nologo=1"
+      },
+      {
+        "de": "niedlich",
+        "en": "adorable",
+        "img": "https://image.pollinations.ai/prompt/adorable?nologo=1"
+      },
+      {
+        "de": "riesig",
+        "en": "huge",
+        "img": "https://image.pollinations.ai/prompt/huge?nologo=1"
+      },
+      {
+        "de": "winzig",
+        "en": "tiny",
+        "img": "https://image.pollinations.ai/prompt/tiny?nologo=1"
+      },
+      {
+        "de": "mager",
+        "en": "skinny",
+        "img": "https://image.pollinations.ai/prompt/skinny?nologo=1"
+      },
+      {
+        "de": "schlank",
+        "en": "slim",
+        "img": "https://image.pollinations.ai/prompt/slim?nologo=1"
+      },
+      {
+        "de": "kräftig",
+        "en": "powerful",
+        "img": "https://image.pollinations.ai/prompt/powerful?nologo=1"
+      },
+      {
+        "de": "zart",
+        "en": "delicate",
+        "img": "https://image.pollinations.ai/prompt/delicate?nologo=1"
+      },
+      {
+        "de": "fest",
+        "en": "firm",
+        "img": "https://image.pollinations.ai/prompt/firm?nologo=1"
+      },
+      {
+        "de": "locker",
+        "en": "loose",
+        "img": "https://image.pollinations.ai/prompt/loose?nologo=1"
+      },
+      {
+        "de": "flüssig",
+        "en": "liquid",
+        "img": "https://image.pollinations.ai/prompt/liquid?nologo=1"
+      },
+      {
+        "de": "gasförmig",
+        "en": "gaseous",
+        "img": "https://image.pollinations.ai/prompt/gaseous?nologo=1"
+      },
+      {
+        "de": "kühl",
+        "en": "cool",
+        "img": "https://image.pollinations.ai/prompt/cool?nologo=1"
+      },
+      {
+        "de": "lauwarm",
+        "en": "lukewarm",
+        "img": "https://image.pollinations.ai/prompt/lukewarm?nologo=1"
+      },
+      {
+        "de": "feucht",
+        "en": "damp",
+        "img": "https://image.pollinations.ai/prompt/damp?nologo=1"
+      },
+      {
+        "de": "rein",
+        "en": "pure",
+        "img": "https://image.pollinations.ai/prompt/pure?nologo=1"
+      },
+      {
+        "de": "dreckig",
+        "en": "filthy",
+        "img": "https://image.pollinations.ai/prompt/filthy?nologo=1"
+      },
+      {
+        "de": "staubig",
+        "en": "dusty",
+        "img": "https://image.pollinations.ai/prompt/dusty?nologo=1"
+      },
+      {
+        "de": "fleckig",
+        "en": "spotted",
+        "img": "https://image.pollinations.ai/prompt/spotted?nologo=1"
+      },
+      {
+        "de": "finster",
+        "en": "gloomy",
+        "img": "https://image.pollinations.ai/prompt/gloomy?nologo=1"
+      },
+      {
+        "de": "bunt",
+        "en": "colorful",
+        "img": "https://image.pollinations.ai/prompt/colorful?nologo=1"
+      },
+      {
+        "de": "farbig",
+        "en": "colored",
+        "img": "https://image.pollinations.ai/prompt/colored?nologo=1"
+      },
+      {
+        "de": "schwarzweiß",
+        "en": "black_and_white",
+        "img": "https://image.pollinations.ai/prompt/black_and_white?nologo=1"
+      },
+      {
+        "de": "lila",
+        "en": "purple",
+        "img": "https://image.pollinations.ai/prompt/purple?nologo=1"
+      },
+      {
+        "de": "violett",
+        "en": "violet",
+        "img": "https://image.pollinations.ai/prompt/violet?nologo=1"
+      },
+      {
+        "de": "türkis",
+        "en": "turquoise",
+        "img": "https://image.pollinations.ai/prompt/turquoise?nologo=1"
+      },
+      {
+        "de": "golden",
+        "en": "golden",
+        "img": "https://image.pollinations.ai/prompt/golden?nologo=1"
+      },
+      {
+        "de": "silbern",
+        "en": "silver",
+        "img": "https://image.pollinations.ai/prompt/silver?nologo=1"
+      },
+      {
+        "de": "stumm",
+        "en": "mute",
+        "img": "https://image.pollinations.ai/prompt/mute?nologo=1"
+      },
+      {
+        "de": "taub",
+        "en": "deaf",
+        "img": "https://image.pollinations.ai/prompt/deaf?nologo=1"
+      },
+      {
+        "de": "blind",
+        "en": "blind",
+        "img": "https://image.pollinations.ai/prompt/blind?nologo=1"
+      },
+      {
+        "de": "sichtbar",
+        "en": "visible",
+        "img": "https://image.pollinations.ai/prompt/visible?nologo=1"
+      },
+      {
+        "de": "unsichtbar",
+        "en": "invisible",
+        "img": "https://image.pollinations.ai/prompt/invisible?nologo=1"
+      },
+      {
+        "de": "hörbar",
+        "en": "audible",
+        "img": "https://image.pollinations.ai/prompt/audible?nologo=1"
+      },
+      {
+        "de": "unhörbar",
+        "en": "inaudible",
+        "img": "https://image.pollinations.ai/prompt/inaudible?nologo=1"
+      },
+      {
+        "de": "riechend",
+        "en": "smelling",
+        "img": "https://image.pollinations.ai/prompt/smelling?nologo=1"
+      },
+      {
+        "de": "stinkend",
+        "en": "stinking",
+        "img": "https://image.pollinations.ai/prompt/stinking?nologo=1"
+      },
+      {
+        "de": "duftend",
+        "en": "fragrant",
+        "img": "https://image.pollinations.ai/prompt/fragrant?nologo=1"
+      },
+      {
+        "de": "schmeckend",
+        "en": "tasting",
+        "img": "https://image.pollinations.ai/prompt/tasting?nologo=1"
+      },
+      {
+        "de": "lecker",
+        "en": "delicious",
+        "img": "https://image.pollinations.ai/prompt/delicious?nologo=1"
+      },
+      {
+        "de": "köstlich",
+        "en": "tasty",
+        "img": "https://image.pollinations.ai/prompt/tasty?nologo=1"
+      },
+      {
+        "de": "eklig",
+        "en": "disgusting",
+        "img": "https://image.pollinations.ai/prompt/disgusting?nologo=1"
+      },
+      {
+        "de": "mild",
+        "en": "mild",
+        "img": "https://image.pollinations.ai/prompt/mild?nologo=1"
+      },
+      {
+        "de": "frisch",
+        "en": "fresh",
+        "img": "https://image.pollinations.ai/prompt/fresh?nologo=1"
+      },
+      {
+        "de": "modern",
+        "en": "modern",
+        "img": "https://image.pollinations.ai/prompt/modern?nologo=1"
+      },
+      {
+        "de": "antik",
+        "en": "antique",
+        "img": "https://image.pollinations.ai/prompt/antique?nologo=1"
+      },
+      {
+        "de": "klassisch",
+        "en": "classic",
+        "img": "https://image.pollinations.ai/prompt/classic?nologo=1"
+      },
+      {
+        "de": "rasch",
+        "en": "quick",
+        "img": "https://image.pollinations.ai/prompt/quick?nologo=1"
+      },
+      {
+        "de": "träge",
+        "en": "sluggish",
+        "img": "https://image.pollinations.ai/prompt/sluggish?nologo=1"
+      },
+      {
+        "de": "eilig",
+        "en": "hurried",
+        "img": "https://image.pollinations.ai/prompt/hurried?nologo=1"
+      },
+      {
+        "de": "pünktlich",
+        "en": "punctual",
+        "img": "https://image.pollinations.ai/prompt/punctual?nologo=1"
+      },
+      {
+        "de": "verspätet",
+        "en": "delayed",
+        "img": "https://image.pollinations.ai/prompt/delayed?nologo=1"
+      },
+      {
+        "de": "häufig",
+        "en": "frequent",
+        "img": "https://image.pollinations.ai/prompt/frequent?nologo=1"
+      },
+      {
+        "de": "ewig",
+        "en": "eternal",
+        "img": "https://image.pollinations.ai/prompt/eternal?nologo=1"
+      },
+      {
+        "de": "kurzzeitig",
+        "en": "short_term",
+        "img": "https://image.pollinations.ai/prompt/short_term?nologo=1"
+      },
+      {
+        "de": "langfristig",
+        "en": "long_term",
+        "img": "https://image.pollinations.ai/prompt/long_term?nologo=1"
+      },
+      {
+        "de": "täglich",
+        "en": "daily",
+        "img": "https://image.pollinations.ai/prompt/daily?nologo=1"
+      },
+      {
+        "de": "wöchentlich",
+        "en": "weekly",
+        "img": "https://image.pollinations.ai/prompt/weekly?nologo=1"
+      },
+      {
+        "de": "monatlich",
+        "en": "monthly",
+        "img": "https://image.pollinations.ai/prompt/monthly?nologo=1"
+      },
+      {
+        "de": "jährlich",
+        "en": "yearly",
+        "img": "https://image.pollinations.ai/prompt/yearly?nologo=1"
+      },
+      {
+        "de": "vorgestern",
+        "en": "day_before_yesterday",
+        "img": "https://image.pollinations.ai/prompt/day_before_yesterday?nologo=1"
+      },
+      {
+        "de": "übermorgen",
+        "en": "day_after_tomorrow",
+        "img": "https://image.pollinations.ai/prompt/day_after_tomorrow?nologo=1"
+      },
+      {
+        "de": "vormittags",
+        "en": "mornings",
+        "img": "https://image.pollinations.ai/prompt/mornings?nologo=1"
+      },
+      {
+        "de": "nachmittags",
+        "en": "afternoons",
+        "img": "https://image.pollinations.ai/prompt/afternoons?nologo=1"
+      },
+      {
+        "de": "abends",
+        "en": "evenings",
+        "img": "https://image.pollinations.ai/prompt/evenings?nologo=1"
+      },
+      {
+        "de": "nachts",
+        "en": "nights",
+        "img": "https://image.pollinations.ai/prompt/nights?nologo=1"
+      },
+      {
+        "de": "sofort",
+        "en": "immediately",
+        "img": "https://image.pollinations.ai/prompt/immediately?nologo=1"
+      },
+      {
+        "de": "früher",
+        "en": "earlier",
+        "img": "https://image.pollinations.ai/prompt/earlier?nologo=1"
+      },
+      {
+        "de": "nachher",
+        "en": "afterwards",
+        "img": "https://image.pollinations.ai/prompt/afterwards?nologo=1"
+      },
+      {
+        "de": "drüben",
+        "en": "across",
+        "img": "https://image.pollinations.ai/prompt/across?nologo=1"
+      },
+      {
+        "de": "geradeaus",
+        "en": "straight_ahead",
+        "img": "https://image.pollinations.ai/prompt/straight_ahead?nologo=1"
+      },
+      {
+        "de": "rundherum",
+        "en": "all_around",
+        "img": "https://image.pollinations.ai/prompt/all_around?nologo=1"
+      },
+      {
+        "de": "irgendwo",
+        "en": "somewhere",
+        "img": "https://image.pollinations.ai/prompt/somewhere?nologo=1"
+      },
+      {
+        "de": "wer",
+        "en": "who",
+        "img": "https://image.pollinations.ai/prompt/who?nologo=1"
+      },
+      {
+        "de": "welcher",
+        "en": "which",
+        "img": "https://image.pollinations.ai/prompt/which?nologo=1"
+      },
+      {
+        "de": "weshalb",
+        "en": "for_what_reason",
+        "img": "https://image.pollinations.ai/prompt/for_what_reason?nologo=1"
+      },
+      {
+        "de": "wieso",
+        "en": "how_come",
+        "img": "https://image.pollinations.ai/prompt/how_come?nologo=1"
+      },
+      {
+        "de": "daher",
+        "en": "therefore",
+        "img": "https://image.pollinations.ai/prompt/therefore?nologo=1"
+      },
+      {
+        "de": "deshalb",
+        "en": "that_is_why",
+        "img": "https://image.pollinations.ai/prompt/that_is_why?nologo=1"
+      },
+      {
+        "de": "trotzdem",
+        "en": "nevertheless",
+        "img": "https://image.pollinations.ai/prompt/nevertheless?nologo=1"
+      },
+      {
+        "de": "obwohl",
+        "en": "although",
+        "img": "https://image.pollinations.ai/prompt/although?nologo=1"
+      },
+      {
+        "de": "falls",
+        "en": "in_case",
+        "img": "https://image.pollinations.ai/prompt/in_case?nologo=1"
+      },
+      {
+        "de": "sondern",
+        "en": "rather",
+        "img": "https://image.pollinations.ai/prompt/rather?nologo=1"
+      },
+      {
+        "de": "wenig",
+        "en": "little",
+        "img": "https://image.pollinations.ai/prompt/little?nologo=1"
+      },
+      {
+        "de": "weniger",
+        "en": "less",
+        "img": "https://image.pollinations.ai/prompt/less?nologo=1"
+      },
+      {
+        "de": "meiste",
+        "en": "most",
+        "img": "https://image.pollinations.ai/prompt/most?nologo=1"
+      },
+      {
+        "de": "wenigste",
+        "en": "least",
+        "img": "https://image.pollinations.ai/prompt/least?nologo=1"
+      },
+      {
+        "de": "völlig",
+        "en": "completely",
+        "img": "https://image.pollinations.ai/prompt/completely?nologo=1"
+      },
+      {
+        "de": "total",
+        "en": "totally",
+        "img": "https://image.pollinations.ai/prompt/totally?nologo=1"
+      },
+      {
+        "de": "absolut",
+        "en": "absolutely",
+        "img": "https://image.pollinations.ai/prompt/absolutely?nologo=1"
+      },
+      {
+        "de": "ziemlich",
+        "en": "fairly",
+        "img": "https://image.pollinations.ai/prompt/fairly?nologo=1"
+      },
+      {
+        "de": "etwas",
+        "en": "some",
+        "img": "https://image.pollinations.ai/prompt/some?nologo=1"
+      },
+      {
+        "de": "bisschen",
+        "en": "bitter",
+        "img": "https://image.pollinations.ai/prompt/bitter?nologo=1"
+      },
+      {
+        "de": "kaum",
+        "en": "hardly",
+        "img": "https://image.pollinations.ai/prompt/hardly?nologo=1"
+      },
+      {
+        "de": "fast",
+        "en": "almost",
+        "img": "https://image.pollinations.ai/prompt/almost?nologo=1"
+      },
+      {
+        "de": "beinahe",
+        "en": "nearly",
+        "img": "https://image.pollinations.ai/prompt/nearly?nologo=1"
+      },
+      {
+        "de": "bloß",
+        "en": "merely",
+        "img": "https://image.pollinations.ai/prompt/merely?nologo=1"
+      },
+      {
+        "de": "sogar",
+        "en": "even",
+        "img": "https://image.pollinations.ai/prompt/even?nologo=1"
+      },
+      {
+        "de": "erst",
+        "en": "only_just",
+        "img": "https://image.pollinations.ai/prompt/only_just?nologo=1"
+      },
+      {
+        "de": "nichts",
+        "en": "nothing",
+        "img": "https://image.pollinations.ai/prompt/nothing?nologo=1"
+      },
+      {
+        "de": "niemand",
+        "en": "nobody",
+        "img": "https://image.pollinations.ai/prompt/nobody?nologo=1"
+      },
+      {
+        "de": "alles",
+        "en": "everything",
+        "img": "https://image.pollinations.ai/prompt/everything?nologo=1"
+      },
+      {
+        "de": "jemand",
+        "en": "somebody",
+        "img": "https://image.pollinations.ai/prompt/somebody?nologo=1"
+      },
+      {
+        "de": "manche",
+        "en": "some",
+        "img": "https://image.pollinations.ai/prompt/some?nologo=1"
+      },
+      {
+        "de": "einige",
+        "en": "several",
+        "img": "https://image.pollinations.ai/prompt/several?nologo=1"
+      },
+      {
+        "de": "mehrere",
+        "en": "multiple",
+        "img": "https://image.pollinations.ai/prompt/multiple?nologo=1"
+      },
+      {
+        "de": "dreißig",
+        "en": "thirty",
+        "img": "https://image.pollinations.ai/prompt/thirty?nologo=1"
+      },
+      {
+        "de": "vierzig",
+        "en": "forty",
+        "img": "https://image.pollinations.ai/prompt/forty?nologo=1"
+      },
+      {
+        "de": "fünfzig",
+        "en": "fifty",
+        "img": "https://image.pollinations.ai/prompt/fifty?nologo=1"
+      },
+      {
+        "de": "sechzig",
+        "en": "sixty",
+        "img": "https://image.pollinations.ai/prompt/sixty?nologo=1"
+      },
+      {
+        "de": "siebzig",
+        "en": "seventy",
+        "img": "https://image.pollinations.ai/prompt/seventy?nologo=1"
+      },
+      {
+        "de": "achtzig",
+        "en": "eighty",
+        "img": "https://image.pollinations.ai/prompt/eighty?nologo=1"
+      },
+      {
+        "de": "neunzig",
+        "en": "ninety",
+        "img": "https://image.pollinations.ai/prompt/ninety?nologo=1"
+      },
+      {
+        "de": "vierte",
+        "en": "fourth",
+        "img": "https://image.pollinations.ai/prompt/fourth?nologo=1"
+      },
+      {
+        "de": "fünfte",
+        "en": "fifth",
+        "img": "https://image.pollinations.ai/prompt/fifth?nologo=1"
+      },
+      {
+        "de": "nächste",
+        "en": "next",
+        "img": "https://image.pollinations.ai/prompt/next?nologo=1"
+      },
+      {
+        "de": "vorherige",
+        "en": "previous",
+        "img": "https://image.pollinations.ai/prompt/previous?nologo=1"
+      },
+      {
+        "de": "dreimal",
+        "en": "three_times",
+        "img": "https://image.pollinations.ai/prompt/three_times?nologo=1"
+      },
+      {
+        "de": "zweifach",
+        "en": "double",
+        "img": "https://image.pollinations.ai/prompt/double?nologo=1"
+      },
+      {
+        "de": "dreifach",
+        "en": "triple",
+        "img": "https://image.pollinations.ai/prompt/triple?nologo=1"
+      }
+    ]
+  }
+}
