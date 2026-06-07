@@ -1,0 +1,1299 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="theme-color" content="#ff6b9d">
+    <meta name="description" content="Deutsch Flashcards - Learn German vocabulary">
+    <title>Deutsch Flashcards 🇩🇪</title>
+
+    <link rel="manifest" href="data:application/manifest+json,{%22name%22:%22Deutsch%20Flashcards%22,%22short_name%22:%22Deutsch%22,%22start_url%22:%22/%22,%22display%22:%22fullscreen%22,%22background_color%22:%22%23ffffff%22,%22theme_color%22:%22%23ff6b9d%22,%22icons%22:[{%22src%22:%22data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 192 192%27><rect fill=%27%23ff6b9d%27 width=%27192%27 height=%27192%27/><text x=%2796%27 y=%27140%27 font-size=%27120%27 text-anchor=%27middle%27>📚</text></svg>%22,%22sizes%22:%22192x192%22,%22type%22:%22image/svg+xml%22},{%22src%22:%22data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 512 512%27><rect fill=%27%23ff6b9d%27 width=%27512%27 height=%27512%27/><text x=%27256%27 y=%27390%27 font-size=%27320%27 text-anchor=%27middle%27>📚</text></svg>%22,%22sizes%22:%22512x512%22,%22type%22:%22image/svg+xml%22}]}">
+
+    <link href="https://cdn.tailwindcss.com" rel="stylesheet">
+
+    <style>
+        * { -webkit-tap-highlight-color: transparent; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+
+        /* Article color coding */
+        .article-der { @apply text-blue-600 font-bold; }
+        .article-die { @apply text-red-600 font-bold; }
+        .article-das { @apply text-green-600 font-bold; }
+
+        /* 3D Card flip animation */
+        .card-container {
+            perspective: 1000px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+            display: flex;
+        }
+        .card-container.flipped .card-inner {
+            transform: rotateY(180deg);
+        }
+        .card-front, .card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            backface-visibility: hidden;
+            -webkit-backface-visibility: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .card-back {
+            transform: rotateY(180deg);
+        }
+
+        /* Celebratory confetti */
+        @keyframes confetti-fall {
+            0% { transform: translateY(-100vh) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
+        }
+        .confetti {
+            position: fixed;
+            pointer-events: none;
+            font-size: 2rem;
+            animation: confetti-fall 2.5s ease-in forwards;
+        }
+
+        /* Star burst animation */
+        @keyframes star-burst {
+            0% { transform: scale(0); opacity: 1; }
+            100% { transform: scale(1); opacity: 0; }
+        }
+        .star-burst {
+            position: absolute;
+            animation: star-burst 0.6s ease-out forwards;
+            font-size: 3rem;
+            pointer-events: none;
+        }
+
+        /* Smooth transitions */
+        .transition-all { transition: all 0.3s ease; }
+
+        /* Safe area for notch devices */
+        @supports (padding: max(0px)) {
+            body { padding-top: max(12px, env(safe-area-inset-top)); padding-bottom: max(12px, env(safe-area-inset-bottom)); }
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-purple-100 via-pink-50 to-blue-100 min-h-screen">
+    <div id="app"></div>
+
+    <script>
+        // ============ DATA STRUCTURE ============
+        // Core vocabulary (50 categories × 10-15 words each)
+        let VOCABULARY_DB = {
+            animals: {
+                emoji: "🐾",
+                name: "Tiere (Animals)",
+                color: "from-amber-400 to-orange-500",
+                words: [
+                    { en: "dog", de: "Hund", article: "der", emoji: "🐕", en_sent: "A dog is a friendly pet.", hi_sent: "कुत्ता एक प्रिय पालतू जानवर है।", de_sent: "Ein Hund ist ein treuer Freund." },
+                    { en: "cat", de: "Katze", article: "die", emoji: "🐱", en_sent: "A cat likes to play and sleep.", hi_sent: "बिल्ली खेलना और सोना पसंद करती है।", de_sent: "Eine Katze spielt und schläft gerne." },
+                    { en: "mouse", de: "Maus", article: "die", emoji: "🐭", en_sent: "A mouse is small and quick.", hi_sent: "चूहा छोटा और तेज़ है।", de_sent: "Eine Maus ist klein und schnell." },
+                    { en: "bird", de: "Vogel", article: "der", emoji: "🕊️", en_sent: "A bird can fly in the sky.", hi_sent: "पक्षी आसमान में उड़ सकता है।", de_sent: "Ein Vogel kann am Himmel fliegen." },
+                    { en: "fish", de: "Fisch", article: "der", emoji: "🐟", en_sent: "A fish swims in water.", hi_sent: "मछली पानी में तैरती है।", de_sent: "Ein Fisch schwimmt im Wasser." },
+                    { en: "elephant", de: "Elefant", article: "der", emoji: "🐘", en_sent: "An elephant is very big and strong.", hi_sent: "हाथी बहुत बड़ा और मजबूत है।", de_sent: "Ein Elefant ist sehr groß und stark." },
+                    { en: "bear", de: "Bär", article: "der", emoji: "🐻", en_sent: "A bear lives in the forest.", hi_sent: "भालू जंगल में रहता है।", de_sent: "Ein Bär lebt im Wald." },
+                    { en: "monkey", de: "Affe", article: "der", emoji: "🐵", en_sent: "A monkey jumps and plays.", hi_sent: "बंदर कूदता और खेलता है।", de_sent: "Ein Affe springt und spielt." },
+                    { en: "lion", de: "Löwe", article: "der", emoji: "🦁", en_sent: "A lion is king of the jungle.", hi_sent: "शेर जंगल का राजा है।", de_sent: "Ein Löwe ist König des Dschungels." },
+                    { en: "tiger", de: "Tiger", article: "der", emoji: "🐯", en_sent: "A tiger has orange and black stripes.", hi_sent: "बाघ के नारंगी और काली धारियां हैं।", de_sent: "Ein Tiger hat orange und schwarze Streifen." }
+                ]
+            },
+            food: {
+                emoji: "🍎",
+                name: "Essen & Trinken (Food & Drink)",
+                color: "from-red-400 to-pink-500",
+                words: [
+                    { en: "apple", de: "Apfel", article: "der", emoji: "🍎", en_sent: "An apple is a healthy fruit.", hi_sent: "सेब एक स्वस्थ फल है।", de_sent: "Ein Apfel ist eine gesunde Frucht." },
+                    { en: "banana", de: "Banane", article: "die", emoji: "🍌", en_sent: "A banana is yellow and sweet.", hi_sent: "केला पीला और मीठा है।", de_sent: "Eine Banane ist gelb und süß." },
+                    { en: "bread", de: "Brot", article: "das", emoji: "🍞", en_sent: "Bread is made from wheat flour.", hi_sent: "ब्रेड गेहूं के आटे से बनी है।", de_sent: "Brot wird aus Weizenmehl hergestellt." },
+                    { en: "milk", de: "Milch", article: "die", emoji: "🥛", en_sent: "Milk is white and healthy.", hi_sent: "दूध सफेद और स्वस्थ है।", de_sent: "Milch ist weiß und gesund." },
+                    { en: "water", de: "Wasser", article: "das", emoji: "💧", en_sent: "Water is essential for life.", hi_sent: "पानी जीवन के लिए जरूरी है।", de_sent: "Wasser ist für das Leben notwendig." },
+                    { en: "cheese", de: "Käse", article: "der", emoji: "🧀", en_sent: "Cheese is made from milk.", hi_sent: "पनीर दूध से बना है।", de_sent: "Käse wird aus Milch hergestellt." },
+                    { en: "egg", de: "Ei", article: "das", emoji: "🥚", en_sent: "Eggs are protein-rich food.", hi_sent: "अंडे प्रोटीन से भरपूर होते हैं।", de_sent: "Eier sind protein-reich." },
+                    { en: "carrot", de: "Karotte", article: "die", emoji: "🥕", en_sent: "Carrots are orange and crunchy.", hi_sent: "गाजर नारंगी और कुरकुरी होती है।", de_sent: "Karotten sind orange und knackig." },
+                    { en: "orange", de: "Orange", article: "die", emoji: "🍊", en_sent: "An orange is a citrus fruit.", hi_sent: "नारंगी एक खट्टा फल है।", de_sent: "Eine Orange ist eine Zitrusfrucht." },
+                    { en: "strawberry", de: "Erdbeere", article: "die", emoji: "🍓", en_sent: "Strawberries are red and sweet.", hi_sent: "स्ट्रॉबेरी लाल और मीठी होती है।", de_sent: "Erdbeeren sind rot und süß." }
+                ]
+            },
+            school: {
+                emoji: "🏫",
+                name: "Schule (School)",
+                color: "from-blue-400 to-indigo-500",
+                words: [
+                    { en: "book", de: "Buch", article: "das", emoji: "📚" },
+                    { en: "pencil", de: "Bleistift", article: "der", emoji: "✏️" },
+                    { en: "backpack", de: "Rucksack", article: "der", emoji: "🎒" },
+                    { en: "desk", de: "Schreibtisch", article: "der", emoji: "🪑" },
+                    { en: "teacher", de: "Lehrer", article: "der", emoji: "👨‍🏫" },
+                    { en: "student", de: "Schüler", article: "der", emoji: "👦" },
+                    { en: "paper", de: "Papier", article: "das", emoji: "📄" },
+                    { en: "pen", de: "Stift", article: "der", emoji: "🖊️" },
+                    { en: "eraser", de: "Radiergummi", article: "der", emoji: "🧹" },
+                    { en: "ruler", de: "Lineal", article: "das", emoji: "📐" },
+                    { en: "scissors", de: "Schere", article: "die", emoji: "✂️" },
+                    { en: "glue", de: "Leim", article: "der", emoji: "🧴" },
+                    { en: "notebook", de: "Heft", article: "das", emoji: "📓" },
+                    { en: "blackboard", de: "Tafel", article: "die", emoji: "🖤" },
+                    { en: "classroom", de: "Klassenzimmer", article: "das", emoji: "🏛️" },
+                    { en: "school", de: "Schule", article: "die", emoji: "🏫" },
+                    { en: "bell", de: "Glocke", article: "die", emoji: "🔔" },
+                    { en: "backpack", de: "Tasche", article: "die", emoji: "👜" }
+                ]
+            },
+            colors: {
+                emoji: "🎨",
+                name: "Farben & Formen (Colors & Shapes)",
+                color: "from-indigo-400 to-purple-500",
+                words: [
+                    { en: "red", de: "rot", article: "die", emoji: "🔴" },
+                    { en: "blue", de: "blau", article: "die", emoji: "🔵" },
+                    { en: "yellow", de: "gelb", article: "die", emoji: "🟡" },
+                    { en: "green", de: "grün", article: "die", emoji: "🟢" },
+                    { en: "circle", de: "Kreis", article: "der", emoji: "⭕" },
+                    { en: "square", de: "Quadrat", article: "das", emoji: "⬜" },
+                    { en: "triangle", de: "Dreieck", article: "das", emoji: "🔺" },
+                    { en: "star", de: "Stern", article: "der", emoji: "⭐" },
+                    { en: "purple", de: "lila", article: "die", emoji: "🟣" },
+                    { en: "pink", de: "rosa", article: "die", emoji: "🌸" },
+                    { en: "orange", de: "orange", article: "die", emoji: "🟠" },
+                    { en: "black", de: "schwarz", article: "die", emoji: "⚫" },
+                    { en: "white", de: "weiß", article: "die", emoji: "⚪" },
+                    { en: "brown", de: "braun", article: "die", emoji: "🟤" },
+                    { en: "gray", de: "grau", article: "die", emoji: "⚡" },
+                    { en: "rectangle", de: "Rechteck", article: "das", emoji: "▭" },
+                    { en: "heart", de: "Herz", article: "das", emoji: "❤️" },
+                    { en: "diamond", de: "Raute", article: "die", emoji: "💎" }
+                ]
+            },
+            clothes: {
+                emoji: "👕",
+                name: "Kleidung (Clothes)",
+                color: "from-pink-400 to-rose-500",
+                words: [
+                    { en: "pants", de: "Hose", article: "die", emoji: "👖" },
+                    { en: "shirt", de: "T-Shirt", article: "das", emoji: "👕" },
+                    { en: "shoe", de: "Schuh", article: "der", emoji: "👟" },
+                    { en: "hat", de: "Hut", article: "der", emoji: "🧢" },
+                    { en: "sock", de: "Socke", article: "die", emoji: "🧦" },
+                    { en: "jacket", de: "Jacke", article: "die", emoji: "🧥" },
+                    { en: "dress", de: "Kleid", article: "das", emoji: "👗" },
+                    { en: "glove", de: "Handschuh", article: "der", emoji: "🧤" },
+                    { en: "scarf", de: "Schal", article: "der", emoji: "🧣" },
+                    { en: "tie", de: "Krawatte", article: "die", emoji: "👔" },
+                    { en: "sweater", de: "Pullover", article: "der", emoji: "🧶" },
+                    { en: "shorts", de: "Shorts", article: "die", emoji: "🩳" },
+                    { en: "skirt", de: "Rock", article: "der", emoji: "👚" },
+                    { en: "belt", de: "Gürtel", article: "der", emoji: "⌚" },
+                    { en: "boot", de: "Stiefel", article: "der", emoji: "🥾" },
+                    { en: "sandal", de: "Sandale", article: "die", emoji: "👡" },
+                    { en: "coat", de: "Mantel", article: "der", emoji: "🧥" },
+                    { en: "pajamas", de: "Pyjama", article: "der", emoji: "🌙" }
+                ]
+            },
+            home: {
+                emoji: "🏡",
+                name: "Zuhause (Home)",
+                color: "from-green-400 to-teal-500",
+                words: [
+                    { en: "bed", de: "Bett", article: "das", emoji: "🛏️" },
+                    { en: "chair", de: "Stuhl", article: "der", emoji: "🪑" },
+                    { en: "table", de: "Tisch", article: "der", emoji: "🪑" },
+                    { en: "door", de: "Tür", article: "die", emoji: "🚪" },
+                    { en: "window", de: "Fenster", article: "das", emoji: "🪟" },
+                    { en: "lamp", de: "Lampe", article: "die", emoji: "💡" },
+                    { en: "sofa", de: "Sofa", article: "das", emoji: "🛋️" },
+                    { en: "mirror", de: "Spiegel", article: "der", emoji: "🪞" },
+                    { en: "kitchen", de: "Küche", article: "die", emoji: "🍳" },
+                    { en: "bathroom", de: "Badezimmer", article: "das", emoji: "🚿" },
+                    { en: "bedroom", de: "Schlafzimmer", article: "das", emoji: "🛌" },
+                    { en: "living room", de: "Wohnzimmer", article: "das", emoji: "🛋️" },
+                    { en: "house", de: "Haus", article: "das", emoji: "🏠" },
+                    { en: "refrigerator", de: "Kühlschrank", article: "der", emoji: "🧊" },
+                    { en: "sink", de: "Spüle", article: "die", emoji: "🚰" },
+                    { en: "toilet", de: "Toilette", article: "die", emoji: "🚽" },
+                    { en: "shower", de: "Dusche", article: "die", emoji: "🚿" },
+                    { en: "curtain", de: "Vorhang", article: "der", emoji: "🪟" }
+                ]
+            },
+            numbers: {
+                emoji: "🔢",
+                name: "Zahlen (Numbers)",
+                color: "from-indigo-500 to-blue-600",
+                words: [
+                    { en: "zero", de: "null", article: "die", emoji: "0️⃣" },
+                    { en: "one", de: "eins", article: "die", emoji: "1️⃣" },
+                    { en: "two", de: "zwei", article: "die", emoji: "2️⃣" },
+                    { en: "three", de: "drei", article: "die", emoji: "3️⃣" },
+                    { en: "four", de: "vier", article: "die", emoji: "4️⃣" },
+                    { en: "five", de: "fünf", article: "die", emoji: "5️⃣" },
+                    { en: "six", de: "sechs", article: "die", emoji: "6️⃣" },
+                    { en: "seven", de: "sieben", article: "die", emoji: "7️⃣" },
+                    { en: "eight", de: "acht", article: "die", emoji: "8️⃣" },
+                    { en: "nine", de: "neun", article: "die", emoji: "9️⃣" },
+                    { en: "ten", de: "zehn", article: "die", emoji: "🔟" }
+                ]
+            },
+            family: {
+                emoji: "👨‍👩‍👧‍👦",
+                name: "Familie (Family)",
+                color: "from-rose-400 to-pink-500",
+                words: [
+                    { en: "mother", de: "Mutter", article: "die", emoji: "👩" },
+                    { en: "father", de: "Vater", article: "der", emoji: "👨" },
+                    { en: "sister", de: "Schwester", article: "die", emoji: "👧" },
+                    { en: "brother", de: "Bruder", article: "der", emoji: "👦" },
+                    { en: "grandmother", de: "Großmutter", article: "die", emoji: "👵" },
+                    { en: "grandfather", de: "Großvater", article: "der", emoji: "👴" },
+                    { en: "aunt", de: "Tante", article: "die", emoji: "👩" },
+                    { en: "uncle", de: "Onkel", article: "der", emoji: "👨" },
+                    { en: "cousin", de: "Cousin", article: "der", emoji: "👦" },
+                    { en: "baby", de: "Baby", article: "das", emoji: "👶" },
+                    { en: "family", de: "Familie", article: "die", emoji: "👨‍👩‍👧‍👦" }
+                ]
+            },
+            body: {
+                emoji: "👶",
+                name: "Körper (Body)",
+                color: "from-orange-400 to-yellow-500",
+                words: [
+                    { en: "head", de: "Kopf", article: "der", emoji: "🗣️" },
+                    { en: "hair", de: "Haare", article: "die", emoji: "💇" },
+                    { en: "eye", de: "Auge", article: "das", emoji: "👁️" },
+                    { en: "nose", de: "Nase", article: "die", emoji: "👃" },
+                    { en: "mouth", de: "Mund", article: "der", emoji: "👄" },
+                    { en: "ear", de: "Ohr", article: "das", emoji: "👂" },
+                    { en: "arm", de: "Arm", article: "der", emoji: "💪" },
+                    { en: "hand", de: "Hand", article: "die", emoji: "✋" },
+                    { en: "finger", de: "Finger", article: "der", emoji: "👆" },
+                    { en: "leg", de: "Bein", article: "das", emoji: "🦵" },
+                    { en: "foot", de: "Fuß", article: "der", emoji: "🦶" }
+                ]
+            },
+            weather: {
+                emoji: "☀️",
+                name: "Wetter (Weather)",
+                color: "from-cyan-400 to-blue-500",
+                words: [
+                    { en: "sun", de: "Sonne", article: "die", emoji: "☀️" },
+                    { en: "rain", de: "Regen", article: "der", emoji: "🌧️" },
+                    { en: "snow", de: "Schnee", article: "der", emoji: "❄️" },
+                    { en: "wind", de: "Wind", article: "der", emoji: "💨" },
+                    { en: "cloud", de: "Wolke", article: "die", emoji: "☁️" },
+                    { en: "storm", de: "Sturm", article: "der", emoji: "⛈️" },
+                    { en: "thunder", de: "Donner", article: "der", emoji: "⚡" },
+                    { en: "lightning", de: "Blitz", article: "der", emoji: "⚡" },
+                    { en: "fog", de: "Nebel", article: "der", emoji: "🌫️" },
+                    { en: "rainbow", de: "Regenbogen", article: "der", emoji: "🌈" }
+                ]
+            },
+            seasons: {
+                emoji: "🍂",
+                name: "Jahreszeiten (Seasons)",
+                color: "from-amber-400 to-orange-600",
+                words: [
+                    { en: "spring", de: "Frühling", article: "der", emoji: "🌱" },
+                    { en: "summer", de: "Sommer", article: "der", emoji: "☀️" },
+                    { en: "autumn", de: "Herbst", article: "der", emoji: "🍂" },
+                    { en: "winter", de: "Winter", article: "der", emoji: "❄️" },
+                    { en: "month", de: "Monat", article: "der", emoji: "📅" },
+                    { en: "January", de: "Januar", article: "der", emoji: "1️⃣" },
+                    { en: "February", de: "Februar", article: "der", emoji: "2️⃣" },
+                    { en: "March", de: "März", article: "der", emoji: "3️⃣" },
+                    { en: "April", de: "April", article: "der", emoji: "4️⃣" },
+                    { en: "May", de: "Mai", article: "der", emoji: "5️⃣" }
+                ]
+            },
+            toys: {
+                emoji: "🎮",
+                name: "Spielzeug (Toys)",
+                color: "from-fuchsia-400 to-purple-500",
+                words: [
+                    { en: "ball", de: "Ball", article: "der", emoji: "🎾" },
+                    { en: "doll", de: "Puppe", article: "die", emoji: "👧" },
+                    { en: "toy car", de: "Spielzeugauto", article: "das", emoji: "🚗" },
+                    { en: "puzzle", de: "Puzzle", article: "das", emoji: "🧩" },
+                    { en: "block", de: "Baustein", article: "der", emoji: "🧱" },
+                    { en: "kite", de: "Drachen", article: "der", emoji: "🪁" },
+                    { en: "bicycle", de: "Fahrrad", article: "das", emoji: "🚲" },
+                    { en: "roller skates", de: "Rollschuhe", article: "die", emoji: "🛼" },
+                    { en: "skateboard", de: "Skateboard", article: "das", emoji: "🛹" },
+                    { en: "video game", de: "Videospiel", article: "das", emoji: "🎮" }
+                ]
+            },
+            sports: {
+                emoji: "⚽",
+                name: "Sport (Sports)",
+                color: "from-lime-400 to-green-500",
+                words: [
+                    { en: "football", de: "Fußball", article: "der", emoji: "⚽" },
+                    { en: "basketball", de: "Basketball", article: "der", emoji: "🏀" },
+                    { en: "tennis", de: "Tennis", article: "das", emoji: "🎾" },
+                    { en: "swimming", de: "Schwimmen", article: "das", emoji: "🏊" },
+                    { en: "running", de: "Laufen", article: "das", emoji: "🏃" },
+                    { en: "jumping", de: "Springen", article: "das", emoji: "🤸" },
+                    { en: "skating", de: "Eislaufen", article: "das", emoji: "⛸️" },
+                    { en: "skiing", de: "Skifahren", article: "das", emoji: "⛷️" },
+                    { en: "climbing", de: "Klettern", article: "das", emoji: "🧗" },
+                    { en: "dancing", de: "Tanzen", article: "das", emoji: "💃" }
+                ]
+            },
+            fruits: {
+                emoji: "🍇",
+                name: "Obst (Fruits)",
+                color: "from-red-300 to-pink-400",
+                words: [
+                    { en: "grape", de: "Traube", article: "die", emoji: "🍇" },
+                    { en: "melon", de: "Melone", article: "die", emoji: "🍈" },
+                    { en: "watermelon", de: "Wassermelone", article: "die", emoji: "🍉" },
+                    { en: "kiwi", de: "Kiwi", article: "die", emoji: "🥝" },
+                    { en: "mango", de: "Mango", article: "die", emoji: "🥭" },
+                    { en: "pineapple", de: "Ananas", article: "die", emoji: "🍍" },
+                    { en: "pear", de: "Birne", article: "die", emoji: "🍐" },
+                    { en: "cherry", de: "Kirsche", article: "die", emoji: "🍒" },
+                    { en: "peach", de: "Pfirsich", article: "der", emoji: "🍑" },
+                    { en: "lemon", de: "Zitrone", article: "die", emoji: "🍋" }
+                ]
+            },
+            vegetables: {
+                emoji: "🥦",
+                name: "Gemüse (Vegetables)",
+                color: "from-green-400 to-emerald-600",
+                words: [
+                    { en: "broccoli", de: "Brokkoli", article: "der", emoji: "🥦" },
+                    { en: "spinach", de: "Spinat", article: "der", emoji: "🥬" },
+                    { en: "lettuce", de: "Salat", article: "der", emoji: "🥬" },
+                    { en: "tomato", de: "Tomate", article: "die", emoji: "🍅" },
+                    { en: "cucumber", de: "Gurke", article: "die", emoji: "🥒" },
+                    { en: "pepper", de: "Paprika", article: "die", emoji: "🫑" },
+                    { en: "onion", de: "Zwiebel", article: "die", emoji: "🧅" },
+                    { en: "garlic", de: "Knoblauch", article: "der", emoji: "🧄" },
+                    { en: "corn", de: "Mais", article: "der", emoji: "🌽" },
+                    { en: "peas", de: "Erbsen", article: "die", emoji: "🫛" }
+                ]
+            },
+            music: {
+                emoji: "🎵",
+                name: "Musik (Music)",
+                color: "from-purple-400 to-indigo-600",
+                words: [
+                    { en: "song", de: "Lied", article: "das", emoji: "🎵" },
+                    { en: "piano", de: "Klavier", article: "das", emoji: "🎹" },
+                    { en: "guitar", de: "Gitarre", article: "die", emoji: "🎸" },
+                    { en: "violin", de: "Geige", article: "die", emoji: "🎻" },
+                    { en: "drum", de: "Trommel", article: "die", emoji: "🥁" },
+                    { en: "flute", de: "Flöte", article: "die", emoji: "🪈" },
+                    { en: "trumpet", de: "Trompete", article: "die", emoji: "🎺" },
+                    { en: "saxophone", de: "Saxophon", article: "das", emoji: "🎷" },
+                    { en: "microphone", de: "Mikrofon", article: "das", emoji: "🎤" },
+                    { en: "dance", de: "Tanz", article: "der", emoji: "💃" }
+                ]
+            },
+            actions: {
+                emoji: "🏃",
+                name: "Aktionen (Actions)",
+                color: "from-blue-400 to-cyan-500",
+                words: [
+                    { en: "run", de: "laufen", article: "das", emoji: "🏃" },
+                    { en: "walk", de: "gehen", article: "das", emoji: "🚶" },
+                    { en: "jump", de: "springen", article: "das", emoji: "🤸" },
+                    { en: "dance", de: "tanzen", article: "das", emoji: "💃" },
+                    { en: "sit", de: "sitzen", article: "das", emoji: "🪑" },
+                    { en: "stand", de: "stehen", article: "das", emoji: "🧍" },
+                    { en: "sleep", de: "schlafen", article: "das", emoji: "😴" },
+                    { en: "eat", de: "essen", article: "das", emoji: "🍽️" },
+                    { en: "drink", de: "trinken", article: "das", emoji: "🥤" },
+                    { en: "play", de: "spielen", article: "das", emoji: "🎮" }
+                ]
+            },
+            transport: {
+                emoji: "🚗",
+                name: "Transport (Transport)",
+                color: "from-yellow-400 to-red-500",
+                words: [
+                    { en: "car", de: "Auto", article: "das", emoji: "🚗" },
+                    { en: "bus", de: "Bus", article: "der", emoji: "🚌" },
+                    { en: "train", de: "Zug", article: "der", emoji: "🚂" },
+                    { en: "airplane", de: "Flugzeug", article: "das", emoji: "✈️" },
+                    { en: "boat", de: "Boot", article: "das", emoji: "⛵" },
+                    { en: "bicycle", de: "Fahrrad", article: "das", emoji: "🚲" },
+                    { en: "motorcycle", de: "Motorrad", article: "das", emoji: "🏍️" },
+                    { en: "truck", de: "Lastwagen", article: "der", emoji: "🚚" },
+                    { en: "taxi", de: "Taxi", article: "das", emoji: "🚕" },
+                    { en: "ambulance", de: "Krankenwagen", article: "der", emoji: "🚑" }
+                ]
+            },
+            emotions: {
+                emoji: "😊",
+                name: "Gefühle (Emotions)",
+                color: "from-yellow-300 to-orange-400",
+                words: [
+                    { en: "happy", de: "glücklich", article: "die", emoji: "😊" },
+                    { en: "sad", de: "traurig", article: "die", emoji: "😢" },
+                    { en: "angry", de: "wütend", article: "die", emoji: "😠" },
+                    { en: "scared", de: "verängstigt", article: "die", emoji: "😨" },
+                    { en: "tired", de: "müde", article: "die", emoji: "😴" },
+                    { en: "excited", de: "aufgeregt", article: "die", emoji: "🤩" },
+                    { en: "silly", de: "albern", article: "die", emoji: "😜" },
+                    { en: "confused", de: "verwirrt", article: "die", emoji: "🤔" },
+                    { en: "surprised", de: "überrascht", article: "die", emoji: "😲" },
+                    { en: "love", de: "liebe", article: "die", emoji: "❤️" }
+                ]
+            },
+            days: {
+                emoji: "📅",
+                name: "Wochentage (Days)",
+                color: "from-purple-400 to-blue-400",
+                words: [
+                    { en: "Monday", de: "Montag", article: "der", emoji: "1️⃣" },
+                    { en: "Tuesday", de: "Dienstag", article: "der", emoji: "2️⃣" },
+                    { en: "Wednesday", de: "Mittwoch", article: "der", emoji: "3️⃣" },
+                    { en: "Thursday", de: "Donnerstag", article: "der", emoji: "4️⃣" },
+                    { en: "Friday", de: "Freitag", article: "der", emoji: "5️⃣" },
+                    { en: "Saturday", de: "Samstag", article: "der", emoji: "6️⃣" },
+                    { en: "Sunday", de: "Sonntag", article: "der", emoji: "7️⃣" },
+                    { en: "today", de: "heute", article: "der", emoji: "☀️" },
+                    { en: "tomorrow", de: "morgen", article: "der", emoji: "🌅" },
+                    { en: "yesterday", de: "gestern", article: "der", emoji: "🌙" }
+                ]
+            },
+            nature: {
+                emoji: "🌿",
+                name: "Natur (Nature)",
+                color: "from-green-500 to-teal-600",
+                words: [
+                    { en: "tree", de: "Baum", article: "der", emoji: "🌳" },
+                    { en: "flower", de: "Blume", article: "die", emoji: "🌸" },
+                    { en: "grass", de: "Gras", article: "das", emoji: "🌱" },
+                    { en: "leaf", de: "Blatt", article: "das", emoji: "🍃" },
+                    { en: "rock", de: "Stein", article: "der", emoji: "🪨" },
+                    { en: "mountain", de: "Berg", article: "der", emoji: "⛰️" },
+                    { en: "river", de: "Fluss", article: "der", emoji: "🌊" },
+                    { en: "forest", de: "Wald", article: "der", emoji: "🌲" },
+                    { en: "beach", de: "Strand", article: "der", emoji: "🏖️" },
+                    { en: "sunset", de: "Sonnenuntergang", article: "der", emoji: "🌅" }
+                ]
+            },
+            insects: {
+                emoji: "🐛",
+                name: "Insekten (Insects)",
+                color: "from-green-400 to-lime-500",
+                words: [
+                    { en: "butterfly", de: "Schmetterling", article: "der", emoji: "🦋" },
+                    { en: "bee", de: "Biene", article: "die", emoji: "🐝" },
+                    { en: "ant", de: "Ameise", article: "die", emoji: "🐜" },
+                    { en: "ladybug", de: "Marienkäfer", article: "der", emoji: "🐞" },
+                    { en: "dragonfly", de: "Libelle", article: "die", emoji: "🐛" },
+                    { en: "spider", de: "Spinne", article: "die", emoji: "🕷️" },
+                    { en: "worm", de: "Wurm", article: "der", emoji: "🪱" },
+                    { en: "fly", de: "Fliege", article: "die", emoji: "🪰" },
+                    { en: "mosquito", de: "Mücke", article: "die", emoji: "🦟" },
+                    { en: "caterpillar", de: "Raupe", article: "die", emoji: "🐛" }
+                ]
+            },
+            adjectives: {
+                emoji: "✨",
+                name: "Adjektive (Adjectives)",
+                color: "from-pink-300 to-rose-400",
+                words: [
+                    { en: "big", de: "groß", article: "die", emoji: "📦" },
+                    { en: "small", de: "klein", article: "die", emoji: "🤏" },
+                    { en: "hot", de: "heiß", article: "die", emoji: "🔥" },
+                    { en: "cold", de: "kalt", article: "die", emoji: "❄️" },
+                    { en: "fast", de: "schnell", article: "die", emoji: "⚡" },
+                    { en: "slow", de: "langsam", article: "die", emoji: "🐢" },
+                    { en: "clean", de: "sauber", article: "die", emoji: "✨" },
+                    { en: "dirty", de: "schmutzig", article: "die", emoji: "🤎" },
+                    { en: "new", de: "neu", article: "die", emoji: "🆕" },
+                    { en: "old", de: "alt", article: "die", emoji: "📜" }
+                ]
+            },
+            animals2: {
+                emoji: "🦬",
+                name: "Farm Animals (Bauernhof)",
+                color: "from-amber-500 to-yellow-600",
+                words: [
+                    { en: "cow", de: "Kuh", article: "die", emoji: "🐄" },
+                    { en: "pig", de: "Schwein", article: "das", emoji: "🐷" },
+                    { en: "sheep", de: "Schaf", article: "das", emoji: "🐑" },
+                    { en: "horse", de: "Pferd", article: "das", emoji: "🐴" },
+                    { en: "goat", de: "Ziege", article: "die", emoji: "🐐" },
+                    { en: "chicken", de: "Huhn", article: "das", emoji: "🐔" },
+                    { en: "duck", de: "Ente", article: "die", emoji: "🦆" },
+                    { en: "goose", de: "Gans", article: "die", emoji: "🦢" },
+                    { en: "rooster", de: "Hahn", article: "der", emoji: "🐓" },
+                    { en: "farm", de: "Bauernhof", article: "der", emoji: "🌾" }
+                ]
+            },
+            professions: {
+                emoji: "👨‍⚕️",
+                name: "Berufe (Professions)",
+                color: "from-blue-500 to-cyan-600",
+                words: [
+                    { en: "doctor", de: "Arzt", article: "der", emoji: "👨‍⚕️" },
+                    { en: "teacher", de: "Lehrer", article: "der", emoji: "👨‍🏫" },
+                    { en: "police officer", de: "Polizist", article: "der", emoji: "👮" },
+                    { en: "firefighter", de: "Feuerwehrmann", article: "der", emoji: "👨‍🚒" },
+                    { en: "chef", de: "Koch", article: "der", emoji: "👨‍🍳" },
+                    { en: "builder", de: "Bauarbeiter", article: "der", emoji: "👷" },
+                    { en: "farmer", de: "Bauer", article: "der", emoji: "👨‍🌾" },
+                    { en: "nurse", de: "Krankenpfleger", article: "der", emoji: "👨‍⚕️" },
+                    { en: "painter", de: "Maler", article: "der", emoji: "👨‍🎨" },
+                    { en: "musician", de: "Musiker", article: "der", emoji: "🎵" }
+                ]
+            },
+            technology: {
+                emoji: "💻",
+                name: "Technologie (Technology)",
+                color: "from-gray-600 to-slate-700",
+                words: [
+                    { en: "computer", de: "Computer", article: "der", emoji: "💻" },
+                    { en: "phone", de: "Telefon", article: "das", emoji: "📱" },
+                    { en: "tablet", de: "Tablet", article: "das", emoji: "📱" },
+                    { en: "television", de: "Fernseher", article: "der", emoji: "📺" },
+                    { en: "camera", de: "Kamera", article: "die", emoji: "📷" },
+                    { en: "headphones", de: "Kopfhörer", article: "die", emoji: "🎧" },
+                    { en: "robot", de: "Roboter", article: "der", emoji: "🤖" },
+                    { en: "keyboard", de: "Tastatur", article: "die", emoji: "⌨️" },
+                    { en: "mouse", de: "Maus", article: "die", emoji: "🖱️" },
+                    { en: "screen", de: "Bildschirm", article: "der", emoji: "🖥️" }
+                ]
+            },
+            hobbies: {
+                emoji: "🎨",
+                name: "Hobbys (Hobbies)",
+                color: "from-indigo-500 to-purple-600",
+                words: [
+                    { en: "drawing", de: "Zeichnen", article: "das", emoji: "🎨" },
+                    { en: "painting", de: "Malen", article: "das", emoji: "🖌️" },
+                    { en: "reading", de: "Lesen", article: "das", emoji: "📚" },
+                    { en: "writing", de: "Schreiben", article: "das", emoji: "✏️" },
+                    { en: "singing", de: "Singen", article: "das", emoji: "🎤" },
+                    { en: "collecting", de: "Sammeln", article: "das", emoji: "🧩" },
+                    { en: "photography", de: "Fotografie", article: "die", emoji: "📷" },
+                    { en: "cooking", de: "Kochen", article: "das", emoji: "👨‍🍳" },
+                    { en: "gardening", de: "Gärtnern", article: "das", emoji: "🌱" },
+                    { en: "crafting", de: "Basteln", article: "das", emoji: "🧵" }
+                ]
+            },
+            bathroom: {
+                emoji: "🛁",
+                name: "Badezimmer (Bathroom)",
+                color: "from-cyan-400 to-blue-500",
+                words: [
+                    { en: "soap", de: "Seife", article: "die", emoji: "🧼" },
+                    { en: "towel", de: "Handtuch", article: "das", emoji: "🛁" },
+                    { en: "toothbrush", de: "Zahnbürste", article: "die", emoji: "🪥" },
+                    { en: "toothpaste", de: "Zahnpasta", article: "die", emoji: "🪥" },
+                    { en: "shampoo", de: "Shampoo", article: "das", emoji: "🧴" },
+                    { en: "comb", de: "Kamm", article: "der", emoji: "🪮" },
+                    { en: "mirror", de: "Spiegel", article: "der", emoji: "🪞" },
+                    { en: "sink", de: "Waschbecken", article: "das", emoji: "🚰" },
+                    { en: "bathtub", de: "Badewanne", article: "die", emoji: "🛁" },
+                    { en: "toilet", de: "Toilette", article: "die", emoji: "🚽" }
+                ]
+            },
+            kitchen: {
+                emoji: "🍳",
+                name: "Küche (Kitchen)",
+                color: "from-orange-400 to-red-500",
+                words: [
+                    { en: "stove", de: "Herd", article: "der", emoji: "🔥" },
+                    { en: "refrigerator", de: "Kühlschrank", article: "der", emoji: "🧊" },
+                    { en: "oven", de: "Ofen", article: "der", emoji: "🔥" },
+                    { en: "pot", de: "Topf", article: "der", emoji: "🍲" },
+                    { en: "pan", de: "Pfanne", article: "die", emoji: "🍳" },
+                    { en: "plate", de: "Teller", article: "der", emoji: "🍽️" },
+                    { en: "bowl", de: "Schüssel", article: "die", emoji: "🥣" },
+                    { en: "cup", de: "Tasse", article: "die", emoji: "☕" },
+                    { en: "glass", de: "Glas", article: "das", emoji: "🥤" },
+                    { en: "fork", de: "Gabel", article: "die", emoji: "🍴" }
+                ]
+            },
+            sea: {
+                emoji: "🌊",
+                name: "Meer (Sea)",
+                color: "from-teal-400 to-cyan-500",
+                words: [
+                    { en: "fish", de: "Fisch", article: "der", emoji: "🐠" },
+                    { en: "shark", de: "Hai", article: "der", emoji: "🦈" },
+                    { en: "whale", de: "Wal", article: "der", emoji: "🐋" },
+                    { en: "octopus", de: "Oktopus", article: "der", emoji: "🐙" },
+                    { en: "starfish", de: "Seestern", article: "der", emoji: "⭐" },
+                    { en: "crab", de: "Krabbe", article: "die", emoji: "🦀" },
+                    { en: "lobster", de: "Hummer", article: "der", emoji: "🦞" },
+                    { en: "jellyfish", de: "Qualle", article: "die", emoji: "🪼" },
+                    { en: "turtle", de: "Schildkröte", article: "die", emoji: "🐢" },
+                    { en: "dolphin", de: "Delfin", article: "der", emoji: "🐬" }
+                ]
+            },
+            time: {
+                emoji: "⏰",
+                name: "Zeit (Time)",
+                color: "from-yellow-500 to-orange-600",
+                words: [
+                    { en: "morning", de: "Morgen", article: "der", emoji: "🌅" },
+                    { en: "afternoon", de: "Nachmittag", article: "der", emoji: "☀️" },
+                    { en: "evening", de: "Abend", article: "der", emoji: "🌆" },
+                    { en: "night", de: "Nacht", article: "die", emoji: "🌙" },
+                    { en: "hour", de: "Stunde", article: "die", emoji: "⏰" },
+                    { en: "minute", de: "Minute", article: "die", emoji: "⏱️" },
+                    { en: "second", de: "Sekunde", article: "die", emoji: "⏲️" },
+                    { en: "noon", de: "Mittag", article: "der", emoji: "🌞" },
+                    { en: "midnight", de: "Mitternacht", article: "die", emoji: "🌙" },
+                    { en: "clock", de: "Uhr", article: "die", emoji: "🕐" }
+                ]
+            },
+            games: {
+                emoji: "🎰",
+                name: "Spiele (Games)",
+                color: "from-purple-500 to-fuchsia-600",
+                words: [
+                    { en: "chess", de: "Schach", article: "das", emoji: "♟️" },
+                    { en: "checkers", de: "Dame", article: "das", emoji: "♟️" },
+                    { en: "hide and seek", de: "Verstecken", article: "das", emoji: "🙈" },
+                    { en: "tag", de: "Fangen", article: "das", emoji: "🏃" },
+                    { en: "hopscotch", de: "Himmel und Hölle", article: "das", emoji: "🎲" },
+                    { en: "jump rope", de: "Springseil", article: "das", emoji: "🧵" },
+                    { en: "dice", de: "Würfel", article: "der", emoji: "🎲" },
+                    { en: "card game", de: "Kartenspiel", article: "das", emoji: "🃏" },
+                    { en: "dominoes", de: "Domino", article: "das", emoji: "🎯" },
+                    { en: "marble", de: "Murmel", article: "die", emoji: "⚪" }
+                ]
+            },
+            position_words: {
+                emoji: "📍",
+                name: "Positionen (Positions)",
+                color: "from-blue-600 to-indigo-700",
+                words: [
+                    { en: "above", de: "oben", article: "die", emoji: "⬆️" },
+                    { en: "below", de: "unten", article: "die", emoji: "⬇️" },
+                    { en: "left", de: "links", article: "die", emoji: "⬅️" },
+                    { en: "right", de: "rechts", article: "die", emoji: "➡️" },
+                    { en: "inside", de: "innen", article: "die", emoji: "🔒" },
+                    { en: "outside", de: "außen", article: "die", emoji: "🏞️" },
+                    { en: "front", de: "vorne", article: "die", emoji: "👀" },
+                    { en: "back", de: "hinten", article: "die", emoji: "🔙" },
+                    { en: "middle", de: "Mitte", article: "die", emoji: "⭕" },
+                    { en: "corner", de: "Ecke", article: "die", emoji: "🔲" }
+                ]
+            },
+            space: {
+                emoji: "🚀",
+                name: "Weltall (Space)",
+                color: "from-indigo-700 to-black",
+                words: [
+                    { en: "moon", de: "Mond", article: "der", emoji: "🌙" },
+                    { en: "star", de: "Stern", article: "der", emoji: "⭐" },
+                    { en: "planet", de: "Planet", article: "der", emoji: "🪐" },
+                    { en: "rocket", de: "Rakete", article: "die", emoji: "🚀" },
+                    { en: "astronaut", de: "Astronaut", article: "der", emoji: "👨‍🚀" },
+                    { en: "sun", de: "Sonne", article: "die", emoji: "☀️" },
+                    { en: "galaxy", de: "Galaxie", article: "die", emoji: "🌌" },
+                    { en: "UFO", de: "UFO", article: "das", emoji: "🛸" },
+                    { en: "alien", de: "Außerirdischer", article: "der", emoji: "👽" },
+                    { en: "meteor", de: "Meteor", article: "der", emoji: "☄️" }
+                ]
+            },
+            holidays: {
+                emoji: "🎄",
+                name: "Feiertage (Holidays)",
+                color: "from-red-500 to-green-600",
+                words: [
+                    { en: "Christmas", de: "Weihnacht", article: "die", emoji: "🎄" },
+                    { en: "Easter", de: "Ostern", article: "das", emoji: "🥚" },
+                    { en: "birthday", de: "Geburtstag", article: "der", emoji: "🎂" },
+                    { en: "party", de: "Party", article: "die", emoji: "🎉" },
+                    { en: "gift", de: "Geschenk", article: "das", emoji: "🎁" },
+                    { en: "decoration", de: "Dekoration", article: "die", emoji: "✨" },
+                    { en: "candle", de: "Kerze", article: "die", emoji: "🕯️" },
+                    { en: "snowman", de: "Schneemann", article: "der", emoji: "⛄" },
+                    { en: "candy", de: "Süßigkeit", article: "die", emoji: "🍬" },
+                    { en: "celebration", de: "Feier", article: "die", emoji: "🎊" }
+                ]
+            },
+            materials: {
+                emoji: "🧱",
+                name: "Materialien (Materials)",
+                color: "from-gray-600 to-slate-800",
+                words: [
+                    { en: "wood", de: "Holz", article: "das", emoji: "🪵" },
+                    { en: "metal", de: "Metall", article: "das", emoji: "⚙️" },
+                    { en: "glass", de: "Glas", article: "das", emoji: "🍷" },
+                    { en: "plastic", de: "Kunststoff", article: "der", emoji: "♻️" },
+                    { en: "fabric", de: "Stoff", article: "der", emoji: "🧵" },
+                    { en: "leather", de: "Leder", article: "das", emoji: "👜" },
+                    { en: "rubber", de: "Gummi", article: "das", emoji: "🎈" },
+                    { en: "cotton", de: "Baumwolle", article: "die", emoji: "☁️" },
+                    { en: "ceramic", de: "Keramik", article: "die", emoji: "🍶" },
+                    { en: "paper", de: "Papier", article: "das", emoji: "📄" }
+                ]
+            },
+            flowers: {
+                emoji: "🌸",
+                name: "Blumen (Flowers)",
+                color: "from-pink-400 to-rose-500",
+                words: [
+                    { en: "rose", de: "Rose", article: "die", emoji: "🌹" },
+                    { en: "tulip", de: "Tulpe", article: "die", emoji: "🌷" },
+                    { en: "sunflower", de: "Sonnenblume", article: "die", emoji: "🌻" },
+                    { en: "daisy", de: "Gänseblümchen", article: "das", emoji: "🌼" },
+                    { en: "lily", de: "Lilie", article: "die", emoji: "🪷" },
+                    { en: "orchid", de: "Orchidee", article: "die", emoji: "🌸" },
+                    { en: "poppy", de: "Mohn", article: "der", emoji: "🌺" },
+                    { en: "violet", de: "Veilchen", article: "das", emoji: "💜" },
+                    { en: "buttercup", de: "Butterblume", article: "die", emoji: "🌼" },
+                    { en: "lavender", de: "Lavendel", article: "der", emoji: "💜" }
+                ]
+            },
+            birds: {
+                emoji: "🦅",
+                name: "Vögel (Birds)",
+                color: "from-blue-500 to-cyan-600",
+                words: [
+                    { en: "eagle", de: "Adler", article: "der", emoji: "🦅" },
+                    { en: "owl", de: "Eule", article: "die", emoji: "🦉" },
+                    { en: "parrot", de: "Papagei", article: "der", emoji: "🦜" },
+                    { en: "peacock", de: "Pfau", article: "der", emoji: "🦚" },
+                    { en: "ostrich", de: "Strauß", article: "der", emoji: "🐦" },
+                    { en: "swan", de: "Schwan", article: "der", emoji: "🦢" },
+                    { en: "raven", de: "Rabe", article: "der", emoji: "🐦‍⬛" },
+                    { en: "stork", de: "Storch", article: "der", emoji: "🦆" },
+                    { en: "penguin", de: "Pinguin", article: "der", emoji: "🐧" },
+                    { en: "hummingbird", de: "Kolibri", article: "der", emoji: "🐦" }
+                ]
+            },
+            reptiles: {
+                emoji: "🐍",
+                name: "Reptilien (Reptiles)",
+                color: "from-green-600 to-lime-700",
+                words: [
+                    { en: "snake", de: "Schlange", article: "die", emoji: "🐍" },
+                    { en: "lizard", de: "Eidechse", article: "die", emoji: "🦎" },
+                    { en: "turtle", de: "Schildkröte", article: "die", emoji: "🐢" },
+                    { en: "crocodile", de: "Krokodil", article: "das", emoji: "🐊" },
+                    { en: "iguana", de: "Leguan", article: "der", emoji: "🦎" },
+                    { en: "alligator", de: "Alligator", article: "der", emoji: "🐊" },
+                    { en: "chameleon", de: "Chamäleon", article: "das", emoji: "🦎" },
+                    { en: "python", de: "Python", article: "die", emoji: "🐍" },
+                    { en: "gecko", de: "Gecko", article: "der", emoji: "🦎" },
+                    { en: "viper", de: "Viper", article: "die", emoji: "🐍" }
+                ]
+            },
+            drinks: {
+                emoji: "🥤",
+                name: "Getränke (Drinks)",
+                color: "from-yellow-400 to-orange-500",
+                words: [
+                    { en: "water", de: "Wasser", article: "das", emoji: "💧" },
+                    { en: "juice", de: "Saft", article: "der", emoji: "🧃" },
+                    { en: "milk", de: "Milch", article: "die", emoji: "🥛" },
+                    { en: "coffee", de: "Kaffee", article: "der", emoji: "☕" },
+                    { en: "tea", de: "Tee", article: "der", emoji: "🍵" },
+                    { en: "soda", de: "Limonade", article: "die", emoji: "🥤" },
+                    { en: "smoothie", de: "Smoothie", article: "der", emoji: "🧋" },
+                    { en: "lemonade", de: "Zitronenlimonade", article: "die", emoji: "🍋" },
+                    { en: "chocolate milk", de: "Kakao", article: "der", emoji: "🍫" },
+                    { en: "ice tea", de: "Eistee", article: "der", emoji: "🧊" }
+                ]
+            },
+            desserts: {
+                emoji: "🍰",
+                name: "Süßigkeiten (Desserts)",
+                color: "from-orange-400 to-pink-500",
+                words: [
+                    { en: "cake", de: "Kuchen", article: "der", emoji: "🍰" },
+                    { en: "cookie", de: "Keks", article: "der", emoji: "🍪" },
+                    { en: "candy", de: "Süßigkeit", article: "die", emoji: "🍬" },
+                    { en: "chocolate", de: "Schokolade", article: "die", emoji: "🍫" },
+                    { en: "ice cream", de: "Eiscreme", article: "die", emoji: "🍦" },
+                    { en: "donut", de: "Donut", article: "der", emoji: "🍩" },
+                    { en: "pudding", de: "Pudding", article: "der", emoji: "🍮" },
+                    { en: "popsicle", de: "Eis am Stiel", article: "das", emoji: "🍧" },
+                    { en: "gum", de: "Kaugummi", article: "der", emoji: "🤭" },
+                    { en: "pie", de: "Kuchen", article: "der", emoji: "🥧" }
+                ]
+            },
+            tools: {
+                emoji: "🔨",
+                name: "Werkzeuge (Tools)",
+                color: "from-orange-600 to-red-700",
+                words: [
+                    { en: "hammer", de: "Hammer", article: "der", emoji: "🔨" },
+                    { en: "nail", de: "Nagel", article: "der", emoji: "🔨" },
+                    { en: "screw", de: "Schraube", article: "die", emoji: "⚙️" },
+                    { en: "screwdriver", de: "Schraubenzieher", article: "der", emoji: "🪛" },
+                    { en: "wrench", de: "Schraubenschlüssel", article: "der", emoji: "🔧" },
+                    { en: "pliers", de: "Zange", article: "die", emoji: "🔗" },
+                    { en: "saw", de: "Säge", article: "die", emoji: "🪚" },
+                    { en: "drill", de: "Bohrer", article: "der", emoji: "🔌" },
+                    { en: "sandpaper", de: "Schleifpapier", article: "das", emoji: "📄" },
+                    { en: "level", de: "Wasserwaage", article: "die", emoji: "📏" }
+                ]
+            },
+            school_subjects: {
+                emoji: "📖",
+                name: "Schulfächer (Subjects)",
+                color: "from-green-500 to-emerald-600",
+                words: [
+                    { en: "math", de: "Mathe", article: "die", emoji: "🔢" },
+                    { en: "science", de: "Naturwissenschaft", article: "die", emoji: "🔬" },
+                    { en: "language", de: "Sprache", article: "die", emoji: "💬" },
+                    { en: "history", de: "Geschichte", article: "die", emoji: "📜" },
+                    { en: "geography", de: "Geographie", article: "die", emoji: "🗺️" },
+                    { en: "art", de: "Kunst", article: "die", emoji: "🎨" },
+                    { en: "music", de: "Musik", article: "die", emoji: "🎵" },
+                    { en: "PE", de: "Sport", article: "der", emoji: "⚽" },
+                    { en: "chemistry", de: "Chemie", article: "die", emoji: "⚗️" },
+                    { en: "biology", de: "Biologie", article: "die", emoji: "🔬" }
+                ]
+            },
+            verbs: {
+                emoji: "⚡",
+                name: "Verben (Verbs)",
+                color: "from-red-500 to-pink-600",
+                words: [
+                    { en: "see", de: "sehen", article: "das", emoji: "👁️" },
+                    { en: "hear", de: "hören", article: "das", emoji: "👂" },
+                    { en: "feel", de: "fühlen", article: "das", emoji: "❤️" },
+                    { en: "touch", de: "berühren", article: "das", emoji: "✋" },
+                    { en: "take", de: "nehmen", article: "das", emoji: "🤲" },
+                    { en: "give", de: "geben", article: "das", emoji: "🎁" },
+                    { en: "buy", de: "kaufen", article: "das", emoji: "🛍️" },
+                    { en: "sell", de: "verkaufen", article: "das", emoji: "💰" },
+                    { en: "open", de: "öffnen", article: "das", emoji: "🚪" },
+                    { en: "close", de: "schließen", article: "das", emoji: "🔒" }
+                ]
+            },
+            sizes: {
+                emoji: "📏",
+                name: "Größen (Sizes)",
+                color: "from-blue-500 to-purple-600",
+                words: [
+                    { en: "big", de: "groß", article: "die", emoji: "📦" },
+                    { en: "small", de: "klein", article: "die", emoji: "🤏" },
+                    { en: "medium", de: "mittelgroß", article: "die", emoji: "📬" },
+                    { en: "long", de: "lang", article: "die", emoji: "📏" },
+                    { en: "short", de: "kurz", article: "die", emoji: "✂️" },
+                    { en: "wide", de: "breit", article: "die", emoji: "↔️" },
+                    { en: "narrow", de: "eng", article: "die", emoji: "↔️" },
+                    { en: "tall", de: "groß", article: "die", emoji: "🤓" },
+                    { en: "low", de: "niedrig", article: "die", emoji: "📉" },
+                    { en: "thick", de: "dick", article: "die", emoji: "📚" }
+                ]
+            },
+            quantities: {
+                emoji: "🔢",
+                name: "Mengen (Quantities)",
+                color: "from-yellow-400 to-red-500",
+                words: [
+                    { en: "all", de: "alle", article: "die", emoji: "✅" },
+                    { en: "some", de: "einige", article: "die", emoji: "👥" },
+                    { en: "many", de: "viele", article: "die", emoji: "👨‍👨‍👧‍👦" },
+                    { en: "few", de: "wenige", article: "die", emoji: "👤" },
+                    { en: "one", de: "eins", article: "die", emoji: "1️⃣" },
+                    { en: "a lot", de: "viel", article: "die", emoji: "📚" },
+                    { en: "a little", de: "wenig", article: "die", emoji: "💧" },
+                    { en: "half", de: "Hälfte", article: "die", emoji: "📖" },
+                    { en: "double", de: "doppelt", article: "die", emoji: "✌️" },
+                    { en: "pair", de: "Paar", article: "das", emoji: "👟👟" }
+                ]
+            },
+            weather_detailed: {
+                emoji: "⛅",
+                name: "Wetter Details (Weather Events)",
+                color: "from-gray-400 to-slate-600",
+                words: [
+                    { en: "hail", de: "Hagel", article: "der", emoji: "🌨️" },
+                    { en: "sleet", de: "Schneeregen", article: "der", emoji: "🌧️" },
+                    { en: "drizzle", de: "Nieselregen", article: "der", emoji: "🌦️" },
+                    { en: "blizzard", de: "Blizzard", article: "der", emoji: "❄️" },
+                    { en: "tornado", de: "Tornado", article: "der", emoji: "🌪️" },
+                    { en: "hurricane", de: "Hurrikan", article: "der", emoji: "🌀" },
+                    { en: "flood", de: "Hochwasser", article: "das", emoji: "💦" },
+                    { en: "drought", de: "Dürre", article: "die", emoji: "☀️" },
+                    { en: "frost", de: "Frost", article: "der", emoji: "❄️" },
+                    { en: "dew", de: "Tau", article: "der", emoji: "💧" }
+                ]
+            },
+            buildings: {
+                emoji: "🏢",
+                name: "Gebäude (Buildings)",
+                color: "from-gray-700 to-slate-900",
+                words: [
+                    { en: "house", de: "Haus", article: "das", emoji: "🏠" },
+                    { en: "apartment", de: "Wohnung", article: "die", emoji: "🏢" },
+                    { en: "hospital", de: "Krankenhaus", article: "das", emoji: "🏥" },
+                    { en: "library", de: "Bibliothek", article: "die", emoji: "📚" },
+                    { en: "museum", de: "Museum", article: "das", emoji: "🖼️" },
+                    { en: "restaurant", de: "Restaurant", article: "das", emoji: "🍽️" },
+                    { en: "store", de: "Geschäft", article: "das", emoji: "🛍️" },
+                    { en: "church", de: "Kirche", article: "die", emoji: "⛪" },
+                    { en: "tower", de: "Turm", article: "der", emoji: "🗼" },
+                    { en: "bridge", de: "Brücke", article: "die", emoji: "🌉" }
+                ]
+            },
+            colors_extended: {
+                emoji: "🎨",
+                name: "Mehr Farben (More Colors)",
+                color: "from-pink-500 to-purple-600",
+                words: [
+                    { en: "turquoise", de: "türkis", article: "die", emoji: "💎" },
+                    { en: "navy", de: "marineblau", article: "die", emoji: "🌊" },
+                    { en: "gold", de: "golden", article: "die", emoji: "✨" },
+                    { en: "silver", de: "silber", article: "die", emoji: "✨" },
+                    { en: "copper", de: "kupfer", article: "die", emoji: "🔧" },
+                    { en: "bronze", de: "bronze", article: "die", emoji: "🏅" },
+                    { en: "magenta", de: "magenta", article: "die", emoji: "🎀" },
+                    { en: "crimson", de: "karminrot", article: "die", emoji: "❤️" },
+                    { en: "scarlet", de: "scharlachrot", article: "die", emoji: "🔴" },
+                    { en: "violet", de: "violett", article: "die", emoji: "💜" }
+                ]
+            },
+            celebrations: {
+                emoji: "🎊",
+                name: "Feste (Celebrations)",
+                color: "from-yellow-300 to-orange-500",
+                words: [
+                    { en: "carnival", de: "Karneval", article: "der", emoji: "🎭" },
+                    { en: "festival", de: "Fest", article: "das", emoji: "🎪" },
+                    { en: "concert", de: "Konzert", article: "das", emoji: "🎵" },
+                    { en: "wedding", de: "Hochzeit", article: "die", emoji: "💒" },
+                    { en: "anniversary", de: "Jahrestag", article: "der", emoji: "📅" },
+                    { en: "graduation", de: "Abschluss", article: "der", emoji: "🎓" },
+                    { en: "wedding cake", de: "Hochzeitstorte", article: "die", emoji: "🎂" },
+                    { en: "fireworks", de: "Feuerwerk", article: "das", emoji: "🎆" },
+                    { en: "confetti", de: "Konfetti", article: "das", emoji: "🎉" },
+                    { en: "celebration", de: "Feier", article: "die", emoji: "🥳" }
+                ]
+            }
+        };
+
+        // ============ LOAD EXTENDED VOCABULARY ============
+        async function loadExtendedVocab() {
+            try {
+                const response = await fetch('vocab-extended.json');
+                if (response.ok) {
+                    const extendedData = await response.json();
+                    // Merge extended data with core data (extended overwrites core)
+                    Object.keys(extendedData).forEach(key => {
+                        if (VOCABULARY_DB[key]) {
+                            VOCABULARY_DB[key].words = extendedData[key].words;
+                        }
+                    });
+                    appState.extendedVocabLoaded = true;
+                    console.log('✅ Extended vocabulary loaded');
+                }
+            } catch (e) {
+                console.log('ℹ️ Extended vocabulary not available (using core words)');
+            }
+        }
+
+        // ============ APP STATE ============
+        const appState = {
+            currentScreen: "home",
+            selectedCategory: null,
+            currentCardIndex: 0,
+            score: 0,
+            deck: [],
+            completedWords: new Set(),
+            synth: window.speechSynthesis || null,
+            extendedVocabLoaded: false
+        };
+
+        // ============ UTILITIES ============
+        function getArticleClass(article) {
+            const classes = { der: "article-der", die: "article-die", das: "article-das" };
+            return classes[article] || "";
+        }
+
+        function speakGerman(text) {
+            if (!appState.synth) return;
+            appState.synth.cancel();
+            const utterance = new SpeechSynthesisUtterance(text);
+            utterance.lang = "de-DE";
+            utterance.rate = 0.9;
+            utterance.pitch = 1.2;
+            appState.synth.speak(utterance);
+        }
+
+        function createConfetti() {
+            const emojis = ["⭐", "🎉", "🎊", "✨", "🌟"];
+            for (let i = 0; i < 30; i++) {
+                const confetti = document.createElement("div");
+                confetti.className = "confetti";
+                confetti.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+                confetti.style.left = Math.random() * 100 + "%";
+                confetti.style.delay = Math.random() * 0.3 + "s";
+                document.body.appendChild(confetti);
+                setTimeout(() => confetti.remove(), 3000);
+            }
+        }
+
+        function createStarBurst(event) {
+            const rect = event.target.getBoundingClientRect();
+            for (let i = 0; i < 8; i++) {
+                const star = document.createElement("div");
+                star.className = "star-burst";
+                star.textContent = "⭐";
+                star.style.left = rect.left + rect.width / 2 + "px";
+                star.style.top = rect.top + rect.height / 2 + "px";
+                const angle = (i / 8) * Math.PI * 2;
+                star.style.setProperty("--angle", angle);
+                star.style.transform = `rotate(${angle}rad) translateX(50px)`;
+                document.body.appendChild(star);
+                setTimeout(() => star.remove(), 600);
+            }
+        }
+
+        function shuffleArray(arr) {
+            const copy = [...arr];
+            for (let i = copy.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [copy[i], copy[j]] = [copy[j], copy[i]];
+            }
+            return copy;
+        }
+
+        // ============ SCREEN RENDERERS ============
+        function renderHome() {
+            const app = document.getElementById("app");
+            const vocabStatus = appState.extendedVocabLoaded
+                ? '<div class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm font-bold mb-4">📚 Extended Vocabulary Loaded</div>'
+                : '<div class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-sm font-bold mb-4">📖 Core Vocabulary (Add vocab-extended.json for more)</div>';
+
+            app.innerHTML = `
+                <div class="min-h-screen flex flex-col items-center justify-center px-4 py-8">
+                    <div class="text-center mb-8">
+                        <h1 class="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600 mb-2">Deutsch Flashcards</h1>
+                        <p class="text-gray-600 text-lg">🇩🇪 Learn German vocabulary like a superstar!</p>
+                        ${vocabStatus}
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-4 max-w-md w-full">
+                        ${Object.entries(VOCABULARY_DB).map(([key, category]) => `
+                            <button class="category-btn bg-gradient-to-br ${category.color} rounded-3xl p-6 text-white font-bold text-center shadow-lg hover:shadow-xl transform hover:scale-105 transition-all" data-category="${key}">
+                                <div class="text-5xl mb-3">${category.emoji}</div>
+                                <div class="text-sm">${category.name}</div>
+                            </button>
+                        `).join("")}
+                    </div>
+                </div>
+            `;
+
+            document.querySelectorAll(".category-btn").forEach(btn => {
+                btn.addEventListener("click", () => startGame(btn.dataset.category));
+            });
+        }
+
+        function startGame(categoryKey) {
+            const category = VOCABULARY_DB[categoryKey];
+            appState.selectedCategory = categoryKey;
+            appState.deck = shuffleArray(category.words);
+            appState.currentCardIndex = 0;
+            appState.score = 0;
+            appState.completedWords.clear();
+            appState.currentScreen = "game";
+            renderGame();
+        }
+
+        function renderGame() {
+            const category = VOCABULARY_DB[appState.selectedCategory];
+            const currentCard = appState.deck[appState.currentCardIndex];
+            const isFlipped = appState.deck[appState.currentCardIndex]._flipped || false;
+            const totalCards = appState.deck.length;
+            const progress = ((appState.completedWords.size) / totalCards) * 100;
+
+            if (appState.currentCardIndex >= totalCards) {
+                renderComplete();
+                return;
+            }
+
+            const app = document.getElementById("app");
+            app.innerHTML = `
+                <div class="min-h-screen flex flex-col px-4 py-6 pb-20">
+                    <!-- Header -->
+                    <div class="flex justify-between items-center mb-6">
+                        <button class="home-btn bg-white rounded-full p-3 shadow-md hover:shadow-lg transition-all" title="Back to home">
+                            <span class="text-2xl">🏠</span>
+                        </button>
+                        <div class="text-center">
+                            <h2 class="text-2xl font-bold text-gray-800">${category.emoji} ${category.name.split(" ")[0]}</h2>
+                            <p class="text-sm text-gray-500">${appState.completedWords.size + 1} / ${totalCards}</p>
+                        </div>
+                        <div class="text-center bg-yellow-300 rounded-full px-4 py-2 font-bold text-lg">
+                            ⭐ ${appState.score}
+                        </div>
+                    </div>
+
+                    <!-- Progress bar -->
+                    <div class="w-full bg-gray-300 rounded-full h-3 mb-8 overflow-hidden">
+                        <div class="bg-gradient-to-r from-purple-500 to-pink-500 h-full transition-all duration-500" style="width: ${progress}%"></div>
+                    </div>
+
+                    <!-- Card -->
+                    <div class="flex-1 flex items-center justify-center mb-8">
+                        <div class="card-container ${isFlipped ? 'flipped' : ''}" id="card" style="width: 320px; height: 380px;">
+                            <div class="card-inner">
+                                <!-- Front -->
+                                <div class="card-front bg-gradient-to-br from-blue-100 to-purple-100 rounded-3xl shadow-2xl border-4 border-white">
+                                    <div class="text-7xl mb-4">${currentCard.emoji}</div>
+                                    <div class="text-3xl font-bold text-gray-800 text-center mb-3">${currentCard.en}</div>
+                                    <div class="text-sm text-gray-700 text-center px-3 mb-2">${currentCard.en_sent || ''}</div>
+                                    <div class="text-xs text-red-600 text-center px-3 mb-3">${currentCard.hi_sent || ''}</div>
+                                    <p class="text-xs text-gray-500 mt-2">← Tap to flip →</p>
+                                </div>
+                                <!-- Back -->
+                                <div class="card-back bg-gradient-to-br from-pink-100 to-red-100 rounded-3xl shadow-2xl border-4 border-white">
+                                    <div class="text-7xl mb-3">${currentCard.emoji}</div>
+                                    <div class="text-lg mb-2">
+                                        <span class="${getArticleClass(currentCard.article)}">${currentCard.article}</span>
+                                        <span class="font-bold text-gray-800"> ${currentCard.de}</span>
+                                    </div>
+                                    <div class="text-xs text-green-700 text-center px-3 mb-2">${currentCard.de_sent || ''}</div>
+                                    <div class="text-xs text-gray-500 mt-3">🔊 Tap to hear</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Navigation buttons -->
+                    <div class="flex gap-3 justify-center mb-4">
+                        <button class="prev-btn ${appState.currentCardIndex === 0 ? 'opacity-50 cursor-not-allowed' : ''} bg-blue-400 hover:bg-blue-500 text-white font-bold py-2 px-6 rounded-xl shadow-lg transform hover:scale-105 transition-all" ${appState.currentCardIndex === 0 ? 'disabled' : ''}>
+                            ⬅️ Previous
+                        </button>
+                        <button class="next-btn ${appState.currentCardIndex === totalCards - 1 ? 'opacity-50 cursor-not-allowed' : ''} bg-blue-400 hover:bg-blue-500 text-white font-bold py-2 px-6 rounded-xl shadow-lg transform hover:scale-105 transition-all" ${appState.currentCardIndex === totalCards - 1 ? 'disabled' : ''}>
+                            Next ➡️
+                        </button>
+                    </div>
+
+                    <!-- Action buttons -->
+                    <div class="flex gap-4 justify-center">
+                        <button class="try-again-btn bg-red-500 hover:bg-red-600 text-white font-bold py-4 px-8 rounded-2xl text-xl shadow-lg transform hover:scale-105 transition-all">
+                            ❌ Try Again
+                        </button>
+                        <button class="know-it-btn bg-green-500 hover:bg-green-600 text-white font-bold py-4 px-8 rounded-2xl text-xl shadow-lg transform hover:scale-105 transition-all">
+                            ✅ I Know It!
+                        </button>
+                    </div>
+                </div>
+            `;
+
+            // Event listeners
+            const card = document.getElementById("card");
+            card.addEventListener("click", () => {
+                card.classList.toggle("flipped");
+                appState.deck[appState.currentCardIndex]._flipped = card.classList.contains("flipped");
+                if (card.classList.contains("flipped")) {
+                    speakGerman(`${currentCard.article} ${currentCard.de}`);
+                }
+            });
+
+            document.querySelector(".know-it-btn").addEventListener("click", () => {
+                createConfetti();
+                createStarBurst(event);
+                appState.score++;
+                appState.completedWords.add(appState.currentCardIndex);
+                appState.currentCardIndex++;
+                appState.deck[appState.currentCardIndex - 1]._flipped = false;
+                renderGame();
+            });
+
+            document.querySelector(".try-again-btn").addEventListener("click", () => {
+                appState.deck.push(appState.deck.splice(appState.currentCardIndex, 1)[0]);
+                appState.deck[appState.currentCardIndex]._flipped = false;
+                renderGame();
+            });
+
+            document.querySelector(".prev-btn").addEventListener("click", () => {
+                if (appState.currentCardIndex > 0) {
+                    appState.currentCardIndex--;
+                    appState.deck[appState.currentCardIndex]._flipped = false;
+                    renderGame();
+                }
+            });
+
+            document.querySelector(".next-btn").addEventListener("click", () => {
+                if (appState.currentCardIndex < appState.deck.length - 1) {
+                    appState.currentCardIndex++;
+                    appState.deck[appState.currentCardIndex]._flipped = false;
+                    renderGame();
+                }
+            });
+
+            document.querySelector(".home-btn").addEventListener("click", () => {
+                appState.currentScreen = "home";
+                renderHome();
+            });
+        }
+
+        function renderComplete() {
+            const category = VOCABULARY_DB[appState.selectedCategory];
+            const app = document.getElementById("app");
+            app.innerHTML = `
+                <div class="min-h-screen flex flex-col items-center justify-center px-4 py-8">
+                    <div class="text-center">
+                        <div class="text-9xl mb-6 animate-bounce">🏆</div>
+                        <h1 class="text-5xl font-bold text-gray-800 mb-4">Super gemacht!</h1>
+                        <p class="text-2xl text-gray-600 mb-8">You earned ${appState.score} stars!</p>
+
+                        <div class="inline-block bg-gradient-to-r from-yellow-300 to-yellow-400 rounded-3xl px-8 py-6 mb-12 shadow-lg">
+                            <p class="text-6xl">⭐ × ${appState.score}</p>
+                        </div>
+
+                        <div class="flex gap-4 justify-center">
+                            <button class="replay-btn bg-gradient-to-r from-purple-500 to-pink-500 text-white font-bold py-4 px-8 rounded-2xl text-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all">
+                                🔄 Play Again
+                            </button>
+                            <button class="home-btn-final bg-gradient-to-r from-blue-500 to-indigo-500 text-white font-bold py-4 px-8 rounded-2xl text-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all">
+                                🏠 Home
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            `;
+
+            document.querySelector(".replay-btn").addEventListener("click", () => {
+                startGame(appState.selectedCategory);
+            });
+
+            document.querySelector(".home-btn-final").addEventListener("click", () => {
+                appState.currentScreen = "home";
+                renderHome();
+            });
+        }
+
+        // ============ INITIALIZATION ============
+        window.addEventListener("load", async () => {
+            if ("serviceWorker" in navigator) {
+                const swCode = `
+const CACHE_NAME = "deutsch-flashcards-v1";
+const ASSETS = ["/", "/index.html"];
+self.addEventListener("install", e => { e.waitUntil(caches.open(CACHE_NAME).then(c => c.addAll(ASSETS))); });
+self.addEventListener("activate", e => { e.waitUntil(caches.keys().then(names => Promise.all(names.map(name => caches.delete(name))))); });
+self.addEventListener("fetch", e => { e.respondWith(caches.match(e.request).then(r => r || fetch(e.request))); });
+                `;
+                const blob = new Blob([swCode], { type: "application/javascript" });
+                const swUrl = URL.createObjectURL(blob);
+                navigator.serviceWorker.register(swUrl).catch(() => {});
+            }
+            // Try to load extended vocabulary
+            await loadExtendedVocab();
+            renderHome();
+        });
+    </script>
+</body>
+</html>

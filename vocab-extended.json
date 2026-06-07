@@ -1,0 +1,1162 @@
+{
+  "animals": {
+    "emoji": "🐾",
+    "name": "Tiere (Animals)",
+    "color": "from-amber-400 to-orange-500",
+    "words": [
+      {
+        "en": "dog",
+        "de": "Hund",
+        "article": "der",
+        "emoji": "🐕"
+      },
+      {
+        "en": "cat",
+        "de": "Katze",
+        "article": "die",
+        "emoji": "🐱"
+      },
+      {
+        "en": "mouse",
+        "de": "Maus",
+        "article": "die",
+        "emoji": "🐭"
+      },
+      {
+        "en": "elephant",
+        "de": "Elefant",
+        "article": "der",
+        "emoji": "🐘"
+      },
+      {
+        "en": "lion",
+        "de": "Löwe",
+        "article": "der",
+        "emoji": "🦁"
+      },
+      {
+        "en": "tiger",
+        "de": "Tiger",
+        "article": "der",
+        "emoji": "🐯"
+      },
+      {
+        "en": "bear",
+        "de": "Bär",
+        "article": "der",
+        "emoji": "🐻"
+      },
+      {
+        "en": "monkey",
+        "de": "Affe",
+        "article": "der",
+        "emoji": "🐵"
+      },
+      {
+        "en": "zebra",
+        "de": "Zebra",
+        "article": "das",
+        "emoji": "🦓"
+      },
+      {
+        "en": "giraffe",
+        "de": "Giraffe",
+        "article": "die",
+        "emoji": "🦒"
+      },
+      {
+        "en": "hippo",
+        "de": "Flusspferd",
+        "article": "das",
+        "emoji": "🦛"
+      },
+      {
+        "en": "rhinoceros",
+        "de": "Nashorn",
+        "article": "das",
+        "emoji": "🦏"
+      },
+      {
+        "en": "kangaroo",
+        "de": "Känguru",
+        "article": "das",
+        "emoji": "🦘"
+      },
+      {
+        "en": "panda",
+        "de": "Panda",
+        "article": "der",
+        "emoji": "🐼"
+      },
+      {
+        "en": "koala",
+        "de": "Koala",
+        "article": "der",
+        "emoji": "🐨"
+      },
+      {
+        "en": "rabbit",
+        "de": "Hase",
+        "article": "der",
+        "emoji": "🐰"
+      },
+      {
+        "en": "cow",
+        "de": "Kuh",
+        "article": "die",
+        "emoji": "🐄"
+      },
+      {
+        "en": "pig",
+        "de": "Schwein",
+        "article": "das",
+        "emoji": "🐷"
+      },
+      {
+        "en": "sheep",
+        "de": "Schaf",
+        "article": "das",
+        "emoji": "🐑"
+      },
+      {
+        "en": "horse",
+        "de": "Pferd",
+        "article": "das",
+        "emoji": "🐴"
+      },
+      {
+        "en": "goat",
+        "de": "Ziege",
+        "article": "die",
+        "emoji": "🐐"
+      },
+      {
+        "en": "squirrel",
+        "de": "Eichhörnchen",
+        "article": "das",
+        "emoji": "🐿️"
+      },
+      {
+        "en": "raccoon",
+        "de": "Waschbär",
+        "article": "der",
+        "emoji": "🦝"
+      },
+      {
+        "en": "fox",
+        "de": "Fuchs",
+        "article": "der",
+        "emoji": "🦊"
+      },
+      {
+        "en": "wolf",
+        "de": "Wolf",
+        "article": "der",
+        "emoji": "🐺"
+      },
+      {
+        "en": "badger",
+        "de": "Dachs",
+        "article": "der",
+        "emoji": "🦡"
+      },
+      {
+        "en": "otter",
+        "de": "Otter",
+        "article": "der",
+        "emoji": "🦦"
+      },
+      {
+        "en": "hedgehog",
+        "de": "Igel",
+        "article": "der",
+        "emoji": "🦔"
+      },
+      {
+        "en": "sloth",
+        "de": "Faultier",
+        "article": "das",
+        "emoji": "🦥"
+      },
+      {
+        "en": "meerkat",
+        "de": "Erdmännchen",
+        "article": "das",
+        "emoji": "🦦"
+      },
+      {
+        "en": "porcupine",
+        "de": "Stachelschwein",
+        "article": "das",
+        "emoji": "🦔"
+      },
+      {
+        "en": "moose",
+        "de": "Elch",
+        "article": "der",
+        "emoji": "🫎"
+      },
+      {
+        "en": "seal",
+        "de": "Robbe",
+        "article": "die",
+        "emoji": "🦭"
+      },
+      {
+        "en": "walrus",
+        "de": "Walross",
+        "article": "das",
+        "emoji": "🦭"
+      },
+      {
+        "en": "whale",
+        "de": "Wal",
+        "article": "der",
+        "emoji": "🐋"
+      },
+      {
+        "en": "shark",
+        "de": "Hai",
+        "article": "der",
+        "emoji": "🦈"
+      },
+      {
+        "en": "dolphin",
+        "de": "Delfin",
+        "article": "der",
+        "emoji": "🐬"
+      },
+      {
+        "en": "octopus",
+        "de": "Oktopus",
+        "article": "der",
+        "emoji": "🐙"
+      },
+      {
+        "en": "squid",
+        "de": "Tintenfisch",
+        "article": "der",
+        "emoji": "🦑"
+      },
+      {
+        "en": "lobster",
+        "de": "Hummer",
+        "article": "der",
+        "emoji": "🦞"
+      },
+      {
+        "en": "crab",
+        "de": "Krabbe",
+        "article": "die",
+        "emoji": "🦀"
+      },
+      {
+        "en": "starfish",
+        "de": "Seestern",
+        "article": "der",
+        "emoji": "⭐"
+      },
+      {
+        "en": "jellyfish",
+        "de": "Qualle",
+        "article": "die",
+        "emoji": "🪼"
+      },
+      {
+        "en": "turtle",
+        "de": "Schildkröte",
+        "article": "die",
+        "emoji": "🐢"
+      },
+      {
+        "en": "crocodile",
+        "de": "Krokodil",
+        "article": "das",
+        "emoji": "🐊"
+      },
+      {
+        "en": "snake",
+        "de": "Schlange",
+        "article": "die",
+        "emoji": "🐍"
+      },
+      {
+        "en": "lizard",
+        "de": "Eidechse",
+        "article": "die",
+        "emoji": "🦎"
+      },
+      {
+        "en": "frog",
+        "de": "Frosch",
+        "article": "der",
+        "emoji": "🐸"
+      },
+      {
+        "en": "toad",
+        "de": "Kröte",
+        "article": "die",
+        "emoji": "🐸"
+      },
+      {
+        "en": "butterfly",
+        "de": "Schmetterling",
+        "article": "der",
+        "emoji": "🦋"
+      },
+      {
+        "en": "bee",
+        "de": "Biene",
+        "article": "die",
+        "emoji": "🐝"
+      },
+      {
+        "en": "ant",
+        "de": "Ameise",
+        "article": "die",
+        "emoji": "🐜"
+      },
+      {
+        "en": "ladybug",
+        "de": "Marienkäfer",
+        "article": "der",
+        "emoji": "🐞"
+      },
+      {
+        "en": "dragonfly",
+        "de": "Libelle",
+        "article": "die",
+        "emoji": "🐛"
+      },
+      {
+        "en": "spider",
+        "de": "Spinne",
+        "article": "die",
+        "emoji": "🕷️"
+      },
+      {
+        "en": "worm",
+        "de": "Wurm",
+        "article": "der",
+        "emoji": "🪱"
+      },
+      {
+        "en": "fly",
+        "de": "Fliege",
+        "article": "die",
+        "emoji": "🪰"
+      },
+      {
+        "en": "mosquito",
+        "de": "Mücke",
+        "article": "die",
+        "emoji": "🦟"
+      },
+      {
+        "en": "caterpillar",
+        "de": "Raupe",
+        "article": "die",
+        "emoji": "🐛"
+      },
+      {
+        "en": "beetle",
+        "de": "Käfer",
+        "article": "der",
+        "emoji": "🐛"
+      },
+      {
+        "en": "grasshopper",
+        "de": "Heuschrecke",
+        "article": "die",
+        "emoji": "🦗"
+      },
+      {
+        "en": "cricket",
+        "de": "Grille",
+        "article": "die",
+        "emoji": "🦗"
+      },
+      {
+        "en": "firefly",
+        "de": "Glühwürmchen",
+        "article": "das",
+        "emoji": "🐛"
+      },
+      {
+        "en": "cockroach",
+        "de": "Kakerlak",
+        "article": "die",
+        "emoji": "🪳"
+      },
+      {
+        "en": "centipede",
+        "de": "Tausendfüßer",
+        "article": "der",
+        "emoji": "🐛"
+      },
+      {
+        "en": "millipede",
+        "de": "Tausendfüßer",
+        "article": "der",
+        "emoji": "🐛"
+      },
+      {
+        "en": "snail",
+        "de": "Schnecke",
+        "article": "die",
+        "emoji": "🐌"
+      },
+      {
+        "en": "slug",
+        "de": "Nacktschnecke",
+        "article": "die",
+        "emoji": "🐌"
+      },
+      {
+        "en": "eagle",
+        "de": "Adler",
+        "article": "der",
+        "emoji": "🦅"
+      },
+      {
+        "en": "owl",
+        "de": "Eule",
+        "article": "die",
+        "emoji": "🦉"
+      },
+      {
+        "en": "parrot",
+        "de": "Papagei",
+        "article": "der",
+        "emoji": "🦜"
+      },
+      {
+        "en": "peacock",
+        "de": "Pfau",
+        "article": "der",
+        "emoji": "🦚"
+      },
+      {
+        "en": "ostrich",
+        "de": "Strauß",
+        "article": "der",
+        "emoji": "🐦"
+      },
+      {
+        "en": "swan",
+        "de": "Schwan",
+        "article": "der",
+        "emoji": "🦢"
+      },
+      {
+        "en": "stork",
+        "de": "Storch",
+        "article": "der",
+        "emoji": "🦆"
+      },
+      {
+        "en": "duck",
+        "de": "Ente",
+        "article": "die",
+        "emoji": "🦆"
+      },
+      {
+        "en": "chicken",
+        "de": "Huhn",
+        "article": "das",
+        "emoji": "🐔"
+      },
+      {
+        "en": "rooster",
+        "de": "Hahn",
+        "article": "der",
+        "emoji": "🐓"
+      },
+      {
+        "en": "goose",
+        "de": "Gans",
+        "article": "die",
+        "emoji": "🦢"
+      },
+      {
+        "en": "penguin",
+        "de": "Pinguin",
+        "article": "der",
+        "emoji": "🐧"
+      },
+      {
+        "en": "raven",
+        "de": "Rabe",
+        "article": "der",
+        "emoji": "🐦‍⬛"
+      },
+      {
+        "en": "crow",
+        "de": "Krähe",
+        "article": "die",
+        "emoji": "🐦"
+      },
+      {
+        "en": "pigeon",
+        "de": "Taube",
+        "article": "die",
+        "emoji": "🕊️"
+      },
+      {
+        "en": "dove",
+        "de": "Taube",
+        "article": "die",
+        "emoji": "🕊️"
+      },
+      {
+        "en": "sparrow",
+        "de": "Spatz",
+        "article": "der",
+        "emoji": "🐦"
+      },
+      {
+        "en": "robin",
+        "de": "Rotkehlchen",
+        "article": "das",
+        "emoji": "🐦"
+      },
+      {
+        "en": "hummingbird",
+        "de": "Kolibri",
+        "article": "der",
+        "emoji": "🐦"
+      },
+      {
+        "en": "hawk",
+        "de": "Habicht",
+        "article": "der",
+        "emoji": "🦅"
+      },
+      {
+        "en": "falcon",
+        "de": "Falke",
+        "article": "der",
+        "emoji": "🦅"
+      },
+      {
+        "en": "vulture",
+        "de": "Geier",
+        "article": "der",
+        "emoji": "🦅"
+      },
+      {
+        "en": "albatross",
+        "de": "Albatros",
+        "article": "der",
+        "emoji": "🐦"
+      },
+      {
+        "en": "puffin",
+        "de": "Papageientaucher",
+        "article": "der",
+        "emoji": "🐦"
+      },
+      {
+        "en": "pelican",
+        "de": "Pelikan",
+        "article": "der",
+        "emoji": "🐦"
+      },
+      {
+        "en": "flamingo",
+        "de": "Flamingo",
+        "article": "der",
+        "emoji": "🦩"
+      }
+    ]
+  },
+  "food": {
+    "emoji": "🍎",
+    "name": "Essen & Trinken (Food & Drink)",
+    "color": "from-red-400 to-pink-500",
+    "words": [
+      {
+        "en": "apple",
+        "de": "Apfel",
+        "article": "der",
+        "emoji": "🍎"
+      },
+      {
+        "en": "banana",
+        "de": "Banane",
+        "article": "die",
+        "emoji": "🍌"
+      },
+      {
+        "en": "orange",
+        "de": "Orange",
+        "article": "die",
+        "emoji": "🍊"
+      },
+      {
+        "en": "grape",
+        "de": "Traube",
+        "article": "die",
+        "emoji": "🍇"
+      },
+      {
+        "en": "strawberry",
+        "de": "Erdbeere",
+        "article": "die",
+        "emoji": "🍓"
+      },
+      {
+        "en": "watermelon",
+        "de": "Wassermelone",
+        "article": "die",
+        "emoji": "🍉"
+      },
+      {
+        "en": "melon",
+        "de": "Melone",
+        "article": "die",
+        "emoji": "🍈"
+      },
+      {
+        "en": "pineapple",
+        "de": "Ananas",
+        "article": "die",
+        "emoji": "🍍"
+      },
+      {
+        "en": "mango",
+        "de": "Mango",
+        "article": "die",
+        "emoji": "🥭"
+      },
+      {
+        "en": "kiwi",
+        "de": "Kiwi",
+        "article": "die",
+        "emoji": "🥝"
+      },
+      {
+        "en": "pear",
+        "de": "Birne",
+        "article": "die",
+        "emoji": "🍐"
+      },
+      {
+        "en": "peach",
+        "de": "Pfirsich",
+        "article": "der",
+        "emoji": "🍑"
+      },
+      {
+        "en": "cherry",
+        "de": "Kirsche",
+        "article": "die",
+        "emoji": "🍒"
+      },
+      {
+        "en": "lemon",
+        "de": "Zitrone",
+        "article": "die",
+        "emoji": "🍋"
+      },
+      {
+        "en": "lime",
+        "de": "Limette",
+        "article": "die",
+        "emoji": "🍋"
+      },
+      {
+        "en": "coconut",
+        "de": "Kokosnuss",
+        "article": "die",
+        "emoji": "🥥"
+      },
+      {
+        "en": "raspberry",
+        "de": "Himbeere",
+        "article": "die",
+        "emoji": "🫐"
+      },
+      {
+        "en": "blueberry",
+        "de": "Blaubeere",
+        "article": "die",
+        "emoji": "🫐"
+      },
+      {
+        "en": "blackberry",
+        "de": "Brombeere",
+        "article": "die",
+        "emoji": "🫐"
+      },
+      {
+        "en": "currant",
+        "de": "Johannisbeere",
+        "article": "die",
+        "emoji": "🫐"
+      },
+      {
+        "en": "avocado",
+        "de": "Avocado",
+        "article": "die",
+        "emoji": "🥑"
+      },
+      {
+        "en": "papaya",
+        "de": "Papaya",
+        "article": "die",
+        "emoji": "🧡"
+      },
+      {
+        "en": "pomegranate",
+        "de": "Granatapfel",
+        "article": "der",
+        "emoji": "🍎"
+      },
+      {
+        "en": "fig",
+        "de": "Feige",
+        "article": "die",
+        "emoji": "🍐"
+      },
+      {
+        "en": "date",
+        "de": "Dattel",
+        "article": "die",
+        "emoji": "📅"
+      },
+      {
+        "en": "plum",
+        "de": "Pflaume",
+        "article": "die",
+        "emoji": "🍑"
+      },
+      {
+        "en": "apricot",
+        "de": "Aprikose",
+        "article": "die",
+        "emoji": "🍑"
+      },
+      {
+        "en": "bread",
+        "de": "Brot",
+        "article": "das",
+        "emoji": "🍞"
+      },
+      {
+        "en": "roll",
+        "de": "Brötchen",
+        "article": "das",
+        "emoji": "🥐"
+      },
+      {
+        "en": "croissant",
+        "de": "Hörnchen",
+        "article": "das",
+        "emoji": "🥐"
+      },
+      {
+        "en": "bagel",
+        "de": "Bagel",
+        "article": "der",
+        "emoji": "🥯"
+      },
+      {
+        "en": "pasta",
+        "de": "Pasta",
+        "article": "die",
+        "emoji": "🍝"
+      },
+      {
+        "en": "spaghetti",
+        "de": "Spaghetti",
+        "article": "die",
+        "emoji": "🍝"
+      },
+      {
+        "en": "rice",
+        "de": "Reis",
+        "article": "der",
+        "emoji": "🍚"
+      },
+      {
+        "en": "cheese",
+        "de": "Käse",
+        "article": "der",
+        "emoji": "🧀"
+      },
+      {
+        "en": "milk",
+        "de": "Milch",
+        "article": "die",
+        "emoji": "🥛"
+      },
+      {
+        "en": "yogurt",
+        "de": "Joghurt",
+        "article": "der",
+        "emoji": "🥛"
+      },
+      {
+        "en": "butter",
+        "de": "Butter",
+        "article": "die",
+        "emoji": "🧈"
+      },
+      {
+        "en": "egg",
+        "de": "Ei",
+        "article": "das",
+        "emoji": "🥚"
+      },
+      {
+        "en": "carrot",
+        "de": "Karotte",
+        "article": "die",
+        "emoji": "🥕"
+      },
+      {
+        "en": "broccoli",
+        "de": "Brokkoli",
+        "article": "der",
+        "emoji": "🥦"
+      },
+      {
+        "en": "spinach",
+        "de": "Spinat",
+        "article": "der",
+        "emoji": "🥬"
+      },
+      {
+        "en": "lettuce",
+        "de": "Salat",
+        "article": "der",
+        "emoji": "🥬"
+      },
+      {
+        "en": "tomato",
+        "de": "Tomate",
+        "article": "die",
+        "emoji": "🍅"
+      },
+      {
+        "en": "cucumber",
+        "de": "Gurke",
+        "article": "die",
+        "emoji": "🥒"
+      },
+      {
+        "en": "pepper",
+        "de": "Paprika",
+        "article": "die",
+        "emoji": "🫑"
+      },
+      {
+        "en": "onion",
+        "de": "Zwiebel",
+        "article": "die",
+        "emoji": "🧅"
+      },
+      {
+        "en": "garlic",
+        "de": "Knoblauch",
+        "article": "der",
+        "emoji": "🧄"
+      },
+      {
+        "en": "corn",
+        "de": "Mais",
+        "article": "der",
+        "emoji": "🌽"
+      },
+      {
+        "en": "peas",
+        "de": "Erbsen",
+        "article": "die",
+        "emoji": "🫛"
+      },
+      {
+        "en": "beans",
+        "de": "Bohnen",
+        "article": "die",
+        "emoji": "🫘"
+      },
+      {
+        "en": "potato",
+        "de": "Kartoffel",
+        "article": "die",
+        "emoji": "🥔"
+      },
+      {
+        "en": "sweet potato",
+        "de": "Süßkartoffel",
+        "article": "die",
+        "emoji": "🍠"
+      },
+      {
+        "en": "mushroom",
+        "de": "Pilz",
+        "article": "der",
+        "emoji": "🍄"
+      },
+      {
+        "en": "meat",
+        "de": "Fleisch",
+        "article": "das",
+        "emoji": "🍖"
+      },
+      {
+        "en": "chicken",
+        "de": "Hähnchen",
+        "article": "das",
+        "emoji": "🍗"
+      },
+      {
+        "en": "beef",
+        "de": "Rindfleisch",
+        "article": "das",
+        "emoji": "🍖"
+      },
+      {
+        "en": "pork",
+        "de": "Schweinefleisch",
+        "article": "das",
+        "emoji": "🍖"
+      },
+      {
+        "en": "lamb",
+        "de": "Lammfleisch",
+        "article": "das",
+        "emoji": "🍖"
+      },
+      {
+        "en": "fish",
+        "de": "Fisch",
+        "article": "der",
+        "emoji": "🐟"
+      },
+      {
+        "en": "salmon",
+        "de": "Lachs",
+        "article": "der",
+        "emoji": "🐟"
+      },
+      {
+        "en": "tuna",
+        "de": "Thunfisch",
+        "article": "der",
+        "emoji": "🐠"
+      },
+      {
+        "en": "shrimp",
+        "de": "Garnelen",
+        "article": "die",
+        "emoji": "🦐"
+      },
+      {
+        "en": "lobster",
+        "de": "Hummer",
+        "article": "der",
+        "emoji": "🦞"
+      },
+      {
+        "en": "crab",
+        "de": "Krabbe",
+        "article": "die",
+        "emoji": "🦀"
+      },
+      {
+        "en": "oyster",
+        "de": "Auster",
+        "article": "die",
+        "emoji": "🦪"
+      },
+      {
+        "en": "clam",
+        "de": "Muschel",
+        "article": "die",
+        "emoji": "🦪"
+      },
+      {
+        "en": "pizza",
+        "de": "Pizza",
+        "article": "die",
+        "emoji": "🍕"
+      },
+      {
+        "en": "hamburger",
+        "de": "Hamburger",
+        "article": "der",
+        "emoji": "🍔"
+      },
+      {
+        "en": "hot dog",
+        "de": "Hot Dog",
+        "article": "der",
+        "emoji": "🌭"
+      },
+      {
+        "en": "sandwich",
+        "de": "Sandwich",
+        "article": "das",
+        "emoji": "🥪"
+      },
+      {
+        "en": "soup",
+        "de": "Suppe",
+        "article": "die",
+        "emoji": "🍲"
+      },
+      {
+        "en": "salad",
+        "de": "Salat",
+        "article": "der",
+        "emoji": "🥗"
+      },
+      {
+        "en": "cake",
+        "de": "Kuchen",
+        "article": "der",
+        "emoji": "🍰"
+      },
+      {
+        "en": "cookie",
+        "de": "Keks",
+        "article": "der",
+        "emoji": "🍪"
+      },
+      {
+        "en": "donut",
+        "de": "Donut",
+        "article": "der",
+        "emoji": "🍩"
+      },
+      {
+        "en": "pie",
+        "de": "Kuchen",
+        "article": "der",
+        "emoji": "🥧"
+      },
+      {
+        "en": "chocolate",
+        "de": "Schokolade",
+        "article": "die",
+        "emoji": "🍫"
+      },
+      {
+        "en": "candy",
+        "de": "Süßigkeit",
+        "article": "die",
+        "emoji": "🍬"
+      },
+      {
+        "en": "ice cream",
+        "de": "Eiscreme",
+        "article": "die",
+        "emoji": "🍦"
+      },
+      {
+        "en": "pudding",
+        "de": "Pudding",
+        "article": "der",
+        "emoji": "🍮"
+      },
+      {
+        "en": "juice",
+        "de": "Saft",
+        "article": "der",
+        "emoji": "🧃"
+      },
+      {
+        "en": "water",
+        "de": "Wasser",
+        "article": "das",
+        "emoji": "💧"
+      },
+      {
+        "en": "coffee",
+        "de": "Kaffee",
+        "article": "der",
+        "emoji": "☕"
+      },
+      {
+        "en": "tea",
+        "de": "Tee",
+        "article": "der",
+        "emoji": "🍵"
+      },
+      {
+        "en": "soda",
+        "de": "Limonade",
+        "article": "die",
+        "emoji": "🥤"
+      },
+      {
+        "en": "smoothie",
+        "de": "Smoothie",
+        "article": "der",
+        "emoji": "🧋"
+      },
+      {
+        "en": "beer",
+        "de": "Bier",
+        "article": "das",
+        "emoji": "🍺"
+      },
+      {
+        "en": "wine",
+        "de": "Wein",
+        "article": "der",
+        "emoji": "🍷"
+      },
+      {
+        "en": "champagne",
+        "de": "Sekt",
+        "article": "der",
+        "emoji": "🍾"
+      },
+      {
+        "en": "lemonade",
+        "de": "Zitronenlimonade",
+        "article": "die",
+        "emoji": "🍋"
+      },
+      {
+        "en": "hot chocolate",
+        "de": "heiße Schokolade",
+        "article": "die",
+        "emoji": "🍫"
+      },
+      {
+        "en": "sugar",
+        "de": "Zucker",
+        "article": "der",
+        "emoji": "🍯"
+      },
+      {
+        "en": "honey",
+        "de": "Honig",
+        "article": "der",
+        "emoji": "🍯"
+      },
+      {
+        "en": "salt",
+        "de": "Salz",
+        "article": "das",
+        "emoji": "🧂"
+      },
+      {
+        "en": "pepper",
+        "de": "Pfeffer",
+        "article": "der",
+        "emoji": "🌶️"
+      },
+      {
+        "en": "oil",
+        "de": "Öl",
+        "article": "das",
+        "emoji": "🍳"
+      }
+    ]
+  }
+}

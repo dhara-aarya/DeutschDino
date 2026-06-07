@@ -1,0 +1,115 @@
+{
+  "categories": {
+    "animals": {
+      "words": {
+        "dog": {
+          "en_sent": "A dog is a friendly pet.",
+          "hi_sent": "कुत्ता एक प्रिय पालतू जानवर है।",
+          "de_sent": "Ein Hund ist ein treuer Freund."
+        },
+        "cat": {
+          "en_sent": "A cat likes to play and sleep.",
+          "hi_sent": "बिल्ली खेलना और सोना पसंद करती है।",
+          "de_sent": "Eine Katze spielt und schläft gerne."
+        },
+        "mouse": {
+          "en_sent": "A mouse is small and quick.",
+          "hi_sent": "चूहा छोटा और तेज़ है।",
+          "de_sent": "Eine Maus ist klein und schnell."
+        },
+        "bird": {
+          "en_sent": "A bird can fly in the sky.",
+          "hi_sent": "पक्षी आसमान में उड़ सकता है।",
+          "de_sent": "Ein Vogel kann am Himmel fliegen."
+        },
+        "fish": {
+          "en_sent": "A fish swims in water.",
+          "hi_sent": "मछली पानी में तैरती है।",
+          "de_sent": "Ein Fisch schwimmt im Wasser."
+        },
+        "elephant": {
+          "en_sent": "An elephant is very big and strong.",
+          "hi_sent": "हाथी बहुत बड़ा और मजबूत है।",
+          "de_sent": "Ein Elefant ist sehr groß und stark."
+        },
+        "bear": {
+          "en_sent": "A bear lives in the forest.",
+          "hi_sent": "भालू जंगल में रहता है।",
+          "de_sent": "Ein Bär lebt im Wald."
+        },
+        "monkey": {
+          "en_sent": "A monkey jumps and plays.",
+          "hi_sent": "बंदर कूदता और खेलता है।",
+          "de_sent": "Ein Affe springt und spielt."
+        },
+        "lion": {
+          "en_sent": "A lion is king of the jungle.",
+          "hi_sent": "शेर जंगल का राजा है।",
+          "de_sent": "Ein Löwe ist König des Dschungels."
+        },
+        "tiger": {
+          "en_sent": "A tiger has orange and black stripes.",
+          "hi_sent": "बाघ के नारंगी और काली धारियां हैं।",
+          "de_sent": "Ein Tiger hat orange und schwarze Streifen."
+        }
+      }
+    },
+    "food": {
+      "words": {
+        "apple": {
+          "en_sent": "An apple is a healthy fruit.",
+          "hi_sent": "सेब एक स्वस्थ फल है।",
+          "de_sent": "Ein Apfel ist eine gesunde Frucht."
+        },
+        "banana": {
+          "en_sent": "A banana is yellow and sweet.",
+          "hi_sent": "केला पीला और मीठा है।",
+          "de_sent": "Eine Banane ist gelb und süß."
+        },
+        "bread": {
+          "en_sent": "Bread is made from wheat flour.",
+          "hi_sent": "ब्रेड गेहूं के आटे से बनी है।",
+          "de_sent": "Brot wird aus Weizenmehl hergestellt."
+        },
+        "milk": {
+          "en_sent": "Milk is white and healthy.",
+          "hi_sent": "दूध सफेद और स्वस्थ है।",
+          "de_sent": "Milch ist weiß und gesund."
+        },
+        "water": {
+          "en_sent": "Water is essential for life.",
+          "hi_sent": "पानी जीवन के लिए जरूरी है।",
+          "de_sent": "Wasser ist für das Leben notwendig."
+        },
+        "cheese": {
+          "en_sent": "Cheese is made from milk.",
+          "hi_sent": "पनीर दूध से बना है।",
+          "de_sent": "Käse wird aus Milch hergestellt."
+        },
+        "egg": {
+          "en_sent": "Eggs are protein-rich food.",
+          "hi_sent": "अंडे प्रोटीन से भरपूर होते हैं।",
+          "de_sent": "Eier sind protein-reich."
+        },
+        "carrot": {
+          "en_sent": "Carrots are orange and crunchy.",
+          "hi_sent": "गाजर नारंगी और कुरकुरी होती है।",
+          "de_sent": "Karotten sind orange und knackig."
+        },
+        "orange": {
+          "en_sent": "An orange is a citrus fruit.",
+          "hi_sent": "नारंगी एक खट्टा फल है।",
+          "de_sent": "Eine Orange ist eine Zitrusfrucht."
+        },
+        "strawberry": {
+          "en_sent": "Strawberries are red and sweet.",
+          "hi_sent": "स्ट्रॉबेरी लाल और मीठी होती है।",
+          "de_sent": "Erdbeeren sind rot und süß."
+        }
+      }
+    }
+  },
+  "total_categories": 2,
+  "total_words": 20,
+  "total_sentences": 60
+}

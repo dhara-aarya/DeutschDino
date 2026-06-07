@@ -1,0 +1,66 @@
+{
+  "animals": [
+    "dog",
+    "cat",
+    "mouse",
+    "bird",
+    "fish",
+    "elephant",
+    "bear",
+    "monkey",
+    "lion",
+    "tiger"
+  ],
+  "food": [
+    "apple",
+    "banana",
+    "bread",
+    "milk",
+    "water",
+    "cheese",
+    "egg",
+    "carrot",
+    "orange",
+    "strawberry"
+  ],
+  "school": [
+    "book",
+    "pencil",
+    "backpack",
+    "desk",
+    "teacher",
+    "student",
+    "paper",
+    "pen"
+  ],
+  "colors": [
+    "red",
+    "blue",
+    "yellow",
+    "green",
+    "circle",
+    "square",
+    "triangle",
+    "star"
+  ],
+  "clothes": [
+    "pants",
+    "shirt",
+    "shoe",
+    "hat",
+    "sock",
+    "jacket",
+    "dress",
+    "glove"
+  ],
+  "home": [
+    "bed",
+    "chair",
+    "table",
+    "door",
+    "window",
+    "lamp",
+    "sofa",
+    "mirror"
+  ]
+}

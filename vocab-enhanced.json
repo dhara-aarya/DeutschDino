@@ -1,0 +1,239 @@
+{
+  "colors": {
+    "emoji": "🎨",
+    "name": "Farben & Formen (Colors & Shapes)",
+    "color": "from-indigo-400 to-purple-500",
+    "words": [
+      {
+        "en": "red",
+        "de": "rot",
+        "article": "die",
+        "emoji": "🔴",
+        "en_sent": "Red is a bright color.",
+        "hi_sent": "लाल एक चमकीला रंग है।",
+        "de_sent": "Rot ist eine helle Farbe."
+      },
+      {
+        "en": "blue",
+        "de": "blau",
+        "article": "die",
+        "emoji": "🔵",
+        "en_sent": "Blue is the color of the sky.",
+        "hi_sent": "नीला आसमान का रंग है।",
+        "de_sent": "Blau ist die Farbe des Himmels."
+      },
+      {
+        "en": "yellow",
+        "de": "gelb",
+        "article": "die",
+        "emoji": "🟡",
+        "en_sent": "Yellow is a warm color.",
+        "hi_sent": "पीला एक गर्म रंग है।",
+        "de_sent": "Gelb ist eine warme Farbe."
+      },
+      {
+        "en": "green",
+        "de": "grün",
+        "article": "die",
+        "emoji": "🟢",
+        "en_sent": "Green is the color of grass.",
+        "hi_sent": "हरा घास का रंग है।",
+        "de_sent": "Grün ist die Farbe von Gras."
+      },
+      {
+        "en": "circle",
+        "de": "Kreis",
+        "article": "der",
+        "emoji": "⭕",
+        "en_sent": "A circle is round.",
+        "hi_sent": "एक वृत्त गोल होता है।",
+        "de_sent": "Ein Kreis ist rund."
+      },
+      {
+        "en": "square",
+        "de": "Quadrat",
+        "article": "das",
+        "emoji": "⬜",
+        "en_sent": "A square has four sides.",
+        "hi_sent": "एक वर्ग के चार भुजाएं हैं।",
+        "de_sent": "Ein Quadrat hat vier Seiten."
+      },
+      {
+        "en": "triangle",
+        "de": "Dreieck",
+        "article": "das",
+        "emoji": "🔺",
+        "en_sent": "A triangle has three corners.",
+        "hi_sent": "त्रिभुज के तीन कोने होते हैं।",
+        "de_sent": "Ein Dreieck hat drei Ecken."
+      },
+      {
+        "en": "star",
+        "de": "Stern",
+        "article": "der",
+        "emoji": "⭐",
+        "en_sent": "A star shines at night.",
+        "hi_sent": "तारा रात को चमकता है।",
+        "de_sent": "Ein Stern leuchtet nachts."
+      }
+    ]
+  },
+  "clothes": {
+    "emoji": "👕",
+    "name": "Kleidung (Clothes)",
+    "color": "from-pink-400 to-rose-500",
+    "words": [
+      {
+        "en": "pants",
+        "de": "Hose",
+        "article": "die",
+        "emoji": "👖",
+        "en_sent": "I wear pants every day.",
+        "hi_sent": "मैं हर दिन पैंट पहनता हूँ।",
+        "de_sent": "Ich trage jeden Tag Hosen."
+      },
+      {
+        "en": "shirt",
+        "de": "T-Shirt",
+        "article": "das",
+        "emoji": "👕",
+        "en_sent": "A shirt covers the body.",
+        "hi_sent": "शर्ट शरीर को ढकती है।",
+        "de_sent": "Ein T-Shirt bedeckt den Körper."
+      },
+      {
+        "en": "shoe",
+        "de": "Schuh",
+        "article": "der",
+        "emoji": "👟",
+        "en_sent": "Shoes protect the feet.",
+        "hi_sent": "जूते पैरों की सुरक्षा करते हैं।",
+        "de_sent": "Schuhe schützen die Füße."
+      },
+      {
+        "en": "hat",
+        "de": "Hut",
+        "article": "der",
+        "emoji": "🧢",
+        "en_sent": "A hat covers the head.",
+        "hi_sent": "टोपी सिर को ढकती है।",
+        "de_sent": "Ein Hut bedeckt den Kopf."
+      },
+      {
+        "en": "sock",
+        "de": "Socke",
+        "article": "die",
+        "emoji": "🧦",
+        "en_sent": "Socks keep feet warm.",
+        "hi_sent": "मोज़े पैरों को गर्म रखते हैं।",
+        "de_sent": "Socken halten die Füße warm."
+      },
+      {
+        "en": "jacket",
+        "de": "Jacke",
+        "article": "die",
+        "emoji": "🧥",
+        "en_sent": "A jacket keeps you warm.",
+        "hi_sent": "जैकेट आपको गर्म रखता है।",
+        "de_sent": "Eine Jacke hält dich warm."
+      },
+      {
+        "en": "dress",
+        "de": "Kleid",
+        "article": "das",
+        "emoji": "👗",
+        "en_sent": "A dress is elegant.",
+        "hi_sent": "एक ड्रेस सुरुचिपूर्ण है।",
+        "de_sent": "Ein Kleid ist elegant."
+      },
+      {
+        "en": "glove",
+        "de": "Handschuh",
+        "article": "der",
+        "emoji": "🧤",
+        "en_sent": "Gloves protect the hands.",
+        "hi_sent": "दस्ताने हाथों की सुरक्षा करते हैं।",
+        "de_sent": "Handschuhe schützen die Hände."
+      }
+    ]
+  },
+  "home": {
+    "emoji": "🏡",
+    "name": "Zuhause (Home)",
+    "color": "from-green-400 to-teal-500",
+    "words": [
+      {
+        "en": "bed",
+        "de": "Bett",
+        "article": "das",
+        "emoji": "🛏️",
+        "en_sent": "I sleep on a bed.",
+        "hi_sent": "मैं बिस्तर पर सोता हूँ।",
+        "de_sent": "Ich schlafe auf einem Bett."
+      },
+      {
+        "en": "chair",
+        "de": "Stuhl",
+        "article": "der",
+        "emoji": "🪑",
+        "en_sent": "A chair is for sitting.",
+        "hi_sent": "कुर्सी बैठने के लिए है।",
+        "de_sent": "Ein Stuhl ist zum Sitzen."
+      },
+      {
+        "en": "table",
+        "de": "Tisch",
+        "article": "der",
+        "emoji": "🪑",
+        "en_sent": "A table is for eating.",
+        "hi_sent": "टेबल खाने के लिए है।",
+        "de_sent": "Ein Tisch ist zum Essen."
+      },
+      {
+        "en": "door",
+        "de": "Tür",
+        "article": "die",
+        "emoji": "🚪",
+        "en_sent": "A door opens the house.",
+        "hi_sent": "दरवाज़ा घर को खोलता है।",
+        "de_sent": "Eine Tür öffnet das Haus."
+      },
+      {
+        "en": "window",
+        "de": "Fenster",
+        "article": "das",
+        "emoji": "🪟",
+        "en_sent": "Windows let in light.",
+        "hi_sent": "खिड़कियां प्रकाश आने देती हैं।",
+        "de_sent": "Fenster lassen Licht herein."
+      },
+      {
+        "en": "lamp",
+        "de": "Lampe",
+        "article": "die",
+        "emoji": "💡",
+        "en_sent": "A lamp gives light.",
+        "hi_sent": "लैंप प्रकाश देता है।",
+        "de_sent": "Eine Lampe gibt Licht."
+      },
+      {
+        "en": "sofa",
+        "de": "Sofa",
+        "article": "das",
+        "emoji": "🛋️",
+        "en_sent": "A sofa is comfortable.",
+        "hi_sent": "सोफा आरामदायक है।",
+        "de_sent": "Ein Sofa ist bequem."
+      },
+      {
+        "en": "mirror",
+        "de": "Spiegel",
+        "article": "der",
+        "emoji": "🪞",
+        "en_sent": "I see myself in a mirror.",
+        "hi_sent": "मैं अपने आप को दर्पण में देखता हूँ।",
+        "de_sent": "Ich sehe mich im Spiegel."
+      }
+    ]
+  }
+}
