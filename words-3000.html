@@ -33,9 +33,9 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
-            padding: 1.5rem;
-            border-radius: 2.5rem;
+            justify-content: space-between; /* Changed to space-between */
+            padding: 1.5rem; /* Increased padding */
+            border-radius: 2rem;
         }
         .card-back {
             transform: rotateY(180deg);
@@ -49,7 +49,7 @@
             background: #f0f0f0;
         }
         .emoji-fallback {
-            font-size: 8rem;
+            font-size: 8rem; /* Larger emoji */
             text-align: center;
             line-height: 1;
         }
@@ -71,6 +71,13 @@
             -webkit-backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.4);
             box-shadow: 0 8px 32px rgba(31, 38, 135, 0.1);
+        }
+
+        .text-clamp {
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
         }
     </style>
 </head>
@@ -153,12 +160,12 @@
                         <p class="text-gray-600 font-medium">Expand your vocabulary</p>
                     </div>
 
-                    <div class="grid grid-cols-2 gap-5 mb-8">
+                    <div class="grid grid-cols-2 gap-4 sm:gap-5 mb-8">
                         ${categories.map(cat => `
-                            <button class="category-btn hover-lift bg-gradient-to-br ${cat.color} rounded-3xl p-5 text-white font-bold text-center shadow-lg border border-white/20" data-category="${cat.key}">
-                                <div class="text-4xl mb-3 drop-shadow-md">${cat.emoji}</div>
-                                <div class="text-sm font-bold tracking-wide">${cat.name.split(" & ")[0]}</div>
-                                <div class="text-xs opacity-80 mt-1">${cat.count} words</div>
+                            <button class="category-btn hover-lift bg-gradient-to-br ${cat.color} rounded-2xl sm:rounded-3xl p-4 sm:p-5 text-white font-bold text-center shadow-lg border border-white/20 flex flex-col items-center justify-center h-full" data-category="${cat.key}">
+                                <div class="text-4xl sm:text-5xl mb-2 sm:mb-3 drop-shadow-md">${cat.emoji}</div>
+                                <div class="text-xs sm:text-sm font-bold tracking-wide w-full px-1">${cat.name.split(" & ")[0]}</div>
+                                <div class="text-[10px] sm:text-xs opacity-80 mt-1">${cat.count} words</div>
                             </button>
                         `).join("")}
                     </div>
@@ -200,56 +207,56 @@
             }
 
             app.innerHTML = `
-                <div class="flex-1 flex flex-col px-5 py-6">
+                <div class="flex-1 flex flex-col px-4 sm:px-5 py-4 sm:py-6 h-full max-h-screen overflow-hidden">
                     <!-- Header -->
-                    <div class="flex justify-between items-center mb-8 glass-panel p-3 rounded-2xl">
-                        <button class="home-btn hover-lift bg-white text-gray-800 rounded-xl p-3 shadow-sm border border-gray-100" title="Back to categories">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" /></svg>
+                    <div class="flex justify-between items-center mb-4 sm:mb-6 glass-panel p-2 sm:p-3 rounded-2xl shrink-0">
+                        <button class="home-btn hover-lift bg-white text-gray-800 rounded-xl p-2 sm:p-3 shadow-sm border border-gray-100" title="Back to categories">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 sm:h-6 sm:w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" /></svg>
                         </button>
-                        <div class="text-center flex-1 mx-4">
-                            <h2 class="text-xl font-bold text-gray-800 tracking-tight">${category.emoji} ${category.name.split(" & ")[0]}</h2>
-                            <p class="text-xs font-bold text-gray-400 tracking-widest uppercase mt-1">${appState.completedWords.size + 1} OF ${totalCards}</p>
+                        <div class="text-center flex-1 mx-2 sm:mx-4 overflow-hidden">
+                            <h2 class="text-lg sm:text-xl font-bold text-gray-800 tracking-tight truncate">${category.emoji} ${category.name.split(" & ")[0]}</h2>
+                            <p class="text-[10px] sm:text-xs font-bold text-gray-400 tracking-widest uppercase mt-0.5 sm:mt-1">${appState.completedWords.size + 1} OF ${totalCards}</p>
                         </div>
-                        <div class="bg-yellow-100 text-yellow-700 border border-yellow-200 rounded-xl px-4 py-2 font-black text-lg shadow-sm flex items-center">
+                        <div class="bg-yellow-100 text-yellow-700 border border-yellow-200 rounded-xl px-3 sm:px-4 py-1.5 sm:py-2 font-black text-base sm:text-lg shadow-sm flex items-center">
                             <span class="mr-1">⭐</span> ${appState.score}
                         </div>
                     </div>
 
                     <!-- Progress bar -->
-                    <div class="w-full bg-gray-200/50 rounded-full h-2.5 mb-10 overflow-hidden shadow-inner backdrop-blur-sm">
+                    <div class="w-full bg-gray-200/50 rounded-full h-2 sm:h-2.5 mb-4 sm:mb-8 overflow-hidden shadow-inner backdrop-blur-sm shrink-0">
                         <div class="bg-gradient-to-r from-purple-500 to-pink-500 h-full transition-all duration-500 ease-out" style="width: ${progress}%"></div>
                     </div>
 
                     <!-- Card -->
-                    <div class="flex-1 flex items-center justify-center mb-10">
-                        <div class="card-container hover-lift w-full max-w-sm aspect-[4/5]" id="card">
+                    <div class="flex-1 flex items-center justify-center mb-6 sm:mb-8 min-h-0">
+                        <div class="card-container hover-lift w-full max-w-sm h-full max-h-[60vh] sm:max-h-[70vh]" id="card">
                             <div class="card-inner">
                                 <!-- Front -->
-                                <div class="card-front bg-white rounded-[2.5rem] shadow-2xl border border-gray-100">
-                                    <div class="w-full h-3/5 mb-4">
+                                <div class="card-front bg-white rounded-[2rem] sm:rounded-[2.5rem] shadow-2xl border border-gray-100 p-4 sm:p-6 overflow-y-auto custom-scrollbar">
+                                    <div class="flex-grow w-full h-3/5 mb-4 flex items-center justify-center">
                                         ${currentCard.img ? `
                                             <img src="${currentCard.img}"
                                                  alt="${currentCard.en}"
                                                  loading="lazy"
-                                                 class="word-image"
+                                                 class="word-image max-w-full max-h-full object-contain"
                                                  onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
                                             <div class="emoji-fallback hidden items-center justify-center h-full">${currentCard.emoji || '🎯'}</div>
                                         ` : `<div class="emoji-fallback flex items-center justify-center h-full">${currentCard.emoji || '🎯'}</div>`}
                                     </div>
-                                    <div class="text-4xl font-black text-gray-800 text-center tracking-tight">${currentCard.en}</div>
-                                    <div class="mt-auto flex items-center text-xs font-bold text-purple-400 uppercase tracking-widest bg-purple-50 px-4 py-2 rounded-full">
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1 animate-pulse" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122" /></svg>
+                                    <div class="text-2xl sm:text-3xl md:text-4xl font-black text-gray-800 text-center tracking-tight w-full break-words text-clamp">${currentCard.en}</div>
+                                    <div class="flex items-center text-[10px] sm:text-xs font-bold text-purple-400 uppercase tracking-widest bg-purple-50 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full mt-4">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 sm:h-4 sm:w-4 mr-1 animate-pulse" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122" /></svg>
                                         Tap to flip
                                     </div>
                                 </div>
                                 <!-- Back -->
-                                <div class="card-back bg-gradient-to-br from-purple-600 to-indigo-700 rounded-[2.5rem] shadow-2xl border border-white/20 text-white">
-                                    <div class="emoji-fallback drop-shadow-xl">${currentCard.emoji || '🇩🇪'}</div>
-                                    <div class="text-3xl mb-4 text-center">
-                                        <span class="font-black tracking-tight block mt-1">${currentCard.de}</span>
+                                <div class="card-back bg-gradient-to-br from-purple-600 to-indigo-700 rounded-[2rem] sm:rounded-[2.5rem] shadow-2xl border border-white/20 text-white p-4 sm:p-6 overflow-y-auto custom-scrollbar">
+                                    <div class="flex-grow flex items-center justify-center">
+                                        <div class="emoji-fallback drop-shadow-xl">${currentCard.emoji || '🇩🇪'}</div>
                                     </div>
-                                    <div class="mt-auto flex items-center text-xs font-bold text-white uppercase tracking-widest bg-white/20 px-4 py-2 rounded-full backdrop-blur-md">
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" /></svg>
+                                    <div class="text-2xl sm:text-3xl md:text-4xl font-black text-center tracking-tight w-full break-words text-clamp">${currentCard.de}</div>
+                                    <div class="flex items-center text-[10px] sm:text-xs font-bold text-white uppercase tracking-widest bg-white/20 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full backdrop-blur-md mt-4">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 sm:h-4 sm:w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" /></svg>
                                         Tap to hear
                                     </div>
                                 </div>
@@ -258,17 +265,32 @@
                     </div>
 
                     <!-- Action buttons -->
-                    <div class="grid grid-cols-2 gap-4 mt-auto">
-                        <button class="try-again-btn hover-lift bg-white border-2 border-red-100 hover:border-red-200 text-red-500 font-bold py-5 px-4 rounded-2xl text-lg shadow-sm flex flex-col items-center justify-center transition-colors">
-                            <span class="text-2xl mb-1">🔄</span>
-                            <span class="text-sm">Review Again</span>
+                    <div class="grid grid-cols-2 gap-3 sm:gap-4 shrink-0 pb-2">
+                        <button class="try-again-btn hover-lift bg-white border-2 border-red-100 hover:border-red-200 text-red-500 font-bold py-3 sm:py-4 px-2 sm:px-4 rounded-xl sm:rounded-2xl text-base sm:text-lg shadow-sm flex flex-col items-center justify-center transition-colors">
+                            <span class="text-xl sm:text-2xl mb-0.5 sm:mb-1">🔄</span>
+                            <span class="text-[10px] sm:text-sm">Review Again</span>
                         </button>
-                        <button class="know-it-btn hover-lift bg-gradient-to-br from-green-400 to-emerald-500 text-white font-bold py-5 px-4 rounded-2xl text-lg shadow-lg shadow-green-200 flex flex-col items-center justify-center">
-                            <span class="text-2xl mb-1">✨</span>
-                            <span class="text-sm">Got It!</span>
+                        <button class="know-it-btn hover-lift bg-gradient-to-br from-green-400 to-emerald-500 text-white font-bold py-3 sm:py-4 px-2 sm:px-4 rounded-xl sm:rounded-2xl text-base sm:text-lg shadow-lg shadow-green-200 flex flex-col items-center justify-center">
+                            <span class="text-xl sm:text-2xl mb-0.5 sm:mb-1">✨</span>
+                            <span class="text-[10px] sm:text-sm">Got It!</span>
                         </button>
                     </div>
                 </div>
+                <style>
+                    .custom-scrollbar::-webkit-scrollbar {
+                        width: 4px;
+                    }
+                    .custom-scrollbar::-webkit-scrollbar-track {
+                        background: transparent;
+                    }
+                    .custom-scrollbar::-webkit-scrollbar-thumb {
+                        background: rgba(0,0,0,0.1);
+                        border-radius: 4px;
+                    }
+                    .card-back .custom-scrollbar::-webkit-scrollbar-thumb {
+                        background: rgba(255,255,255,0.2);
+                    }
+                </style>
             `;
 
             const cardContainer = document.getElementById("card");
@@ -298,23 +320,23 @@
             const category = VOCABULARY_DB[appState.selectedCategory];
             app.innerHTML = `
                 <div class="min-h-screen flex flex-col items-center justify-center px-6 py-8 bg-gradient-to-b from-purple-600 to-indigo-800 text-white text-center">
-                    <div class="text-9xl mb-8 animate-bounce drop-shadow-2xl">🏆</div>
-                    <h1 class="text-5xl font-black mb-4 tracking-tight">Wunderbar!</h1>
-                    <p class="text-xl text-purple-200 mb-10 font-medium">You finished the ${category.name.split(" & ")[0]} set!</p>
+                    <div class="text-8xl sm:text-9xl mb-6 sm:mb-8 animate-bounce drop-shadow-2xl">🏆</div>
+                    <h1 class="text-4xl sm:text-5xl font-black mb-3 sm:mb-4 tracking-tight">Wunderbar!</h1>
+                    <p class="text-lg sm:text-xl text-purple-200 mb-8 sm:mb-10 font-medium">You finished the ${category.name.split(" & ")[0]} set!</p>
 
-                    <div class="bg-white/10 backdrop-blur-md rounded-[2.5rem] p-8 mb-12 shadow-2xl border border-white/20 w-full max-w-sm">
-                        <p class="text-sm font-bold uppercase tracking-widest text-purple-300 mb-2">Total Score</p>
-                        <div class="flex items-center justify-center text-7xl font-black">
-                            <span class="text-yellow-400 mr-3 drop-shadow-lg">⭐</span> ${appState.score}
+                    <div class="bg-white/10 backdrop-blur-md rounded-[2rem] sm:rounded-[2.5rem] p-6 sm:p-8 mb-10 sm:mb-12 shadow-2xl border border-white/20 w-full max-w-sm">
+                        <p class="text-xs sm:text-sm font-bold uppercase tracking-widest text-purple-300 mb-2">Total Score</p>
+                        <div class="flex items-center justify-center text-6xl sm:text-7xl font-black">
+                            <span class="text-yellow-400 mr-2 sm:mr-3 drop-shadow-lg">⭐</span> ${appState.score}
                         </div>
                     </div>
 
-                    <div class="w-full max-w-sm space-y-4">
-                        <button class="replay-btn hover-lift w-full bg-white text-indigo-700 font-black py-5 px-8 rounded-2xl text-xl shadow-xl flex items-center justify-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" /></svg>
+                    <div class="w-full max-w-sm space-y-3 sm:space-y-4">
+                        <button class="replay-btn hover-lift w-full bg-white text-indigo-700 font-black py-4 sm:py-5 px-6 sm:px-8 rounded-xl sm:rounded-2xl text-lg sm:text-xl shadow-xl flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 sm:h-6 sm:w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" /></svg>
                             Play Again
                         </button>
-                        <button class="home-btn-final hover-lift w-full bg-indigo-900/50 border border-white/10 text-white font-bold py-5 px-8 rounded-2xl text-lg shadow-lg flex items-center justify-center transition-colors hover:bg-indigo-900/70">
+                        <button class="home-btn-final hover-lift w-full bg-indigo-900/50 border border-white/10 text-white font-bold py-4 sm:py-5 px-6 sm:px-8 rounded-xl sm:rounded-2xl text-base sm:text-lg shadow-lg flex items-center justify-center transition-colors hover:bg-indigo-900/70">
                             Choose New Category
                         </button>
                     </div>
