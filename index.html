@@ -90,12 +90,14 @@
             body { padding-top: max(12px, env(safe-area-inset-top)); padding-bottom: max(12px, env(safe-area-inset-bottom)); }
         }
 
-        /* iPhone app container */
+        /* App container */
         #app {
             background: linear-gradient(180deg, rgba(255,255,255,0.98) 0%, rgba(248,249,255,0.95) 100%);
-            border-radius: 40px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
             overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            min-height: 100vh;
         }
 
         /* Button hover styles */
@@ -158,8 +160,8 @@
         }
     </style>
 </head>
-<body style="background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);" class="min-h-screen text-gray-800 flex items-center justify-center p-2 sm:p-4">
-    <div id="app" class="max-w-md w-full aspect-[9/20] sm:aspect-auto sm:h-screen relative flex flex-col shadow-2xl overflow-hidden"></div>
+<body style="background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);" class="min-h-screen text-gray-800">
+    <div id="app" class="w-full min-h-screen relative flex flex-col overflow-hidden"></div>
 
     <script>
         // ============ DATA STRUCTURE ============
@@ -1143,8 +1145,8 @@
             const app = document.getElementById("app");
 
             app.innerHTML = `
-                <div class="flex-1 overflow-y-auto px-5 py-10 pb-40">
-                    <div class="text-center mb-12 mt-8">
+                <div class="flex-1 overflow-y-auto px-5 py-10 pb-40 w-full">
+                    <div class="text-center mb-12 mt-8 w-full mx-auto">
                         <div class="inline-block p-6 sm:p-8 rounded-full bg-gradient-to-br from-purple-100 to-pink-100 shadow-xl mb-6 border border-white/50 backdrop-blur-sm">
                             <span style="font-size: 100px; line-height: 1;">🇩🇪</span>
                         </div>
@@ -1152,11 +1154,11 @@
                         <p class="text-gray-600 font-semibold text-lg sm:text-xl">Master German vocabulary</p>
                     </div>
 
-                    <div class="grid grid-cols-2 gap-4 sm:gap-5 mb-10">
+                    <div class="grid grid-cols-2 gap-4 sm:gap-5 mb-10 w-full">
                         ${Object.entries(VOCABULARY_DB).map(([key, category]) => `
-                            <button class="category-btn hover-lift bg-gradient-to-br ${category.color} rounded-3xl sm:rounded-3xl p-5 sm:p-6 text-white font-bold text-center shadow-lg shadow-black/20 border border-white/20 flex flex-col items-center justify-center h-full active:scale-95 transition-transform duration-150" data-category="${key}">
-                                <div style="font-size: 64px; line-height: 1; filter: drop-shadow(0 4px 8px rgba(0,0,0,0.2));" class="mb-3 sm:mb-4">${category.emoji}</div>
-                                <div class="text-xs sm:text-sm font-bold tracking-wide w-full px-1 leading-tight">${category.name}</div>
+                            <button class="category-btn hover-lift bg-gradient-to-br ${category.color} rounded-3xl p-6 sm:p-7 text-white font-black text-center shadow-2xl shadow-black/30 border-3 border-white flex flex-col items-center justify-center h-full active:scale-90 transition-all transform hover:scale-105 duration-150" data-category="${key}">
+                                <div style="font-size: 72px; line-height: 1; filter: drop-shadow(0 4px 12px rgba(0,0,0,0.3));" class="mb-4 sm:mb-5">${category.emoji}</div>
+                                <div class="text-sm sm:text-base font-black tracking-wide w-full px-1 leading-tight">${category.name}</div>
                             </button>
                         `).join("")}
                     </div>
@@ -1164,11 +1166,11 @@
 
                 <!-- Fixed Bottom Navigation -->
                 <div class="absolute bottom-0 left-0 right-0 p-5 pb-10 glass-panel rounded-t-3xl sm:rounded-t-[3rem] z-10">
-                    <a href="words-3000.html" class="flex items-center justify-center w-full bg-gradient-to-br from-pink-500 via-purple-500 to-indigo-600 text-white font-black py-6 sm:py-7 px-8 rounded-3xl sm:rounded-full text-lg sm:text-2xl shadow-2xl shadow-purple-500/50 hover-lift active:scale-95 border border-white/20 backdrop-blur-sm relative overflow-hidden group">
-                        <div class="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                        <span style="font-size: 56px; line-height: 1;" class="mr-4 relative z-10">📚</span>
-                        <span class="relative z-10 font-semibold">Explore 3000 Words</span>
-                        <span style="font-size: 32px; margin-left: 12px;" class="relative z-10 group-hover:translate-x-2 transition-transform">→</span>
+                    <a href="words-3000.html" class="flex items-center justify-center w-full bg-gradient-to-br from-yellow-400 via-orange-500 to-red-600 text-white font-black py-6 sm:py-8 px-8 rounded-full text-xl sm:text-2xl shadow-2xl shadow-orange-500/80 hover-lift active:scale-90 border-4 border-white relative overflow-hidden group transform hover:scale-105">
+                        <div class="absolute inset-0 bg-white/15 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                        <span style="font-size: 56px; line-height: 1;" class="mr-5 relative z-10">📚</span>
+                        <span class="relative z-10 font-black">Explore 3000 Words</span>
+                        <span style="font-size: 36px; margin-left: 16px;" class="relative z-10 group-hover:translate-x-3 transition-transform">🚀</span>
                     </a>
                 </div>
             `;
@@ -1203,10 +1205,10 @@
 
             const app = document.getElementById("app");
             app.innerHTML = `
-                <div class="flex-1 flex flex-col px-4 sm:px-6 py-5 sm:py-7 h-full max-h-screen overflow-hidden">
+                <div class="flex-1 flex flex-col px-4 sm:px-6 py-5 sm:py-7 w-full overflow-hidden">
                     <!-- Header -->
                     <div class="flex justify-between items-center gap-3 sm:gap-4 mb-5 sm:mb-7 shrink-0 relative z-20">
-                        <button class="home-btn hover-lift bg-gradient-to-br from-yellow-400 via-orange-400 to-red-500 text-white rounded-full shadow-2xl shadow-orange-500/80 active:scale-95 flex items-center justify-center border-4 border-white transition-all hover:shadow-orange-500/100" title="Back to home" style="width: 60px; height: 60px; font-size: 32px; line-height: 1;">
+                        <button class="home-btn hover-lift bg-gradient-to-br from-yellow-400 via-orange-400 to-red-500 text-white rounded-full active:scale-90 flex items-center justify-center border-4 border-white transition-all transform hover:scale-110" title="Back to home" style="width: 70px; height: 70px; font-size: 40px; line-height: 1; box-shadow: 0 8px 20px rgba(249, 115, 22, 0.6);">
                             🏠
                         </button>
                         <div class="text-center flex-1 min-w-0">
@@ -1266,26 +1268,28 @@
                     <!-- Navigation and Action buttons -->
                     <div class="shrink-0 pb-2">
                         <!-- Navigation Row -->
-                        <div class="flex items-center justify-between gap-2 sm:gap-3 mb-3 sm:mb-4">
-                            <button class="prev-btn hover-lift bg-gradient-to-r from-pink-400 to-purple-500 text-white font-bold py-3 sm:py-3.5 px-3 sm:px-4 rounded-xl sm:rounded-2xl shadow-md shadow-purple-300/40 flex items-center justify-center transition-all active:scale-95 border border-white/20 ${appState.currentCardIndex === 0 ? 'opacity-40 cursor-not-allowed' : ''}">
-                                <span class="text-lg sm:text-xl">⬅️</span>
+                        <div class="flex items-center justify-between gap-2 sm:gap-3 mb-4 sm:mb-5">
+                            <button class="prev-btn hover-lift bg-gradient-to-br from-cyan-400 via-blue-400 to-blue-600 text-white font-black py-4 sm:py-5 px-5 sm:px-7 rounded-full shadow-2xl shadow-blue-400/60 flex items-center justify-center transition-all active:scale-90 border-3 border-white flex-1 transform hover:scale-105" style="font-size: 28px; line-height: 1;" ${appState.currentCardIndex === 0 ? 'disabled' : ''}>
+                                ⬅️
                             </button>
-                            <div class="text-center flex-1">
-                                <p class="text-xs sm:text-sm font-bold text-gray-700 bg-white/60 rounded-lg px-3 py-1.5">Card ${appState.currentCardIndex + 1}/${totalCards}</p>
+                            <div class="text-center flex-1 px-2 sm:px-3">
+                                <div class="bg-gradient-to-r from-yellow-300 to-yellow-400 text-yellow-800 font-black rounded-full px-4 py-3 inline-block shadow-lg shadow-yellow-300/50 border-2 border-white">
+                                    <span style="font-size: 20px;">Card ${appState.currentCardIndex + 1}/${totalCards}</span>
+                                </div>
                             </div>
-                            <button class="next-btn hover-lift bg-gradient-to-r from-purple-500 to-indigo-600 text-white font-bold py-3 sm:py-3.5 px-3 sm:px-4 rounded-xl sm:rounded-2xl shadow-md shadow-indigo-300/40 flex items-center justify-center transition-all active:scale-95 border border-white/20 ${appState.currentCardIndex >= totalCards - 1 ? 'opacity-40 cursor-not-allowed' : ''}">
-                                <span class="text-lg sm:text-xl">➡️</span>
+                            <button class="next-btn hover-lift bg-gradient-to-br from-lime-400 via-green-400 to-emerald-600 text-white font-black py-4 sm:py-5 px-5 sm:px-7 rounded-full shadow-2xl shadow-green-400/60 flex items-center justify-center transition-all active:scale-90 border-3 border-white flex-1 transform hover:scale-105" style="font-size: 28px; line-height: 1;" ${appState.currentCardIndex >= totalCards - 1 ? 'disabled' : ''}>
+                                ➡️
                             </button>
                         </div>
                         <!-- Action buttons -->
-                        <div class="grid grid-cols-2 gap-3 sm:gap-4">
-                            <button class="try-again-btn hover-lift bg-gradient-to-br from-pink-400 to-rose-500 text-white font-bold py-4 sm:py-5 px-4 sm:px-5 rounded-2xl sm:rounded-3xl text-sm sm:text-base shadow-lg shadow-pink-300/50 flex flex-col items-center justify-center transition-all active:scale-95 border border-white/20">
-                                <span style="font-size: 38px; line-height: 1;" class="mb-1">🔄</span>
-                                <span class="text-xs sm:text-sm font-semibold">Review</span>
+                        <div class="grid grid-cols-2 gap-4 sm:gap-5">
+                            <button class="try-again-btn hover-lift bg-gradient-to-br from-orange-400 via-orange-500 to-red-600 text-white font-black py-5 sm:py-6 px-5 sm:px-6 rounded-3xl text-base sm:text-lg shadow-2xl shadow-orange-400/70 flex flex-col items-center justify-center transition-all active:scale-90 border-3 border-white transform hover:scale-105">
+                                <span style="font-size: 44px; line-height: 1;" class="mb-2">🔄</span>
+                                <span class="text-sm sm:text-base font-black">Review</span>
                             </button>
-                            <button class="know-it-btn hover-lift bg-gradient-to-br from-indigo-500 to-blue-600 text-white font-bold py-4 sm:py-5 px-4 sm:px-5 rounded-2xl sm:rounded-3xl text-sm sm:text-base shadow-lg shadow-blue-300/50 flex flex-col items-center justify-center transition-all active:scale-95 border border-white/20">
-                                <span style="font-size: 38px; line-height: 1;" class="mb-1">✨</span>
-                                <span class="text-xs sm:text-sm font-semibold">Got It!</span>
+                            <button class="know-it-btn hover-lift bg-gradient-to-br from-pink-500 via-purple-500 to-indigo-700 text-white font-black py-5 sm:py-6 px-5 sm:px-6 rounded-3xl text-base sm:text-lg shadow-2xl shadow-purple-500/70 flex flex-col items-center justify-center transition-all active:scale-90 border-3 border-white transform hover:scale-105">
+                                <span style="font-size: 44px; line-height: 1;" class="mb-2">✨</span>
+                                <span class="text-sm sm:text-base font-black">Got It!</span>
                             </button>
                         </div>
                     </div>
@@ -1368,8 +1372,8 @@
             const category = VOCABULARY_DB[appState.selectedCategory];
             const app = document.getElementById("app");
             app.innerHTML = `
-                <div class="min-h-screen flex flex-col items-center justify-center px-6 py-8 bg-gradient-to-b from-purple-500 via-pink-400 to-indigo-600 text-white text-center relative">
-                    <button class="home-btn-top absolute top-6 left-6 bg-gradient-to-br from-yellow-400 via-orange-400 to-red-500 text-white rounded-full shadow-2xl shadow-orange-500/80 active:scale-95 flex items-center justify-center border-4 border-white transition-all hover:shadow-orange-500/100" style="width: 60px; height: 60px; font-size: 32px; line-height: 1; z-index: 20;">
+                <div class="w-full min-h-screen flex flex-col items-center justify-center px-6 py-8 bg-gradient-to-b from-purple-500 via-pink-400 to-indigo-600 text-white text-center relative">
+                    <button class="home-btn-top absolute top-6 left-6 bg-gradient-to-br from-yellow-400 via-orange-400 to-red-500 text-white rounded-full active:scale-90 flex items-center justify-center border-4 border-white transition-all transform hover:scale-110" style="width: 70px; height: 70px; font-size: 40px; line-height: 1; z-index: 20; box-shadow: 0 8px 20px rgba(249, 115, 22, 0.6);">
                         🏠
                     </button>
                     <div style="font-size: 160px; line-height: 1;" class="mb-8 sm:mb-10 drop-shadow-2xl animate-bounce">🏆</div>
@@ -1384,12 +1388,13 @@
                     </div>
 
                     <div class="w-full max-w-sm space-y-4 sm:space-y-5">
-                        <button class="replay-btn hover-lift w-full bg-white text-indigo-700 font-black py-5 sm:py-6 px-6 rounded-2xl sm:rounded-3xl text-lg sm:text-xl shadow-xl flex items-center justify-center active:scale-95">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 sm:h-7 sm:w-7 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" /></svg>
+                        <button class="replay-btn hover-lift w-full bg-gradient-to-br from-blue-400 via-cyan-400 to-teal-600 text-white font-black py-6 sm:py-7 px-8 rounded-3xl text-lg sm:text-xl shadow-2xl shadow-blue-400/70 flex items-center justify-center active:scale-90 border-3 border-white transform hover:scale-105">
+                            <span style="font-size: 32px; margin-right: 12px;">🔁</span>
                             Play Again
                         </button>
-                        <button class="home-btn-final hover-lift w-full bg-white/20 border border-white/30 text-white font-bold py-5 sm:py-6 px-6 rounded-2xl sm:rounded-3xl text-base sm:text-lg shadow-lg flex items-center justify-center transition-colors hover:bg-white/25 active:scale-95">
-                            Choose New Category
+                        <button class="home-btn-final hover-lift w-full bg-gradient-to-br from-purple-500 via-pink-500 to-red-500 text-white font-black py-6 sm:py-7 px-8 rounded-3xl text-base sm:text-lg shadow-2xl shadow-pink-400/70 flex items-center justify-center transition-all active:scale-90 border-3 border-white transform hover:scale-105">
+                            <span style="font-size: 28px; margin-right: 12px;">🏠</span>
+                            Home
                         </button>
                     </div>
                 </div>
