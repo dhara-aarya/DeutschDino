@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-    <meta name="theme-color" content="#ff6b9d">
-    <meta name="description" content="3000 German Words - Learn German vocabulary">
+    <meta name="theme-color" content="#8B5CF6">
+    <meta name="description" content="3000 German Words - A Deutsch Dino Flashcard App">
     <title>3000 German Words 🇩🇪</title>
     <link href="https://cdn.tailwindcss.com" rel="stylesheet">
     <style>
@@ -13,19 +13,18 @@
 
         .card-container {
             perspective: 1000px;
-            height: 400px;
-            width: 100%;
-            max-width: 350px;
-            margin: 0 auto;
+            cursor: pointer;
         }
-        .card {
+        .card-inner {
             position: relative;
             width: 100%;
             height: 100%;
             transition: transform 0.6s;
             transform-style: preserve-3d;
         }
-        .card.flipped { transform: rotateY(180deg); }
+        .card-container.flipped .card-inner {
+            transform: rotateY(180deg);
+        }
         .card-front, .card-back {
             position: absolute;
             width: 100%;
@@ -35,60 +34,106 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            padding: 24px;
-            border-radius: 24px;
+            padding: 1.5rem;
+            border-radius: 2.5rem;
         }
-        .card-back { transform: rotateY(180deg); }
-
-        .fade-in {
-            animation: fadeIn 0.3s ease-in;
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+        .card-back {
+            transform: rotateY(180deg);
         }
 
         img.word-image {
-            width: 200px;
-            height: 200px;
+            width: 100%;
+            height: 100%;
             object-fit: cover;
-            border-radius: 16px;
+            border-radius: 1.5rem;
             background: #f0f0f0;
         }
-
         .emoji-fallback {
             font-size: 8rem;
             text-align: center;
+            line-height: 1;
+        }
+
+        .hover-lift {
+            transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.2s ease;
+        }
+        .hover-lift:hover {
+            transform: translateY(-4px) scale(1.02);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+        }
+        .hover-lift:active {
+            transform: translateY(0) scale(0.98);
+        }
+
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            box-shadow: 0 8px 32px rgba(31, 38, 135, 0.1);
         }
     </style>
 </head>
-<body class="bg-gradient-to-br from-purple-100 via-pink-50 to-blue-100 min-h-screen">
-    <div id="app"></div>
+<body class="bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50 min-h-screen text-gray-800">
+    <div id="app" class="max-w-md mx-auto relative min-h-screen flex flex-col shadow-2xl bg-white/40 overflow-hidden"></div>
 
     <script>
         const app = document.getElementById("app");
         let VOCABULARY_DB = {};
         let appState = {
-            screen: "home",
+            screen: "loading",
             selectedCategory: null,
             currentCardIndex: 0,
             deck: [],
-            score: 0
+            score: 0,
+            completedWords: new Set(),
+            synth: window.speechSynthesis || null,
         };
 
-        // Load JSON data
-        fetch("words-3000.json")
-            .then(res => res.json())
-            .then(data => {
-                VOCABULARY_DB = data;
-                showHome();
-            })
-            .catch(err => {
-                app.innerHTML = `<div class="flex items-center justify-center h-screen"><div class="text-red-600 text-2xl">❌ Failed to load words-3000.json</div></div>`;
-                console.error(err);
-            });
+        function speakGerman(text) {
+            if (!appState.synth) return;
+            appState.synth.cancel();
+            const utterance = new SpeechSynthesisUtterance(text);
+            utterance.lang = "de-DE";
+            utterance.rate = 0.9;
+            utterance.pitch = 1.2;
+            appState.synth.speak(utterance);
+        }
 
-        function showHome() {
+        function shuffleArray(arr) {
+            const copy = [...arr];
+            for (let i = copy.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [copy[i], copy[j]] = [copy[j], copy[i]];
+            }
+            return copy;
+        }
+
+        function renderLoading() {
+            app.innerHTML = `
+                <div class="flex-1 flex flex-col items-center justify-center p-8 text-center">
+                    <div class="text-6xl animate-spin mb-8">⚙️</div>
+                    <h1 class="text-2xl font-bold text-gray-700">Loading Vocabulary...</h1>
+                    <p class="text-gray-500 mt-2">Getting the 3000 words ready for you!</p>
+                </div>
+            `;
+        }
+
+        function renderError(error) {
+            app.innerHTML = `
+                <div class="flex-1 flex flex-col items-center justify-center p-8 text-center">
+                    <div class="text-6xl mb-8">😭</div>
+                    <h1 class="text-2xl font-bold text-red-600">Failed to Load</h1>
+                    <p class="text-gray-500 mt-2">Could not fetch 'words-3000.json'. Please check the file and your connection.</p>
+                    <pre class="mt-4 text-xs text-left bg-red-50 p-4 rounded-lg text-red-700 overflow-auto">${error}</pre>
+                    <a href="index.html" class="mt-8 bg-indigo-600 text-white font-bold py-3 px-6 rounded-xl shadow-lg hover-lift">
+                        Back to Main App
+                    </a>
+                </div>
+            `;
+        }
+
+        function renderHome() {
             appState.screen = "home";
             const categories = Object.entries(VOCABULARY_DB).map(([key, cat]) => ({
                 key,
@@ -99,22 +144,31 @@
             }));
 
             app.innerHTML = `
-                <div class="min-h-screen flex flex-col items-center justify-center px-4 py-8">
-                    <div class="text-center mb-8">
-                        <h1 class="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600 mb-2">3000 Words</h1>
-                        <p class="text-gray-600 text-lg">🇩🇪 Master German vocabulary</p>
-                        <a href="index.html" class="mt-4 inline-block bg-white text-purple-600 font-bold py-2 px-4 rounded-full shadow hover:shadow-lg transition">🏠 Back to App</a>
+                <div class="flex-1 overflow-y-auto px-4 py-8 pb-32">
+                    <div class="text-center mb-10 mt-6">
+                        <div class="inline-block p-4 rounded-full bg-white shadow-xl mb-4">
+                            <span class="text-6xl">📚</span>
+                        </div>
+                        <h1 class="text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-purple-600 mb-2 tracking-tight">3000 German Words</h1>
+                        <p class="text-gray-600 font-medium">Expand your vocabulary</p>
                     </div>
 
-                    <div class="grid grid-cols-2 gap-4 max-w-md w-full">
+                    <div class="grid grid-cols-2 gap-5 mb-8">
                         ${categories.map(cat => `
-                            <button class="category-btn bg-gradient-to-br ${cat.color} rounded-3xl p-6 text-white font-bold text-center shadow-lg hover:shadow-xl transform hover:scale-105 transition-all" data-category="${cat.key}">
-                                <div class="text-5xl mb-3">${cat.emoji}</div>
-                                <div class="text-sm">${cat.name.split(" & ")[0]}</div>
+                            <button class="category-btn hover-lift bg-gradient-to-br ${cat.color} rounded-3xl p-5 text-white font-bold text-center shadow-lg border border-white/20" data-category="${cat.key}">
+                                <div class="text-4xl mb-3 drop-shadow-md">${cat.emoji}</div>
+                                <div class="text-sm font-bold tracking-wide">${cat.name.split(" & ")[0]}</div>
                                 <div class="text-xs opacity-80 mt-1">${cat.count} words</div>
                             </button>
                         `).join("")}
                     </div>
+                </div>
+
+                <div class="absolute bottom-0 left-0 right-0 p-4 pb-8 glass-panel rounded-t-3xl z-10">
+                    <a href="index.html" class="flex items-center justify-center w-full bg-white text-indigo-600 font-bold py-4 px-6 rounded-2xl text-lg shadow-xl hover-lift">
+                        <span class="text-2xl mr-3">🏠</span>
+                        Back to Main App
+                    </a>
                 </div>
             `;
 
@@ -124,152 +178,166 @@
         }
 
         function startGame(categoryKey) {
+            const category = VOCABULARY_DB[categoryKey];
             appState.selectedCategory = categoryKey;
+            appState.deck = shuffleArray(category.words);
             appState.currentCardIndex = 0;
             appState.score = 0;
-            appState.deck = [...VOCABULARY_DB[categoryKey].words];
+            appState.completedWords.clear();
             appState.screen = "game";
-            showGame();
+            renderGame();
         }
 
-        function showGame() {
+        function renderGame() {
             const category = VOCABULARY_DB[appState.selectedCategory];
             const currentCard = appState.deck[appState.currentCardIndex];
             const totalCards = appState.deck.length;
-            const progress = appState.currentCardIndex + 1;
+            const progress = ((appState.completedWords.size) / totalCards) * 100;
+
+            if (appState.currentCardIndex >= totalCards) {
+                renderComplete();
+                return;
+            }
 
             app.innerHTML = `
-                <div class="min-h-screen flex flex-col px-4 py-6 pb-20">
-                    <div class="flex items-center justify-between mb-6">
-                        <button class="home-btn bg-white rounded-full p-3 shadow-md hover:shadow-lg transition-all" title="Back to home">
-                            🏠
+                <div class="flex-1 flex flex-col px-5 py-6">
+                    <!-- Header -->
+                    <div class="flex justify-between items-center mb-8 glass-panel p-3 rounded-2xl">
+                        <button class="home-btn hover-lift bg-white text-gray-800 rounded-xl p-3 shadow-sm border border-gray-100" title="Back to categories">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" /></svg>
                         </button>
-                        <div class="text-center flex-1">
-                            <h2 class="text-2xl font-bold text-gray-800">${category.emoji} ${category.name.split(" & ")[0]}</h2>
+                        <div class="text-center flex-1 mx-4">
+                            <h2 class="text-xl font-bold text-gray-800 tracking-tight">${category.emoji} ${category.name.split(" & ")[0]}</h2>
+                            <p class="text-xs font-bold text-gray-400 tracking-widest uppercase mt-1">${appState.completedWords.size + 1} OF ${totalCards}</p>
                         </div>
-                        <div class="w-12"></div>
+                        <div class="bg-yellow-100 text-yellow-700 border border-yellow-200 rounded-xl px-4 py-2 font-black text-lg shadow-sm flex items-center">
+                            <span class="mr-1">⭐</span> ${appState.score}
+                        </div>
                     </div>
 
-                    <div class="w-full max-w-md mx-auto mb-4">
-                        <div class="bg-gray-300 rounded-full h-2 overflow-hidden">
-                            <div class="bg-gradient-to-r from-purple-500 to-pink-500 h-full transition-all" style="width: ${(progress / totalCards) * 100}%"></div>
-                        </div>
-                        <p class="text-center text-sm text-gray-600 mt-2">${progress} / ${totalCards}</p>
+                    <!-- Progress bar -->
+                    <div class="w-full bg-gray-200/50 rounded-full h-2.5 mb-10 overflow-hidden shadow-inner backdrop-blur-sm">
+                        <div class="bg-gradient-to-r from-purple-500 to-pink-500 h-full transition-all duration-500 ease-out" style="width: ${progress}%"></div>
                     </div>
 
-                    <div class="flex-1 flex items-center justify-center">
-                        <div class="card-container">
-                            <div class="card" id="card">
-                                <div class="card-front bg-gradient-to-br from-blue-100 to-purple-100 rounded-3xl shadow-2xl border-4 border-white">
-                                    ${currentCard.img ? `
-                                        <img src="${currentCard.img}"
-                                             alt="${currentCard.en}"
-                                             loading="lazy"
-                                             class="word-image"
-                                             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
-                                        <div class="emoji-fallback" style="display:none">🎯</div>
-                                    ` : `<div class="emoji-fallback">🎯</div>`}
-                                    <div class="text-2xl font-bold text-gray-800 text-center mt-4">${currentCard.en}</div>
-                                    <p class="text-xs text-gray-500 mt-4">← Tap to flip →</p>
+                    <!-- Card -->
+                    <div class="flex-1 flex items-center justify-center mb-10">
+                        <div class="card-container hover-lift w-full max-w-sm aspect-[4/5]" id="card">
+                            <div class="card-inner">
+                                <!-- Front -->
+                                <div class="card-front bg-white rounded-[2.5rem] shadow-2xl border border-gray-100">
+                                    <div class="w-full h-3/5 mb-4">
+                                        ${currentCard.img ? `
+                                            <img src="${currentCard.img}"
+                                                 alt="${currentCard.en}"
+                                                 loading="lazy"
+                                                 class="word-image"
+                                                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                                            <div class="emoji-fallback hidden items-center justify-center h-full">${currentCard.emoji || '🎯'}</div>
+                                        ` : `<div class="emoji-fallback flex items-center justify-center h-full">${currentCard.emoji || '🎯'}</div>`}
+                                    </div>
+                                    <div class="text-4xl font-black text-gray-800 text-center tracking-tight">${currentCard.en}</div>
+                                    <div class="mt-auto flex items-center text-xs font-bold text-purple-400 uppercase tracking-widest bg-purple-50 px-4 py-2 rounded-full">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1 animate-pulse" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122" /></svg>
+                                        Tap to flip
+                                    </div>
                                 </div>
-                                <div class="card-back bg-gradient-to-br from-pink-100 to-red-100 rounded-3xl shadow-2xl border-4 border-white">
-                                    <div style="font-size: 8rem" class="mb-3">🇩🇪</div>
-                                    <div class="text-3xl font-bold text-gray-800 text-center">${currentCard.de}</div>
-                                    <p class="text-xs text-gray-500 mt-4">← Tap to flip →</p>
+                                <!-- Back -->
+                                <div class="card-back bg-gradient-to-br from-purple-600 to-indigo-700 rounded-[2.5rem] shadow-2xl border border-white/20 text-white">
+                                    <div class="emoji-fallback drop-shadow-xl">${currentCard.emoji || '🇩🇪'}</div>
+                                    <div class="text-3xl mb-4 text-center">
+                                        <span class="font-black tracking-tight block mt-1">${currentCard.de}</span>
+                                    </div>
+                                    <div class="mt-auto flex items-center text-xs font-bold text-white uppercase tracking-widest bg-white/20 px-4 py-2 rounded-full backdrop-blur-md">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" /></svg>
+                                        Tap to hear
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="flex gap-3 justify-center mb-4">
-                        <button class="prev-btn ${appState.currentCardIndex === 0 ? 'opacity-50 cursor-not-allowed' : ''} bg-blue-400 hover:bg-blue-500 text-white font-bold py-2 px-6 rounded-xl shadow-lg transform hover:scale-105 transition-all" ${appState.currentCardIndex === 0 ? 'disabled' : ''}>
-                            ⬅️ Prev
+                    <!-- Action buttons -->
+                    <div class="grid grid-cols-2 gap-4 mt-auto">
+                        <button class="try-again-btn hover-lift bg-white border-2 border-red-100 hover:border-red-200 text-red-500 font-bold py-5 px-4 rounded-2xl text-lg shadow-sm flex flex-col items-center justify-center transition-colors">
+                            <span class="text-2xl mb-1">🔄</span>
+                            <span class="text-sm">Review Again</span>
                         </button>
-                        <button class="next-btn ${appState.currentCardIndex === totalCards - 1 ? 'opacity-50 cursor-not-allowed' : ''} bg-blue-400 hover:bg-blue-500 text-white font-bold py-2 px-6 rounded-xl shadow-lg transform hover:scale-105 transition-all" ${appState.currentCardIndex === totalCards - 1 ? 'disabled' : ''}>
-                            Next ➡️
-                        </button>
-                    </div>
-
-                    <div class="flex gap-4 justify-center">
-                        <button class="try-again-btn bg-red-500 hover:bg-red-600 text-white font-bold py-4 px-8 rounded-2xl text-xl shadow-lg transform hover:scale-105 transition-all">
-                            ❌ Try Again
-                        </button>
-                        <button class="know-it-btn bg-green-500 hover:bg-green-600 text-white font-bold py-4 px-8 rounded-2xl text-xl shadow-lg transform hover:scale-105 transition-all">
-                            ✅ I Know It!
+                        <button class="know-it-btn hover-lift bg-gradient-to-br from-green-400 to-emerald-500 text-white font-bold py-5 px-4 rounded-2xl text-lg shadow-lg shadow-green-200 flex flex-col items-center justify-center">
+                            <span class="text-2xl mb-1">✨</span>
+                            <span class="text-sm">Got It!</span>
                         </button>
                     </div>
                 </div>
             `;
 
-            // Event listeners
-            const card = document.getElementById("card");
-            card.addEventListener("click", () => {
-                card.classList.toggle("flipped");
+            const cardContainer = document.getElementById("card");
+            cardContainer.addEventListener("click", () => {
+                cardContainer.classList.toggle("flipped");
+                if (cardContainer.classList.contains("flipped")) {
+                    speakGerman(currentCard.de);
+                }
             });
 
-            document.querySelector(".home-btn").addEventListener("click", showHome);
-            document.querySelector(".prev-btn").addEventListener("click", () => {
-                if (appState.currentCardIndex > 0) {
-                    appState.currentCardIndex--;
-                    showGame();
-                }
-            });
-            document.querySelector(".next-btn").addEventListener("click", () => {
-                if (appState.currentCardIndex < totalCards - 1) {
-                    appState.currentCardIndex++;
-                    showGame();
-                }
-            });
             document.querySelector(".know-it-btn").addEventListener("click", () => {
                 appState.score++;
-                if (appState.currentCardIndex < totalCards - 1) {
-                    appState.currentCardIndex++;
-                    showGame();
-                } else {
-                    showCompletion();
-                }
+                appState.completedWords.add(appState.currentCardIndex);
+                appState.currentCardIndex++;
+                setTimeout(() => renderGame(), 100);
             });
+
             document.querySelector(".try-again-btn").addEventListener("click", () => {
-                // Move to end for retry later
-                if (appState.currentCardIndex < totalCards - 1) {
-                    appState.currentCardIndex++;
-                    showGame();
-                } else {
-                    showCompletion();
-                }
+                appState.deck.push(appState.deck.splice(appState.currentCardIndex, 1)[0]);
+                renderGame();
             });
+
+            document.querySelector(".home-btn").addEventListener("click", renderHome);
         }
 
-        function showCompletion() {
+        function renderComplete() {
             const category = VOCABULARY_DB[appState.selectedCategory];
-            const totalCards = appState.deck.length;
-
             app.innerHTML = `
-                <div class="min-h-screen flex flex-col items-center justify-center px-4 py-8">
-                    <div class="text-9xl mb-6 animate-bounce">🏆</div>
-                    <h1 class="text-5xl font-bold text-gray-800 mb-4">Super gemacht!</h1>
-                    <p class="text-2xl text-gray-600 mb-8">You earned ${appState.score} stars!</p>
+                <div class="min-h-screen flex flex-col items-center justify-center px-6 py-8 bg-gradient-to-b from-purple-600 to-indigo-800 text-white text-center">
+                    <div class="text-9xl mb-8 animate-bounce drop-shadow-2xl">🏆</div>
+                    <h1 class="text-5xl font-black mb-4 tracking-tight">Wunderbar!</h1>
+                    <p class="text-xl text-purple-200 mb-10 font-medium">You finished the ${category.name.split(" & ")[0]} set!</p>
 
-                    <div class="mb-8">
-                        <p class="text-6xl">⭐ × ${appState.score}</p>
+                    <div class="bg-white/10 backdrop-blur-md rounded-[2.5rem] p-8 mb-12 shadow-2xl border border-white/20 w-full max-w-sm">
+                        <p class="text-sm font-bold uppercase tracking-widest text-purple-300 mb-2">Total Score</p>
+                        <div class="flex items-center justify-center text-7xl font-black">
+                            <span class="text-yellow-400 mr-3 drop-shadow-lg">⭐</span> ${appState.score}
+                        </div>
                     </div>
 
-                    <div class="flex gap-4 flex-wrap justify-center">
-                        <button class="replay-btn bg-gradient-to-r from-purple-500 to-pink-500 text-white font-bold py-4 px-8 rounded-2xl text-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all">
-                            🔄 Repeat ${category.name.split(" & ")[0]}
+                    <div class="w-full max-w-sm space-y-4">
+                        <button class="replay-btn hover-lift w-full bg-white text-indigo-700 font-black py-5 px-8 rounded-2xl text-xl shadow-xl flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" /></svg>
+                            Play Again
                         </button>
-                        <button class="home-btn-final bg-gradient-to-r from-blue-500 to-indigo-500 text-white font-bold py-4 px-8 rounded-2xl text-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all">
-                            🏠 Home
+                        <button class="home-btn-final hover-lift w-full bg-indigo-900/50 border border-white/10 text-white font-bold py-5 px-8 rounded-2xl text-lg shadow-lg flex items-center justify-center transition-colors hover:bg-indigo-900/70">
+                            Choose New Category
                         </button>
                     </div>
                 </div>
             `;
 
-            document.querySelector(".replay-btn").addEventListener("click", () => {
-                startGame(appState.selectedCategory);
-            });
-            document.querySelector(".home-btn-final").addEventListener("click", showHome);
+            document.querySelector(".replay-btn").addEventListener("click", () => startGame(appState.selectedCategory));
+            document.querySelector(".home-btn-final").addEventListener("click", renderHome);
         }
+
+        // Initial Load
+        (async () => {
+            renderLoading();
+            try {
+                const response = await fetch("words-3000.json");
+                if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+                VOCABULARY_DB = await response.json();
+                renderHome();
+            } catch (e) {
+                console.error(e);
+                renderError(e);
+            }
+        })();
     </script>
 </body>
 </html>
