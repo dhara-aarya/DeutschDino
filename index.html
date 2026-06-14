@@ -11,8 +11,9 @@
     <link href="https://cdn.tailwindcss.com" rel="stylesheet">
 
     <style>
-        * { -webkit-tap-highlight-color: transparent; }
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+        * { -webkit-tap-highlight-color: transparent; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; }
+        html { -webkit-user-select: none; user-select: none; }
 
         /* Article color coding */
         .article-der { @apply text-blue-600 font-bold; }
@@ -89,6 +90,14 @@
             body { padding-top: max(12px, env(safe-area-inset-top)); padding-bottom: max(12px, env(safe-area-inset-bottom)); }
         }
 
+        /* iPhone app container */
+        #app {
+            background: linear-gradient(180deg, rgba(255,255,255,0.98) 0%, rgba(248,249,255,0.95) 100%);
+            border-radius: 40px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+
         /* Button hover styles */
         .hover-lift {
             transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.2s ease;
@@ -117,10 +126,40 @@
             -webkit-box-orient: vertical;
             overflow: hidden;
         }
+
+        /* Kid-friendly animations */
+        @keyframes gentle-pop {
+            0% { transform: scale(0.95); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-8px); }
+        }
+
+        .animate-gentle-pop {
+            animation: gentle-pop 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .animate-float {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        /* iOS-style button ripple on active */
+        button {
+            -webkit-user-select: none;
+            user-select: none;
+        }
+
+        /* Smooth page transitions */
+        #app > div {
+            animation: gentle-pop 0.3s ease-out;
+        }
     </style>
 </head>
-<body class="bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50 min-h-screen text-gray-800">
-    <div id="app" class="max-w-md mx-auto relative min-h-screen flex flex-col shadow-2xl bg-white/40 overflow-hidden"></div>
+<body style="background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);" class="min-h-screen text-gray-800 flex items-center justify-center p-2 sm:p-4">
+    <div id="app" class="max-w-md w-full aspect-[9/20] sm:aspect-auto sm:h-screen relative flex flex-col shadow-2xl overflow-hidden"></div>
 
     <script>
         // ============ DATA STRUCTURE ============
@@ -1106,8 +1145,8 @@
             app.innerHTML = `
                 <div class="flex-1 overflow-y-auto px-5 py-10 pb-40">
                     <div class="text-center mb-12 mt-8">
-                        <div class="inline-block p-5 sm:p-6 rounded-full bg-gradient-to-br from-purple-100 to-pink-100 shadow-xl mb-6 border border-white/50 backdrop-blur-sm">
-                            <span class="text-7xl sm:text-8xl">🇩🇪</span>
+                        <div class="inline-block p-6 sm:p-8 rounded-full bg-gradient-to-br from-purple-100 to-pink-100 shadow-xl mb-6 border border-white/50 backdrop-blur-sm">
+                            <span style="font-size: 100px; line-height: 1;">🇩🇪</span>
                         </div>
                         <h1 class="text-5xl sm:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600 mb-3 tracking-tight">Deutsch Dino</h1>
                         <p class="text-gray-600 font-semibold text-lg sm:text-xl">Master German vocabulary</p>
@@ -1115,9 +1154,9 @@
 
                     <div class="grid grid-cols-2 gap-4 sm:gap-5 mb-10">
                         ${Object.entries(VOCABULARY_DB).map(([key, category]) => `
-                            <button class="category-btn hover-lift bg-gradient-to-br ${category.color} rounded-3xl sm:rounded-3xl p-5 sm:p-6 text-white font-bold text-center shadow-lg border border-white/20 flex flex-col items-center justify-center h-full active:scale-95 transition-transform" data-category="${key}">
-                                <div class="text-5xl sm:text-6xl mb-3 sm:mb-4 drop-shadow-md">${category.emoji}</div>
-                                <div class="text-xs sm:text-sm font-bold tracking-wide w-full px-1">${category.name}</div>
+                            <button class="category-btn hover-lift bg-gradient-to-br ${category.color} rounded-3xl sm:rounded-3xl p-5 sm:p-6 text-white font-bold text-center shadow-lg shadow-black/20 border border-white/20 flex flex-col items-center justify-center h-full active:scale-95 transition-transform duration-150" data-category="${key}">
+                                <div style="font-size: 64px; line-height: 1; filter: drop-shadow(0 4px 8px rgba(0,0,0,0.2));" class="mb-3 sm:mb-4">${category.emoji}</div>
+                                <div class="text-xs sm:text-sm font-bold tracking-wide w-full px-1 leading-tight">${category.name}</div>
                             </button>
                         `).join("")}
                     </div>
@@ -1125,10 +1164,11 @@
 
                 <!-- Fixed Bottom Navigation -->
                 <div class="absolute bottom-0 left-0 right-0 p-5 pb-10 glass-panel rounded-t-3xl sm:rounded-t-[3rem] z-10">
-                    <a href="words-3000.html" class="flex items-center justify-center w-full bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-bold py-5 sm:py-6 px-6 rounded-2xl sm:rounded-3xl text-lg sm:text-xl shadow-xl hover-lift active:scale-95">
-                        <span class="text-3xl sm:text-4xl mr-3">📚</span>
-                        Explore 3000 Words
-                        <span class="ml-2 opacity-70 text-2xl">→</span>
+                    <a href="words-3000.html" class="flex items-center justify-center w-full bg-gradient-to-br from-pink-500 via-purple-500 to-indigo-600 text-white font-black py-6 sm:py-7 px-8 rounded-3xl sm:rounded-full text-lg sm:text-2xl shadow-2xl shadow-purple-500/50 hover-lift active:scale-95 border border-white/20 backdrop-blur-sm relative overflow-hidden group">
+                        <div class="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                        <span style="font-size: 56px; line-height: 1;" class="mr-4 relative z-10">📚</span>
+                        <span class="relative z-10 font-semibold">Explore 3000 Words</span>
+                        <span style="font-size: 32px; margin-left: 12px;" class="relative z-10 group-hover:translate-x-2 transition-transform">→</span>
                     </a>
                 </div>
             `;
@@ -1165,9 +1205,9 @@
             app.innerHTML = `
                 <div class="flex-1 flex flex-col px-4 sm:px-6 py-5 sm:py-7 h-full max-h-screen overflow-hidden">
                     <!-- Header -->
-                    <div class="flex justify-between items-center gap-3 sm:gap-4 mb-5 sm:mb-7 shrink-0">
-                        <button class="home-btn hover-lift bg-gradient-to-br from-indigo-500 to-purple-600 text-white rounded-full p-3 sm:p-3.5 shadow-lg shadow-purple-200/50 active:scale-95 flex items-center justify-center border border-white/20" title="Back to home">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 sm:h-7 sm:w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M10 19l-7-7m0 0l7-7m-7 7h18" /></svg>
+                    <div class="flex justify-between items-center gap-3 sm:gap-4 mb-5 sm:mb-7 shrink-0 relative z-20">
+                        <button class="home-btn hover-lift bg-gradient-to-br from-yellow-400 via-orange-400 to-red-500 text-white rounded-full shadow-2xl shadow-orange-500/80 active:scale-95 flex items-center justify-center border-4 border-white transition-all hover:shadow-orange-500/100" title="Back to home" style="width: 60px; height: 60px; font-size: 32px; line-height: 1;">
+                            🏠
                         </button>
                         <div class="text-center flex-1 min-w-0">
                             <h2 class="text-lg sm:text-2xl font-bold text-gray-800 tracking-tight truncate">${category.emoji} ${category.name.split(" ")[0]}</h2>
@@ -1184,13 +1224,13 @@
                     </div>
 
                     <!-- Card -->
-                    <div class="flex-1 flex items-center justify-center mb-7 sm:mb-9 min-h-0">
-                        <div class="card-container hover-lift w-full max-w-sm h-full max-h-[65vh] sm:max-h-[72vh] ${isFlipped ? 'flipped' : ''}" id="card">
+                    <div class="flex-1 flex items-center justify-center mb-5 sm:mb-6 min-h-0 px-2">
+                        <div class="card-container hover-lift w-full h-full max-h-[55vh] sm:max-h-[60vh] ${isFlipped ? 'flipped' : ''}" id="card">
                             <div class="card-inner">
                                 <!-- Front -->
                                 <div class="card-front bg-white rounded-[2rem] sm:rounded-[2.5rem] shadow-2xl border border-gray-100 p-6 sm:p-8 overflow-y-auto custom-scrollbar">
                                     <div class="flex-grow flex flex-col items-center justify-center w-full">
-                                        <div class="text-9xl sm:text-10xl md:text-[160px] mb-8 sm:mb-10 drop-shadow-xl transform transition-transform hover:scale-110 leading-none">${currentCard.emoji}</div>
+                                        <div style="font-size: 180px; line-height: 1;" class="mb-8 sm:mb-10 drop-shadow-xl transform transition-transform hover:scale-110">${currentCard.emoji}</div>
                                     </div>
                                     <div class="w-full flex flex-col items-center shrink-0">
                                         <div class="text-3xl sm:text-4xl md:text-5xl font-black text-gray-800 text-center mb-4 sm:mb-5 tracking-tight w-full break-words text-clamp leading-tight">${currentCard.en}</div>
@@ -1205,7 +1245,7 @@
                                 <!-- Back -->
                                 <div class="card-back bg-gradient-to-br from-purple-600 to-indigo-700 rounded-[2rem] sm:rounded-[2.5rem] shadow-2xl border border-white/20 text-white p-6 sm:p-8 overflow-y-auto custom-scrollbar">
                                     <div class="flex-grow flex flex-col items-center justify-center w-full">
-                                        <div class="text-9xl sm:text-10xl md:text-[160px] mb-8 sm:mb-10 drop-shadow-xl leading-none">${currentCard.emoji}</div>
+                                        <div style="font-size: 180px; line-height: 1;" class="mb-8 sm:mb-10 drop-shadow-xl">${currentCard.emoji}</div>
                                     </div>
                                     <div class="w-full flex flex-col items-center shrink-0">
                                         <div class="text-2xl sm:text-3xl md:text-4xl mb-5 sm:mb-6 text-center w-full break-words">
@@ -1227,25 +1267,25 @@
                     <div class="shrink-0 pb-2">
                         <!-- Navigation Row -->
                         <div class="flex items-center justify-between gap-2 sm:gap-3 mb-3 sm:mb-4">
-                            <button class="prev-btn hover-lift bg-white border border-gray-200 text-gray-700 font-bold py-3 sm:py-3.5 px-3 sm:px-4 rounded-xl sm:rounded-2xl shadow-sm flex items-center justify-center transition-colors hover:bg-gray-50 ${appState.currentCardIndex === 0 ? 'opacity-50 cursor-not-allowed' : ''}">
-                                <span class="text-xl sm:text-2xl">⬅️</span>
+                            <button class="prev-btn hover-lift bg-gradient-to-r from-pink-400 to-purple-500 text-white font-bold py-3 sm:py-3.5 px-3 sm:px-4 rounded-xl sm:rounded-2xl shadow-md shadow-purple-300/40 flex items-center justify-center transition-all active:scale-95 border border-white/20 ${appState.currentCardIndex === 0 ? 'opacity-40 cursor-not-allowed' : ''}">
+                                <span class="text-lg sm:text-xl">⬅️</span>
                             </button>
                             <div class="text-center flex-1">
-                                <p class="text-xs sm:text-sm font-semibold text-gray-500">Card ${appState.currentCardIndex + 1} of ${totalCards}</p>
+                                <p class="text-xs sm:text-sm font-bold text-gray-700 bg-white/60 rounded-lg px-3 py-1.5">Card ${appState.currentCardIndex + 1}/${totalCards}</p>
                             </div>
-                            <button class="next-btn hover-lift bg-white border border-gray-200 text-gray-700 font-bold py-3 sm:py-3.5 px-3 sm:px-4 rounded-xl sm:rounded-2xl shadow-sm flex items-center justify-center transition-colors hover:bg-gray-50 ${appState.currentCardIndex >= totalCards - 1 ? 'opacity-50 cursor-not-allowed' : ''}">
-                                <span class="text-xl sm:text-2xl">➡️</span>
+                            <button class="next-btn hover-lift bg-gradient-to-r from-purple-500 to-indigo-600 text-white font-bold py-3 sm:py-3.5 px-3 sm:px-4 rounded-xl sm:rounded-2xl shadow-md shadow-indigo-300/40 flex items-center justify-center transition-all active:scale-95 border border-white/20 ${appState.currentCardIndex >= totalCards - 1 ? 'opacity-40 cursor-not-allowed' : ''}">
+                                <span class="text-lg sm:text-xl">➡️</span>
                             </button>
                         </div>
                         <!-- Action buttons -->
                         <div class="grid grid-cols-2 gap-3 sm:gap-4">
-                            <button class="try-again-btn hover-lift bg-white border-2 border-orange-200 hover:border-orange-300 text-orange-600 font-bold py-4 sm:py-5 px-3 sm:px-4 rounded-2xl sm:rounded-3xl text-sm sm:text-base shadow-md flex flex-col items-center justify-center transition-colors active:scale-95">
-                                <span class="text-2xl sm:text-3xl mb-1">🔄</span>
-                                <span class="text-[11px] sm:text-xs font-semibold">Review</span>
+                            <button class="try-again-btn hover-lift bg-gradient-to-br from-pink-400 to-rose-500 text-white font-bold py-4 sm:py-5 px-4 sm:px-5 rounded-2xl sm:rounded-3xl text-sm sm:text-base shadow-lg shadow-pink-300/50 flex flex-col items-center justify-center transition-all active:scale-95 border border-white/20">
+                                <span style="font-size: 38px; line-height: 1;" class="mb-1">🔄</span>
+                                <span class="text-xs sm:text-sm font-semibold">Review</span>
                             </button>
-                            <button class="know-it-btn hover-lift bg-gradient-to-br from-green-400 to-emerald-500 text-white font-bold py-4 sm:py-5 px-3 sm:px-4 rounded-2xl sm:rounded-3xl text-sm sm:text-base shadow-lg shadow-green-200/60 flex flex-col items-center justify-center active:scale-95">
-                                <span class="text-2xl sm:text-3xl mb-1">✨</span>
-                                <span class="text-[11px] sm:text-xs font-semibold">Got It!</span>
+                            <button class="know-it-btn hover-lift bg-gradient-to-br from-indigo-500 to-blue-600 text-white font-bold py-4 sm:py-5 px-4 sm:px-5 rounded-2xl sm:rounded-3xl text-sm sm:text-base shadow-lg shadow-blue-300/50 flex flex-col items-center justify-center transition-all active:scale-95 border border-white/20">
+                                <span style="font-size: 38px; line-height: 1;" class="mb-1">✨</span>
+                                <span class="text-xs sm:text-sm font-semibold">Got It!</span>
                             </button>
                         </div>
                     </div>
@@ -1328,15 +1368,18 @@
             const category = VOCABULARY_DB[appState.selectedCategory];
             const app = document.getElementById("app");
             app.innerHTML = `
-                <div class="min-h-screen flex flex-col items-center justify-center px-6 py-8 bg-gradient-to-b from-purple-600 to-indigo-800 text-white text-center">
-                    <div class="text-9xl sm:text-10xl mb-8 sm:mb-10 animate-bounce drop-shadow-2xl">🏆</div>
+                <div class="min-h-screen flex flex-col items-center justify-center px-6 py-8 bg-gradient-to-b from-purple-500 via-pink-400 to-indigo-600 text-white text-center relative">
+                    <button class="home-btn-top absolute top-6 left-6 bg-gradient-to-br from-yellow-400 via-orange-400 to-red-500 text-white rounded-full shadow-2xl shadow-orange-500/80 active:scale-95 flex items-center justify-center border-4 border-white transition-all hover:shadow-orange-500/100" style="width: 60px; height: 60px; font-size: 32px; line-height: 1; z-index: 20;">
+                        🏠
+                    </button>
+                    <div style="font-size: 160px; line-height: 1;" class="mb-8 sm:mb-10 drop-shadow-2xl animate-bounce">🏆</div>
                     <h1 class="text-5xl sm:text-6xl font-black mb-4 sm:mb-5 tracking-tight">Wunderbar!</h1>
                     <p class="text-xl sm:text-2xl text-purple-200 mb-12 sm:mb-14 font-semibold">You mastered ${category.name}</p>
 
                     <div class="bg-white/15 backdrop-blur-md rounded-3xl sm:rounded-[2.5rem] p-8 sm:p-10 mb-14 sm:mb-16 shadow-2xl border border-white/30 w-full max-w-sm">
                         <p class="text-xs sm:text-sm font-bold uppercase tracking-widest text-purple-300 mb-3">Total Score</p>
-                        <div class="flex items-center justify-center text-7xl sm:text-8xl font-black">
-                            <span class="text-yellow-300 mr-3 sm:mr-4 drop-shadow-lg">⭐</span> ${appState.score}
+                        <div class="flex items-center justify-center font-black">
+                            <span style="font-size: 80px; line-height: 1;" class="text-yellow-300 mr-3 sm:mr-4 drop-shadow-lg">⭐</span><span style="font-size: 72px;">${appState.score}</span>
                         </div>
                     </div>
 
@@ -1360,6 +1403,14 @@
                 appState.currentScreen = "home";
                 renderHome();
             });
+
+            const homeTopBtn = document.querySelector(".home-btn-top");
+            if (homeTopBtn) {
+                homeTopBtn.addEventListener("click", () => {
+                    appState.currentScreen = "home";
+                    renderHome();
+                });
+            }
         }
 
         // ============ INITIALIZATION ============
